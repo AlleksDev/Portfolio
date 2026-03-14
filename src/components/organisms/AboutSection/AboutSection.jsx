@@ -14,7 +14,7 @@ const AboutSection = () => {
           <p>Soy <strong>Estudiante de Ingeniería en Software</strong> y Desarrollador Full Stack con sólidas bases en diseño UX/UI e ilustración.</p>
           <p>Cuento con experiencia <strong>liderando y colaborando</strong> en proyectos académicos y hackathones dentro de equipos multidisciplinarios.</p>
           <p>Mi enfoque combina la <strong>resolución técnica de problemas</strong> con la creación de interfaces intuitivas y estéticas, buscando siempre el balance perfecto entre código limpio y una experiencia de usuario excepcional.</p>
-          <a href="#" className="about-btn"><div className="dot"></div> Open to work</a>
+          <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="about-btn"><div className="dot"></div> Open to work</button>
         </div>
         <div className="about-image">
           <div className="about-image-frame"></div>

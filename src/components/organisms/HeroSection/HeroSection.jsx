@@ -2,6 +2,11 @@ import React from 'react';
 import './HeroSection.css';
 
 const HeroSection = () => {
+  const handleScroll = (e, id) => {
+    e.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <>
       <section id="hero">
@@ -9,8 +14,8 @@ const HeroSection = () => {
           <h1 className="hero-title">CÓDIGO<br/><span>+</span> <span>DISEÑO</span> </h1>
           <p className="hero-desc">Construyo experiencias digitales, busco la excelencia del código y el diseño, de la arquitectura a la gráfica</p>
           <div className="hero-actions">
-            <a href="#contact" className="btn-primary">CONTACTAME</a>
-            <a href="#experience" className="btn-outline">MI EXPERIENCIA</a>
+            <a href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="btn-primary">CONTACTAME</a>
+            <a href="#experience" onClick={(e) => handleScroll(e, 'experience')} className="btn-outline">MI EXPERIENCIA</a>
           </div>
           <div className="hero-socials">
             <a href="#"><i className="fa-brands fa-x-twitter"></i></a>
