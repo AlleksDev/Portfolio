@@ -1,8 +1,8 @@
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 .about-text p { font-size: 1.1rem; line-height: 1.8; color: var(--muted); margin-bottom: 24px; }
-.about-text p strong { color: var(--orange); font-weight: normal; }
-.about-btn { display: inline-flex; align-items: center; gap: 12px; padding: 12px 24px; border: 1px solid var(--border); border-radius: 100px; color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; text-decoration: none; margin-top: 16px; transition: 0.3s; }
-.about-btn:hover { border-color: var(--orange); }
+.about-text p strong { color: var(--orange); font-weight: bold; }
+.about-btn { background: none; display: inline-flex; align-items: center; gap: 12px; padding: 12px 24px; border: 1px solid var(--orange); border-radius: 100px; color: var(--orange); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: bold; text-decoration: none; margin-top: 16px; transition: 0.3s; }
+.about-btn:hover { border-color: var(--orange); background-color: rgba(225, 90, 26, 0.15); }
 .about-btn .dot { width: 8px; height: 8px; background: var(--orange); border-radius: 50%; box-shadow: 0 0 8px var(--orange); }
 
 .about-image {  position: relative; width: 100%; max-width: 450px; aspect-ratio: 4/5; margin: auto; }
