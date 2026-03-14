@@ -1,0 +1,21 @@
+.projects-filters { display: flex; gap: 16px; margin-bottom: 48px; border-bottom: 1px solid var(--border); padding-bottom: 24px; flex-wrap: wrap; }
+.proj-filter { padding: 12px 24px; font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; border: 1px solid var(--border); color: var(--muted); background: transparent; cursor: pointer; border-radius: 100px; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+.proj-filter.active { border-color: var(--yellow); color: var(--yellow); }
+
+.projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.project-card { background: var(--card); border: 1px solid var(--border); overflow: hidden; display: flex; flex-direction: column; }
+.project-img { height: 240px; background: #222; position: relative; border-bottom: 1px solid var(--border); }
+.project-info { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+.project-tags { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.project-tag { padding: 4px 10px; background: rgba(225,90,26,0.1); color: var(--orange); font-size: 0.75rem; font-family: 'Space Mono', monospace; border: 1px solid rgba(225,90,26,0.2); }
+.project-title { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; margin-bottom: 8px; letter-spacing: 0.05em; }
+.project-desc { font-size: 0.95rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.project-head-link { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--muted); display: flex; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid var(--border); text-transform: uppercase; }
+
+.projects-more { border: 1px solid var(--border); padding: 24px; display: flex; flex-direction: column; align-items: flex-start; margin-top: 48px; justify-content: end; }
+.projects-more h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--orange); margin-bottom: 8px; }
+.projects-more p { color: var(--muted); font-size: 0.95rem; }
+
+@media (max-width: 1024px) {
+  .projects-grid { grid-template-columns: 1fr; }
+}

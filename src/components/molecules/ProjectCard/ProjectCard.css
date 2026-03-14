@@ -1,0 +1,111 @@
+.project-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  aspect-ratio: 1 / 1;
+  background: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: 1px solid transparent;
+}
+
+.project-card:hover,
+.project-card:focus {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(230, 126, 34, 0.2);
+}
+
+.project-card:focus {
+  border-color: #e67e22;
+}
+
+.project-card__image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: inherit;
+}
+
+.project-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card:hover .project-card__image,
+.project-card:focus .project-card__image {
+  transform: scale(1.08);
+}
+
+.project-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card:hover .project-card__overlay,
+.project-card:focus .project-card__overlay {
+  opacity: 1;
+}
+
+.project-card__content {
+  width: 100%;
+}
+
+.project-card__title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: -0.3px;
+}
+
+.project-card__desc {
+  font-size: 0.85rem;
+  color: #bbb;
+  margin: 0 0 1.25rem 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.project-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #e67e22;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.project-card__cta:hover,
+.project-card__cta:focus {
+  background: #d96f1a;
+  transform: translateX(4px);
+  outline: 2px solid #e67e22;
+  outline-offset: 2px;
+}

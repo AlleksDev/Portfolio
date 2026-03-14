@@ -1,0 +1,32 @@
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.input-group__label {
+  font-size: 0.85rem;
+  color: #ccc;
+  font-weight: 500;
+}
+
+.input-group__field {
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+  font-family: inherit;
+}
+
+.input-group__field::placeholder {
+  color: #666;
+}
+
+.input-group__field:focus {
+  border-color: #e67e22;
+  box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.15);
+}

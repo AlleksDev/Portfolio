@@ -1,0 +1,27 @@
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  letter-spacing: -0.5px;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #e67e22, #d35400);
+  margin: 0.75rem auto 0;
+  border-radius: 2px;
+}
+
+.section-title--light {
+  color: #1a1a1a;
+}
+
+.section-title--light::after {
+  background: linear-gradient(90deg, #e67e22, #d35400);
+}

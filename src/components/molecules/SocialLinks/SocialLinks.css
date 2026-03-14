@@ -1,0 +1,26 @@
+.social-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.social-links__item {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.social-links__item:hover {
+  background: #e67e22;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+  border-color: transparent;
+}

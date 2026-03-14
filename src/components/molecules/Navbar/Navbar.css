@@ -1,0 +1,15 @@
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 24px 80px; display: flex; justify-content: space-between; align-items: center;
+  background: linear-gradient(to bottom, rgba(8,8,8,0.95), transparent); backdrop-filter: blur(8px);
+}
+.nav-logo { display: flex; align-items: center; font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; letter-spacing: 0.05em; color: var(--white); gap: 4px; text-decoration: none; }
+.nav-logo .slash { color: var(--orange); }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.1em; color: var(--white); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--orange); }
+
+@media (max-width: 1024px) {
+  nav { padding: 24px; }
+  .nav-links { display: none; }
+}

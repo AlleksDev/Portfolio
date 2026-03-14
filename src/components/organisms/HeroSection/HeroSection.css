@@ -1,0 +1,32 @@
+#hero {
+  min-height: 100vh; min-width: 100%; display: flex; align-items: center; padding: 0 80px; position: relative; margin: 0%;
+}
+#hero::before {
+  content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 80% 30%, rgba(225, 90, 26, 0.2) 0%, transparent 50%); pointer-events: none; z-index: 0;
+}
+.hero-inner { position: relative; z-index: 1; max-width: 800px; padding-top: 80px; }
+.hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(5rem, 12vw, 10rem); line-height: 0.85; color: var(--white); margin-bottom: 24px; text-shadow: 0 0 40px rgba(225, 90, 26, 0.3); }
+.hero-title span { color: var(--orange); }
+.hero-title span:nth-child(3) { color: var(--yellow); }
+.hero-desc { font-size: 1.1rem; color: var(--muted); max-width: 500px; line-height: 1.6; margin-bottom: 40px; }
+.hero-actions { display: flex; align-items: center; gap: 24px; margin-bottom: 48px; }
+.btn-primary { padding: 16px 32px; background: var(--orange); color: var(--white); text-decoration: none; font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.05em; transition: background 0.3s; }
+.btn-primary:hover { background: var(--orange-dim); }
+.btn-outline { padding: 16px 32px; color: var(--white); text-decoration: none; font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); transition: color 0.3s, border-color 0.3s; }
+.btn-outline:hover { color: var(--orange); border-color: var(--orange); }
+
+.hero-socials { display: flex; gap: 20px; font-size: 1.5rem; }
+.hero-socials a { color: var(--muted); transition: color 0.3s; }
+.hero-socials a:hover { color: var(--white); }
+
+/* MARQUEE */
+.marquee { background: var(--orange); padding: 16px 0; overflow: hidden; position: relative; border-top: 1px solid var(--orange-dim); border-bottom: 1px solid var(--orange-dim); display: flex; }
+.marquee-content { display: flex; white-space: nowrap; animation: marquee-scroll 20s linear infinite; }
+.marquee-item { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: var(--black); letter-spacing: 0.1em; display: flex; align-items: center; gap: 32px; padding: 0 16px; }
+.dot-separator { width: 6px; height: 6px; background: var(--black); border-radius: 50%; opacity: 0.5; }
+@keyframes marquee-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+@media (max-width: 1024px) {
+  #hero { padding: 0 24px; }
+  .hero-title { font-size: 5rem; }
+}

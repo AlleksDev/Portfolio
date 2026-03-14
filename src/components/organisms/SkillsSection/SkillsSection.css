@@ -1,0 +1,36 @@
+
+/* HABILIDADES BLANDAS */
+.soft-grid { display: flex; align-items: center; gap: 40px;}
+.soft-graphic { width: auto; aspect-ratio: 1; position: relative; display: none; align-items: center; justify-content: center; }
+.soft-cube { width: 200px; height: 200px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="50,15 85,35 50,55 15,35" fill="%23ffb800"/><polygon points="15,35 50,55 50,95 15,75" fill="%23b84310"/><polygon points="85,35 50,55 50,95 85,75" fill="%23e15a1a"/></svg>') no-repeat center; background-size: contain; }
+
+.soft-items { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.soft-item { padding: 24px; border: 1px solid var(--border); border-left: 2px solid var(--orange); background: var(--black); }
+.soft-item h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; margin-bottom: 8px; display: flex; align-items: center; gap: 12px; letter-spacing: 0.05em; font-weight: lighter; }
+.soft-item h4 i { color: var(--white); font-size: 1.1rem; }
+.soft-item p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+/* PATRONES */
+.patterns-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.pattern-card { display: flex; gap: 24px; padding: 32px; background: var(--black); border: 1px solid var(--border); }
+.pattern-icon { width: 48px; height: 48px; flex-shrink: 0; background: rgba(255,184,0,0.1); border: 1px solid rgba(255,184,0,0.3); display: flex; align-items: center; justify-content: center; color: var(--yellow); font-size: 1.4rem; }
+.pattern-info h4 { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1.1rem; margin-bottom: 12px; }
+.pattern-info p { font-size: 0.95rem; color: var(--muted); line-height: 1.6; }
+
+/* CONOCIMIENTOS TECNICOS */
+.tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); }
+.tech-category { padding: 40px; border: 1px solid var(--border); background: var(--black); }
+.tech-cat-title { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1.2rem; display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
+.tech-items { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.tech-item { display: flex; flex-direction: column; gap: 8px; padding: 16px; background: var(--card); border: 1px solid var(--border); }
+.tech-item.empty { border: none; background: transparent; }
+.tech-name { font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
+.tech-name i { color: var(--orange); }
+.tech-level { font-family: 'Space Mono', monospace; font-size: 0.7rem; padding: 2px 8px; border-radius: 2px; display: inline-block; width: max-content; }
+.level-high { background: rgba(225,90,26,0.15); color: var(--orange); }
+.level-mid { background: rgba(255,184,0,0.15); color: var(--yellow); }
+
+@media (max-width: 1024px) {
+  .soft-grid, .patterns-grid, .tech-grid { grid-template-columns: 1fr; }
+  .soft-items { grid-template-columns: 1fr; }
+}
