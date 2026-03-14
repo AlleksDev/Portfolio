@@ -22,9 +22,25 @@ const ProjectsSection = () => {
       title: 'GEOVA', 
       tags: ['IoT', '3D Design', 'Hardware'], 
       desc: 'Solución avanzada para medición de terrenos que incorpora un dispositivo IoT. A cargo del diseño UI/UX de la app web, arquitectura de los circuitos y modelado mecánico 3D estructural de la carcasa del dispositivo.'
+    },
+    {
+      title: 'NOTARÍA 178',
+      tags: ['Arquitectura de Red', 'Full Stack', 'VPN'],
+      desc: 'Plataforma web robusta para la gestión operativa. Incluye servidor local configurado con VPN Tailscale para acceso remoto cifrado desde sucursales y sistema avanzado de gestión con control de acceso.'
+    },
+    {
+      title: 'VAULTDOC-VD',
+      tags: ['Ciberseguridad', 'Encriptación', 'Back-End'],
+      desc: 'Plataforma de seguridad empresarial para la gestión segura de archivos gubernamentales. Incluye análisis de vulnerabilidades en tiempo real, encriptación de extremo a extremo y auditoría completa.'
+    },
+    {
+      title: 'Videojuego 2D Educativo',
+      tags: ['Game Dev', 'Assets 2D', 'Animación'],
+      desc: 'Juego educativo 2D para el Museo Chiapas de Ciencia y Tecnología (MUCH) sobre la formación del cuerpo humano. Encargado de todos los assets visuales, sprites, frames y animaciones interactivas.'
     }
-  ];
-
+    //Falta agregar Crehor, FrontEnd Event Driven, DebiHex (fusionar con el de cargas [coulomb]), Ordenamiento y JessyRemastered ];
+  ]
+  
   return (
     <section id="projects">
       <div className="section-header">
