@@ -10,5 +10,20 @@ footer { background: var(--card); border-top: 1px solid var(--border); padding: 
 .footer-socials a:hover { color: var(--white); }
 
 @media (max-width: 1024px) {
-  footer { flex-direction: column; gap: 32px; text-align: center; }
+  footer { flex-direction: column; gap: 32px; text-align: center; padding: 40px 24px; }
+}
+
+@media (max-width: 768px) {
+  footer { padding: 32px 16px; margin-top: 80px; gap: 24px; }
+  .footer-logo { font-size: 2rem; }
+  .footer-subtitle { font-size: 0.7rem; }
+  .footer-copy { font-size: 0.8rem; }
+  .footer-follow { flex-direction: column; gap: 16px; }
+  .footer-follow span { font-size: 0.85rem; }
+  .footer-socials { font-size: 1.2rem; gap: 20px; }
+}
+
+@media (max-width: 480px) {
+  footer { padding: 24px 12px; margin-top: 60px; }
+  .footer-logo { font-size: 1.6rem; }
 }

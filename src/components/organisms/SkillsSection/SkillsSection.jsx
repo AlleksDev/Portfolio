@@ -60,70 +60,73 @@ const Patterns = () => (
 );
 
 const TechSkills = () => {
+  const devIcon = (name) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${name}/${name}-original.svg`;
+  const devIconPlain = (name) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${name}/${name}-plain.svg`;
+
   const categories = [
     {
       title: 'Frontend', icon: 'fa-code',
       items: [
-        { name: 'HTML', icon: 'fa-html5', brand: true, level: 'Avanzado', levelClass: 'level-high' },
-        { name: 'CSS', icon: 'fa-css3-alt', brand: true, level: 'Avanzado', levelClass: 'level-high' },
-        { name: 'Tailwind', icon: 'fa-css3', brand: true, level: 'Medio', levelClass: 'level-mid' },
-        { name: 'JetpackCompose', icon: 'fa-android', brand: true, level: 'Principiante', levelClass: 'level-high' },
-        { name: 'Angular', icon: 'fa-angular', brand: true, level: 'Medio', levelClass: 'level-mid' },
-        { name: 'React', icon: 'fa-react', brand: true, level: 'Medio', levelClass: 'level-mid' }
+        { name: 'HTML', icon: devIcon('html5'), level: 'Avanzado', levelClass: 'level-high' },
+        { name: 'CSS', icon: devIcon('css3'), level: 'Avanzado', levelClass: 'level-high' },
+        { name: 'Tailwind', icon: devIcon('tailwindcss'), level: 'Medio', levelClass: 'level-mid' },
+        { name: 'Jetpack Compose', icon: devIcon('jetpackcompose'), level: 'Principiante', levelClass: 'level-high' },
+        { name: 'Angular', icon: devIcon('angular'), level: 'Medio', levelClass: 'level-mid' },
+        { name: 'React', icon: devIcon('react'), level: 'Medio', levelClass: 'level-mid' }
       ]
     },
     {
       title: 'Diseño', icon: 'fa-pen-nib',
       items: [
-        { name: 'Blender', icon: 'fa-cube', level: 'Principiante', levelClass: 'level-high' },
-        { name: 'Affinity', icon: 'fa-a', level: 'Avanzado', levelClass: 'level-high' },
-        { name: 'Gimp', icon: 'fa-goodreads-g', brand: true, level: 'Principiante', levelClass: 'level-high' },
-        { name: 'Figma', icon: 'fa-figma', brand: true, level: 'Avanzado', levelClass: 'level-high' },
-        { name: 'SolidWorks', icon: 'fa-cubes', level: 'Medio', levelClass: 'level-mid' }
+        { name: 'Blender', icon: devIcon('blender'), level: 'Principiante', levelClass: 'level-high' },
+        { name: 'Affinity', icon: devIconPlain('affinity'), level: 'Avanzado', levelClass: 'level-high' },
+        { name: 'Gimp', icon: devIcon('gimp'), level: 'Principiante', levelClass: 'level-high' },
+        { name: 'Figma', icon: devIcon('figma'), level: 'Avanzado', levelClass: 'level-high' },
+        { name: 'SolidWorks', icon: devIcon('solidworks'), level: 'Medio', levelClass: 'level-mid' }
       ]
     },
     {
       title: 'Backend', icon: 'fa-server',
       items: [
-        { name: 'PostgreSQL', icon: 'fa-database', level: 'Medio', levelClass: 'level-mid' },
-        { name: 'MySQL', icon: 'fa-database', level: 'Avanzado', levelClass: 'level-high' },
-        { name: 'MongoDB', icon: 'fa-leaf', level: 'Avanzado', levelClass: 'level-high' },
-        { name: 'FastAPI', icon: 'fa-bolt', level: 'Principiante', levelClass: 'level-high' },
-        { name: 'Express', icon: 'fa-etsy', brand: true, level: 'Avanzado', levelClass: 'level-high' },
-        { name: 'Node js', icon: 'fa-node-js', brand: true, level: 'Medio', levelClass: 'level-mid' }
+        { name: 'PostgreSQL', icon: devIcon('postgresql'), level: 'Medio', levelClass: 'level-mid' },
+        { name: 'MySQL', icon: devIcon('mysql'), level: 'Avanzado', levelClass: 'level-high' },
+        { name: 'MongoDB', icon: devIcon('mongodb'), level: 'Avanzado', levelClass: 'level-high' },
+        { name: 'FastAPI', icon: devIcon('fastapi'), level: 'Principiante', levelClass: 'level-high' },
+        { name: 'Express', icon: devIcon('express'), level: 'Avanzado', levelClass: 'level-high' },
+        { name: 'Node.js', icon: devIcon('nodejs'), level: 'Medio', levelClass: 'level-mid' }
       ]
     },
     {
       title: 'DevOps', icon: 'fa-cloud',
       items: [
-        { name: 'Ubuntu', icon: 'fa-ubuntu', brand: true, level: 'Medio', levelClass: 'level-mid' },
-        { name: 'AWS', icon: 'fa-aws', brand: true, level: 'Medio', levelClass: 'level-mid' },
-        { name: 'Docker', icon: 'fa-docker', brand: true, level: 'Principiante', levelClass: 'level-high' },
-        { name: 'Cloudflare', icon: 'fa-cloud', level: 'Medio', levelClass: 'level-mid' },
-        { name: 'NginX', icon: 'fa-network-wired', level: 'Principiante', levelClass: 'level-high' },
-        { name: 'GitHub', icon: 'fa-github', brand: true, level: 'Avanzado', levelClass: 'level-high' }
+        { name: 'Ubuntu', icon: devIcon('ubuntu'), level: 'Medio', levelClass: 'level-mid' },
+        { name: 'AWS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg', level: 'Medio', levelClass: 'level-mid' },
+        { name: 'Docker', icon: devIcon('docker'), level: 'Principiante', levelClass: 'level-high' },
+        { name: 'Cloudflare', icon: devIcon('cloudflare'), level: 'Medio', levelClass: 'level-mid' },
+        { name: 'Nginx', icon: devIcon('nginx'), level: 'Principiante', levelClass: 'level-high' },
+        { name: 'GitHub', icon: devIcon('github'), level: 'Avanzado', levelClass: 'level-high' }
       ]
     },
     {
       title: 'IOT & herramientas', icon: 'fa-microchip',
       items: [
-        { name: 'Raspberry Pi', icon: 'fa-raspberry-pi', brand: true, level: 'Principiante', levelClass: 'level-high' },
-        { name: 'ESP32', icon: 'fa-microchip', level: 'Avanzado', levelClass: 'level-high' },
-        { name: 'Arduino', icon: 'fa-infinity', level: 'Avanzado', levelClass: 'level-high' },
+        { name: 'Raspberry Pi', icon: devIcon('raspberrypi'), level: 'Principiante', levelClass: 'level-high' },
+        { name: 'ESP32', icon: devIcon('arduino'), level: 'Avanzado', levelClass: 'level-high' },
+        { name: 'Arduino', icon: devIcon('arduino'), level: 'Avanzado', levelClass: 'level-high' },
         null,
-        { name: 'RabbitMQ', icon: 'fa-rabbit', level: 'Medio', levelClass: 'level-mid' },
-        { name: 'Git', icon: 'fa-git-alt', brand: true, level: 'Avanzado', levelClass: 'level-high' }
+        { name: 'RabbitMQ', icon: devIcon('rabbitmq'), level: 'Medio', levelClass: 'level-mid' },
+        { name: 'Git', icon: devIcon('git'), level: 'Avanzado', levelClass: 'level-high' }
       ]
     },
     {
       title: 'Lenguajes', icon: 'fa-code-branch',
       items: [
-        { name: 'C++', icon: 'fa-c', level: 'Principiante', levelClass: 'level-high' },
-        { name: 'Python', icon: 'fa-python', brand: true, level: 'Medio', levelClass: 'level-mid' },
-        { name: 'JavaScript', icon: 'fa-js', brand: true, level: 'Medio', levelClass: 'level-mid' },
-        { name: 'Go', icon: 'fa-g', level: 'Avanzado', levelClass: 'level-high' },
-        { name: 'Kotlin', icon: 'fa-k', level: 'Avanzado', levelClass: 'level-high' },
-        { name: 'Java', icon: 'fa-java', brand: true, level: 'Medio', levelClass: 'level-mid' }
+        { name: 'C++', icon: devIcon('cplusplus'), level: 'Principiante', levelClass: 'level-high' },
+        { name: 'Python', icon: devIcon('python'), level: 'Medio', levelClass: 'level-mid' },
+        { name: 'JavaScript', icon: devIcon('javascript'), level: 'Medio', levelClass: 'level-mid' },
+        { name: 'Go', icon: devIcon('go'), level: 'Avanzado', levelClass: 'level-high' },
+        { name: 'Kotlin', icon: devIcon('kotlin'), level: 'Avanzado', levelClass: 'level-high' },
+        { name: 'Java', icon: devIcon('java'), level: 'Medio', levelClass: 'level-mid' }
       ]
     }
   ];
@@ -141,7 +144,7 @@ const TechSkills = () => {
             <div className="tech-items">
               {cat.items.map((item, i) => item ? (
                 <div className="tech-item" key={i}>
-                  <span className="tech-name"><i className={`${item.brand ? 'fa-brands' : 'fa-solid'} ${item.icon}`}></i> {item.name}</span>
+                  <span className="tech-name"><img src={item.icon} alt={item.name} className="tech-icon" /> {item.name}</span>
                   <span className={`tech-level ${item.levelClass}`}>{item.level}</span>
                 </div>
               ) : <div className="tech-item empty" key={i}></div>)}

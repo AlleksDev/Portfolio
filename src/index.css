@@ -2,17 +2,22 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 :root {
+  /* Colores sólidos base */
   --black: #080808;
   --dark: #111111;
   --card: #161616;
   --border: #232323;
   --orange: #E15A1A;
   --orange-dim: #b84310;
-  --yellow: #FFB800;
+  --yellow: #ffc400;
   --text: #e8e8e8;
   --muted: #888888;
   --white: #ffffff;
   --bg-grid: #131313;
+
+  /* Colores con transparencia */
+  --white-grid: rgba(255, 255, 255, 0.02);
+  --transparent: transparent;
 }
 
 *,
@@ -40,8 +45,8 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-image: linear-gradient(var(--white-grid) 1px, var(--transparent) 1px),
+                    linear-gradient(90deg, var(--white-grid) 1px, var(--transparent) 1px);
   background-size: 24px 24px;
   z-index: -1;
   pointer-events: none;
@@ -91,6 +96,20 @@ section {
 
 @media (max-width: 1024px) {
   section { padding: 80px 24px; }
+  .section-title { font-size: 3.5rem; }
+}
+
+@media (max-width: 768px) {
+  section { padding: 60px 16px; }
+  .section-title { font-size: 2.5rem; }
+  .section-header { margin-bottom: 32px; gap: 12px; }
+  .section-dot { width: 5px; height: 5px; }
+}
+
+@media (max-width: 480px) {
+  section { padding: 48px 12px; }
+  .section-title { font-size: 2rem; }
+  .section-header { margin-bottom: 24px; }
 }
 
 ::-webkit-scrollbar {

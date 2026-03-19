@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Navbar.css';
+import logo from '../../../assets/logo.svg';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -30,7 +31,9 @@ const Navbar = () => {
 
   return (
     <nav>
-      <a href="/" onClick={scrollToTop} className="nav-logo"><span className="slash">//</span>Alleks</a>
+      <a href="/" onClick={scrollToTop} className="nav-logo">
+        <img src={logo} alt="Logo" />
+      </a>
       <ul className="nav-links">
         <li><a href="#about" onClick={(e) => handleScroll(e, 'about')}>SOBRE MÍ</a></li>
         <li><a href="#skills" onClick={(e) => handleScroll(e, 'skills')}>HABILIDADES</a></li>

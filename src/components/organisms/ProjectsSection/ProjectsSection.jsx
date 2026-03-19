@@ -1,26 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ProjectsSection.css';
 
 const ProjectsSection = () => {
-  const projects = [
-    { 
-      title: 'COINERS DIRFT', 
-      tags: ['UX/UI', 'Front-End', 'Wireframing'], 
+  const [activeFilter, setActiveFilter] = useState('web');
+
+  const webProjects = [
+    {
+      title: 'COINERS DIRFT',
+      tags: ['UX/UI', 'Front-End', 'Wireframing'],
       desc: 'Plataforma de entretenimiento recreativo que redefine la experiencia de juego. Su diseño busca la desestimulación activa para aliviar el estrés. Estuve a cargo de la conceptualización y el wireframing de principio a fin.'
     },
-    { 
-      title: 'FRIMEET', 
-      tags: ['Front-End', 'MercadoPago', 'UX/UI'], 
+    {
+      title: 'FRIMEET',
+      tags: ['Front-End', 'MercadoPago', 'UX/UI'],
       desc: 'Plataforma que ayuda a los usuarios a encontrar lugares perfectos para visitar. Lideré el branding, diseño UX/UI y el desarrollo Front-End. Además, integré la API de pagos usando el SDK de MercadoPago.'
     },
-    { 
-      title: 'VIXEL', 
-      tags: ['Web3', 'Game Assets', 'UX/UI'], 
+    {
+      title: 'VIXEL',
+      tags: ['Web3', 'Game Assets', 'UX/UI'],
       desc: 'Plataforma descentralizada Web3 enfocada a la creación de torneos y streaming. Creé el branding y diseño UI/UX, además de ser el responsable principal de la producción y optimización de assets funcionales y visuales del juego.'
     },
-    { 
-      title: 'GEOVA', 
-      tags: ['IoT', '3D Design', 'Hardware'], 
+    {
+      title: 'GEOVA',
+      tags: ['IoT', '3D Design', 'Hardware'],
       desc: 'Solución avanzada para medición de terrenos que incorpora un dispositivo IoT. A cargo del diseño UI/UX de la app web, arquitectura de los circuitos y modelado mecánico 3D estructural de la carcasa del dispositivo.'
     },
     {
@@ -38,8 +40,46 @@ const ProjectsSection = () => {
       tags: ['Game Dev', 'Assets 2D', 'Animación'],
       desc: 'Juego educativo 2D para el Museo Chiapas de Ciencia y Tecnología (MUCH) sobre la formación del cuerpo humano. Encargado de todos los assets visuales, sprites, frames y animaciones interactivas.'
     }
-    //Falta agregar Crehor, FrontEnd Event Driven, DebiHex (fusionar con el de cargas [coulomb]), Ordenamiento y JessyRemastered ];
-  ]
+  ];
+
+  const mobileProjects = [
+    {
+      title: 'CINERADAR',
+      tags: ['Android', 'Kotlin', 'API REST'],
+      desc: 'Aplicación móvil que recomienda películas personalizadas según los gustos del usuario. Implementa algoritmos de recomendación y una interfaz intuitiva para descubrir nuevo contenido cinematográfico.'
+    },
+    {
+      title: 'SCOREUP',
+      tags: ['Android', 'Productividad', 'UX/UI'],
+      desc: 'Aplicación diseñada para ayudar a estudiantes a organizar sus retos de estudio. Permite crear metas, hacer seguimiento del progreso y mantener la motivación académica de forma gamificada.'
+    },
+    {
+      title: 'SPLITMEET',
+      tags: ['Android', 'Finanzas', 'UX/UI'],
+      desc: 'Aplicación que facilita la organización de gastos compartidos en salidas con amigos, familia o pareja. Divide cuentas de forma equitativa y mantiene un historial claro de los gastos grupales.'
+    }
+  ];
+
+  const illustrationProjects = [
+    {
+      title: 'ENTRE SEÑAS Y PALABRAS',
+      tags: ['Ilustración', 'Editorial', 'Educativo'],
+      desc: 'Cuadernillo ilustrado para el aprendizaje de Lengua de Señas Mexicana (LSM). Responsable de toda la ilustración del proyecto, creando recursos visuales accesibles para facilitar la comunicación inclusiva.'
+    }
+  ];
+
+  const getProjects = () => {
+    switch (activeFilter) {
+      case 'mobile':
+        return mobileProjects;
+      case 'illustration':
+        return illustrationProjects;
+      default:
+        return webProjects;
+    }
+  };
+
+  const projects = getProjects();
   
   return (
     <section id="projects">
@@ -48,9 +88,24 @@ const ProjectsSection = () => {
         <h2 className="section-title">PROYECTOS</h2>
       </div>
       <div className="projects-filters">
-        <button className="proj-filter active"><i className="fa-solid fa-globe"></i> APLICACIONES WEB</button>
-        <button className="proj-filter"><i className="fa-brands fa-android"></i> APLICACIONES ANDROID</button>
-        <button className="proj-filter"><i className="fa-solid fa-pen-nib"></i> ILUSTRACIONES</button>
+        <button
+          className={`proj-filter ${activeFilter === 'web' ? 'active' : ''}`}
+          onClick={() => setActiveFilter('web')}
+        >
+          <i className="fa-solid fa-globe"></i> APLICACIONES WEB
+        </button>
+        <button
+          className={`proj-filter ${activeFilter === 'mobile' ? 'active' : ''}`}
+          onClick={() => setActiveFilter('mobile')}
+        >
+          <i className="fa-brands fa-android"></i> APLICACIONES ANDROID
+        </button>
+        <button
+          className={`proj-filter ${activeFilter === 'illustration' ? 'active' : ''}`}
+          onClick={() => setActiveFilter('illustration')}
+        >
+          <i className="fa-solid fa-pen-nib"></i> ILUSTRACIONES
+        </button>
       </div>
       <div className="projects-grid">
         {projects.map((proj, idx) => (

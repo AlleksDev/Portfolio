@@ -2,7 +2,7 @@
 .exp-card { border: 1px solid var(--border); border-radius: 12px; padding: 32px; background: var(--card); display: flex; flex-direction: column; gap: 16px; transition: transform 0.3s ease, border-color 0.3s ease; }
 .exp-card:hover { border-color: var(--orange); transform: translateY(-4px); }
 .exp-header { display: flex; align-items: center; gap: 16px; }
-.exp-num { font-family: 'Bebas Neue', sans-serif; font-size: 5rem; color: var(--yellow); line-height: 0.85; }
+.exp-num { font-family: 'Bebas Neue', sans-serif; font-size: 6rem; color: var(--yellow); line-height: 0.85; }
 .exp-line { flex: 1; height: 1px; background: linear-gradient(to right, rgba(255,184,0,0), var(--yellow)); }
 .exp-subheader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
 .exp-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--white); letter-spacing: 0.05em; line-height: 1; }
@@ -13,5 +13,23 @@
 .exp-tag.highlight { border-color: var(--orange); color: var(--orange); background: rgba(225,90,26,0.08); }
 
 @media (max-width: 1024px) {
-  .exp-grid { grid-template-columns: 1fr; }
+  .exp-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .exp-grid { grid-template-columns: 1fr; gap: 24px; }
+  .exp-card { padding: 24px; gap: 12px; }
+  .exp-num { font-size: 3.5rem; }
+  .exp-title { font-size: 1.4rem; }
+  .exp-date { font-size: 0.85rem; }
+  .exp-desc { font-size: 0.9rem; }
+  .exp-tags { gap: 8px; }
+  .exp-tag { padding: 6px 12px; font-size: 0.8rem; }
+}
+
+@media (max-width: 480px) {
+  .exp-card { padding: 20px; }
+  .exp-num { font-size: 3rem; }
+  .exp-title { font-size: 1.3rem; }
+  .exp-subheader { flex-direction: column; align-items: flex-start; gap: 4px; }
 }

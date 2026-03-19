@@ -17,5 +17,26 @@
 .projects-more p { color: var(--muted); font-size: 0.95rem; }
 
 @media (max-width: 1024px) {
+  .projects-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+}
+
+@media (max-width: 768px) {
   .projects-grid { grid-template-columns: 1fr; }
+  .projects-filters { gap: 12px; margin-bottom: 32px; padding-bottom: 16px; }
+  .proj-filter { padding: 10px 18px; font-size: 1rem; }
+  .project-img { height: 200px; }
+  .project-info { padding: 20px; }
+  .project-title { font-size: 1.8rem; }
+  .project-desc { font-size: 0.9rem; }
+  .projects-more { padding: 20px; margin-top: 32px; }
+  .projects-more h3 { font-size: 1.6rem; }
+  .projects-more p { font-size: 0.85rem; }
+}
+
+@media (max-width: 480px) {
+  .projects-filters { gap: 8px; }
+  .proj-filter { padding: 8px 14px; font-size: 0.9rem; }
+  .project-img { height: 180px; }
+  .project-info { padding: 16px; }
+  .project-title { font-size: 1.5rem; }
 }

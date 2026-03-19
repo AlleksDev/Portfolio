@@ -7,9 +7,21 @@ nav {
 .nav-logo .slash { color: var(--orange); }
 .nav-links { display: flex; gap: 32px; list-style: none; }
 .nav-links a { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 0.1em; color: var(--white); text-decoration: none; transition: color 0.2s; }
+.nav-links a::after { content: ''; display: block; width: 0; height: 2px; background: var(--orange); transition: width 0.3s; }
+.nav-links a:hover::after { width: 100%; }
 .nav-links a:hover { color: var(--orange); }
 
 @media (max-width: 1024px) {
   nav { padding: 24px; }
   .nav-links { display: none; }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 16px; }
+  .nav-logo { font-size: 1.8rem; }
+}
+
+@media (max-width: 480px) {
+  nav { padding: 12px; }
+  .nav-logo { font-size: 1.5rem; }
 }

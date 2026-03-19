@@ -1,11 +1,14 @@
 import React from 'react';
 import './Footer.css';
+import logo from '../../../assets/logo.svg';
 
 const Footer = () => {
   return (
     <footer>
       <div>
-        <div className="footer-logo"><span className="slash">//</span>Alleks</div>
+        <div className="footer-logo">
+          <img src={logo} alt="Logo" />
+        </div>
         <div className="footer-subtitle">FullStack - UX/UI Designer - Illustrator</div>
       </div>
       <div className="footer-copy">© 2026 Alleks. Todos los derechos reservados</div>
