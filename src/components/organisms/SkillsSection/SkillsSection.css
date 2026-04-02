@@ -14,6 +14,7 @@
 .patterns-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .pattern-card { display: flex; gap: 24px; padding: 32px; background: var(--black); border: 1px solid var(--border); }
 .pattern-icon { width: 48px; height: 48px; flex-shrink: 0; background: rgba(255,184,0,0.1); border: 1px solid rgba(255,184,0,0.3); display: flex; align-items: center; justify-content: center; color: var(--yellow); font-size: 1.4rem; }
+.pattern-svg-icon { width: 28px; height: 28px; object-fit: contain; }
 .pattern-info h4 { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1.1rem; margin-bottom: 12px; }
 .pattern-info p { font-size: 0.95rem; color: var(--muted); line-height: 1.6; }
 
@@ -21,15 +22,16 @@
 .tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); }
 .tech-category { padding: 40px; border: 1px solid var(--border); background: var(--black); }
 .tech-cat-title { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1.2rem; display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
-.tech-items { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.tech-item { display: flex; flex-direction: column; gap: 8px; padding: 16px; background: var(--card); border: 1px solid var(--border); }
+.tech-items { display: flex; flex-wrap: wrap; gap: 16px; }
+.tech-item { display: flex; flex-direction: column; gap: 12px; padding: 16px; background: var(--card); border: 1px solid var(--border); flex: 1 1 auto; min-width: calc(50% - 8px); box-sizing: border-box; }
 .tech-item.empty { border: none; background: transparent; }
-.tech-name { font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
+.tech-name { font-size: 1.1rem; display: flex; align-items: center; gap: 8px; white-space: nowrap; }
 .tech-name i { color: var(--orange); }
-.tech-icon { width: 20px; height: 20px; object-fit: contain; }
-.tech-level { font-family: 'Space Mono', monospace; font-size: 0.7rem; padding: 2px 8px; border-radius: 2px; display: inline-block; width: max-content; }
-.level-high { background: rgba(225,90,26,0.15); color: var(--orange); }
+.tech-icon { width: 32px; height: 32px; object-fit: contain; }
+.tech-level { font-family: 'Space Mono', monospace; font-size: 0.8rem; padding: 4px 8px; border-radius: 2px; display: inline-block; width: max-content; }
+.level-high { background: rgba(225,255,255,0.15); color: var(--white); }
 .level-mid { background: rgba(255,184,0,0.15); color: var(--yellow); }
+.level-low { background: rgba(225,90,26,0.15); color: var(--orange); }
 
 /* RESPONSIVE - Tablet */
 @media (max-width: 1024px) {
@@ -53,7 +55,7 @@
   .tech-grid { grid-template-columns: 1fr; }
   .tech-category { padding: 24px; }
   .tech-cat-title { font-size: 1.1rem; margin-bottom: 24px; }
-  .tech-items { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .tech-items { gap: 12px; }
   .tech-item { padding: 12px; }
   .tech-name { font-size: 0.85rem; }
   .tech-icon { width: 18px; height: 18px; }
@@ -69,6 +71,5 @@
   .pattern-info p { font-size: 0.8rem; }
 
   .tech-category { padding: 20px; }
-  .tech-items { grid-template-columns: 1fr; }
-  .tech-item { padding: 10px; }
+  .tech-item { padding: 10px; flex: 1 1 100%; min-width: 100%; }
 }
