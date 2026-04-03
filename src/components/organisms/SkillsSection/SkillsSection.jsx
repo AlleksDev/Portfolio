@@ -17,6 +17,16 @@ import mysqlIcon from '../../../assets/icons/programs/mysql.svg';
 import solidworksIcon from '../../../assets/icons/programs/solidworks.svg';
 import express from '../../../assets/icons/programs/express.svg';
 
+// Soft skills icons
+import teamworkIcon from '../../../assets/icons/softSkills/teamwork.svg';
+import communicationIcon from '../../../assets/icons/softSkills/communication.svg';
+import creativityIcon from '../../../assets/icons/softSkills/creativity.svg';
+import leadershipIcon from '../../../assets/icons/softSkills/leadership.svg';
+import fastLearningIcon from '../../../assets/icons/softSkills/fast.svg';
+import criticalThinkingIcon from '../../../assets/icons/softSkills/criticalThinking.svg';
+import adaptableIcon from '../../../assets/icons/softSkills/adaptable.svg';
+import pressureIcon from '../../../assets/icons/softSkills/pressure.svg';
+
 const SoftSkills = () => (
   <section id="soft-skills">
     <div className="section-header">
@@ -29,17 +39,17 @@ const SoftSkills = () => (
       </div>
       <div className="soft-items">
         {[
-          { icon: 'fa-users', title: 'TRABAJO EN EQUIPO', desc: 'Colaboración efectiva en células multidisciplinarias para alcanzar metas comunes de proyecto.' },
-          { icon: 'fa-comment', title: 'COMUNICACIÓN', reg: true, desc: 'Expresión clara de ideas técnicas tanto para desarrolladores como para perfiles de negocio.' },
-          { icon: 'fa-wand-magic-sparkles', title: 'CREATIVIDAD', desc: 'Aportación de enfoques innovadores tanto en interfaces gráficas como en soluciones lógicas.' },
-          { icon: 'fa-crown', title: 'LIDERAZGO', desc: 'Guía técnica y de conceptualización, asumiendo responsabilidad o propiedad (ownership) del producto.' },
-          { icon: 'fa-bolt', title: 'APRENDIZAJE RÁPIDO', desc: 'Capacidad de investigar e implementar nuevos lenguajes, frameworks o SDKs velozmente.' },
-          { icon: 'fa-brain', title: 'PENSAMIENTO CRÍTICO', desc: 'Análisis profundo de requerimientos para encontrar soluciones eficientes y escalables.' },
-          { icon: 'fa-arrows-spin', title: 'ADAPTABILIDAD', desc: 'Facilidad para ajustarme a cambios de requerimientos en entornos ágiles y competitivos.' },
-          { icon: 'fa-gauge-high', title: 'TRABAJO BAJO PRESIÓN', desc: 'Experiencia demostrada entregando desarrollos de alta calidad con fechas límite estrictas.' }
+          { icon: teamworkIcon, title: 'TRABAJO EN EQUIPO', desc: 'Colaboración efectiva en células multidisciplinarias para alcanzar metas comunes de proyecto.' },
+          { icon: communicationIcon, title: 'COMUNICACIÓN', desc: 'Expresión clara de ideas técnicas tanto para desarrolladores como para perfiles de negocio.' },
+          { icon: creativityIcon, title: 'CREATIVIDAD', desc: 'Aportación de enfoques innovadores tanto en interfaces gráficas como en soluciones lógicas.' },
+          { icon: leadershipIcon, title: 'LIDERAZGO', desc: 'Guía técnica y de conceptualización, asumiendo responsabilidad o propiedad (ownership) del producto.' },
+          { icon: fastLearningIcon, title: 'APRENDIZAJE RÁPIDO', desc: 'Capacidad de investigar e implementar nuevos lenguajes, frameworks o SDKs velozmente.' },
+          { icon: criticalThinkingIcon, title: 'PENSAMIENTO CRÍTICO', desc: 'Análisis profundo de requerimientos para encontrar soluciones eficientes y escalables.' },
+          { icon: adaptableIcon, title: 'ADAPTABILIDAD', desc: 'Facilidad para ajustarme a cambios de requerimientos en entornos ágiles y competitivos.' },
+          { icon: pressureIcon, title: 'TRABAJO BAJO PRESIÓN', desc: 'Experiencia demostrada entregando desarrollos de alta calidad con fechas límite estrictas.' }
         ].map((item, idx) => (
           <div className="soft-item" key={idx}>
-            <h4><i className={`${item.reg ? 'fa-regular' : 'fa-solid'} ${item.icon}`}></i> {item.title}</h4>
+            <h4><img src={item.icon} alt={item.title} className="soft-skill-icon" /> {item.title}</h4>
             <p>{item.desc}</p>
           </div>
         ))}
@@ -77,7 +87,7 @@ const Patterns = () => (
 
 const TechSkills = () => {
   const devIcon = (name) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${name}/${name}-original.svg`;
-  const devIconPlain = (name) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${name}/${name}-plain.svg`;
+  // const devIconPlain = (name) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${name}/${name}-plain.svg`;
 
   const categories = [
     {
