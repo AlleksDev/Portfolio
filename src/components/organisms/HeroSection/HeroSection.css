@@ -1,10 +1,24 @@
+/* PARTICLES EFFECT */
+.particles-container {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100vh; pointer-events: none; z-index: 0; overflow: hidden;
+}
+.particle {
+  position: absolute; width: 2px; height: 2px; background: linear-gradient(90deg, transparent, rgba(225, 90, 26, 0.8), transparent); border-radius: 50%; box-shadow: 0 0 8px rgba(225, 90, 26, 0.6); right: -10px; animation: float-left 6s linear infinite;
+}
+@keyframes float-left {
+  0% { right: -10px; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { right: 100vw; opacity: 0; }
+}
+
 #hero {
   min-height: 100vh; min-width: 100%; display: flex; align-items: center; padding: 0 80px; position: relative; margin: 0%;
 }
 #hero::before {
-  content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 80% 30%, rgba(225, 90, 26, 0.2) 0%, transparent 50%); pointer-events: none; z-index: 0;
+  content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 80% 30%, rgba(225, 90, 26, 0.2) 0%, transparent 50%); pointer-events: none; z-index: 1;
 }
-.hero-inner { position: relative; z-index: 1; max-width: 800px; padding-top: 80px; }
+.hero-inner { position: relative; z-index: 2; max-width: 800px; padding-top: 80px; }
 .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(5rem, 12vw, 10rem); line-height: 0.85; color: var(--white); margin-bottom: 24px; text-shadow: 0 0 40px rgba(225, 90, 26, 0.3); }
 .hero-title span { color: var(--orange); }
 .hero-title span:nth-child(3) { color: var(--yellow); }

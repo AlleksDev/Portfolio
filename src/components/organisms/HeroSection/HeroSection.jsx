@@ -7,8 +7,29 @@ const HeroSection = () => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // Crear partículas aleatorias para las estrellas fugaces
+  const particles = Array.from({ length: 15 }, (_, i) => ({
+    id: i,
+    delay: Math.random() * 8,
+    duration: 4 + Math.random() * 4,
+    top: Math.random() * 70 + 10,
+  }));
+
   return (
     <>
+      <div className="particles-container">
+        {particles.map((particle) => (
+          <div
+            key={particle.id}
+            className="particle"
+            style={{
+              top: `${particle.top}%`,
+              animationDelay: `${particle.delay}s`,
+              animationDuration: `${particle.duration}s`,
+            }}
+          />
+        ))}
+      </div>
       <section id="hero">
         <div className="hero-inner">
           <h1 className="hero-title">CÓDIGO<br/><span>+</span> <span>DISEÑO</span> </h1>
