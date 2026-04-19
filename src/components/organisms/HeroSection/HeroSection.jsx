@@ -17,20 +17,20 @@ const HeroSection = () => {
 
   return (
     <>
-      <div className="particles-container">
-        {particles.map((particle) => (
-          <div
-            key={particle.id}
-            className="particle"
-            style={{
-              top: `${particle.top}%`,
-              animationDelay: `${particle.delay}s`,
-              animationDuration: `${particle.duration}s`,
-            }}
-          />
-        ))}
-      </div>
       <section id="hero">
+        <div className="particles-container">
+          {particles.map((particle) => (
+            <div
+              key={particle.id}
+              className="particle"
+              style={{
+                top: `${particle.top}%`,
+                animationDelay: `${particle.delay}s`,
+                animationDuration: `${particle.duration}s`,
+              }}
+            />
+          ))}
+        </div>
         <div className="hero-inner">
           <h1 className="hero-title">CÓDIGO<br/><span>+</span> <span>DISEÑO</span> </h1>
           <p className="hero-desc">Construyo experiencias digitales, busco la excelencia del código y el diseño, de la arquitectura a la gráfica</p>

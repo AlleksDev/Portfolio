@@ -5,6 +5,7 @@ const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState('web');
 
   const webProjects = [
+    //Faltan Crehor, los de conversiones, el AG, el Proyecto individual de Ali 5o, hacer un proyecto para aprender ED con lo que ya tengo
     {
       title: 'COINERS DIRFT',
       tags: ['UX/UI', 'Front-End', 'Wireframing'],
