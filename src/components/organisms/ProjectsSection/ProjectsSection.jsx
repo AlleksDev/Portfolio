@@ -1,42 +1,52 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './ProjectsSection.css';
+import projects from '../../../data/projects';
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState('web');
+  const navigate = useNavigate();
 
   const webProjects = [
     //Faltan Crehor, los de conversiones, el AG, el Proyecto individual de Ali 5o, hacer un proyecto para aprender ED con lo que ya tengo
     {
+      id: 'coiners-drift',
       title: 'COINERS DIRFT',
       tags: ['UX/UI', 'Front-End', 'Wireframing'],
       desc: 'Plataforma de entretenimiento recreativo que redefine la experiencia de juego. Su diseño busca la desestimulación activa para aliviar el estrés. Estuve a cargo de la conceptualización y el wireframing de principio a fin.'
     },
     {
+      id: 'frimeet',
       title: 'FRIMEET',
       tags: ['Front-End', 'MercadoPago', 'UX/UI'],
       desc: 'Plataforma que ayuda a los usuarios a encontrar lugares perfectos para visitar. Lideré el branding, diseño UX/UI y el desarrollo Front-End. Además, integré la API de pagos usando el SDK de MercadoPago.'
     },
     {
+      id: 'vixel-1',
       title: 'VIXEL',
       tags: ['Web3', 'Game Assets', 'UX/UI'],
       desc: 'Plataforma descentralizada Web3 enfocada a la creación de torneos y streaming. Creé el branding y diseño UI/UX, además de ser el responsable principal de la producción y optimización de assets funcionales y visuales del juego.'
     },
     {
+      id: 'geova',
       title: 'GEOVA',
       tags: ['IoT', '3D Design', 'Hardware'],
       desc: 'Solución avanzada para medición de terrenos que incorpora un dispositivo IoT. A cargo del diseño UI/UX de la app web, arquitectura de los circuitos y modelado mecánico 3D estructural de la carcasa del dispositivo.'
     },
     {
+      id: 'notaria-178',
       title: 'NOTARÍA 178',
       tags: ['Arquitectura de Red', 'Full Stack', 'VPN'],
       desc: 'Plataforma web robusta para la gestión operativa. Incluye servidor local configurado con VPN Tailscale para acceso remoto cifrado desde sucursales y sistema avanzado de gestión con control de acceso.'
     },
     {
+      id: 'vaultdoc-vd',
       title: 'VAULTDOC-VD',
       tags: ['Ciberseguridad', 'Encriptación', 'Back-End'],
       desc: 'Plataforma de seguridad empresarial para la gestión segura de archivos gubernamentales. Incluye análisis de vulnerabilidades en tiempo real, encriptación de extremo a extremo y auditoría completa.'
     },
     {
+      id: 'videojuego-2d',
       title: 'Videojuego 2D Educativo',
       tags: ['Game Dev', 'Assets 2D', 'Animación'],
       desc: 'Juego educativo 2D para el Museo Chiapas de Ciencia y Tecnología (MUCH) sobre la formación del cuerpo humano. Encargado de todos los assets visuales, sprites, frames y animaciones interactivas.'
@@ -45,16 +55,19 @@ const ProjectsSection = () => {
 
   const mobileProjects = [
     {
+      id: 'cineradar',
       title: 'CINERADAR',
       tags: ['Android', 'Kotlin', 'API REST'],
       desc: 'Aplicación móvil que recomienda películas personalizadas según los gustos del usuario. Implementa algoritmos de recomendación y una interfaz intuitiva para descubrir nuevo contenido cinematográfico.'
     },
     {
+      id: 'scoreup',
       title: 'SCOREUP',
       tags: ['Android', 'Productividad', 'UX/UI'],
       desc: 'Aplicación diseñada para ayudar a estudiantes a organizar sus retos de estudio. Permite crear metas, hacer seguimiento del progreso y mantener la motivación académica de forma gamificada.'
     },
     {
+      id: 'splitmeet',
       title: 'SPLITMEET',
       tags: ['Android', 'Finanzas', 'UX/UI'],
       desc: 'Aplicación que facilita la organización de gastos compartidos en salidas con amigos, familia o pareja. Divide cuentas de forma equitativa y mantiene un historial claro de los gastos grupales.'
@@ -63,6 +76,7 @@ const ProjectsSection = () => {
 
   const illustrationProjects = [
     {
+      id: 'entre-senas-palabras',
       title: 'ENTRE SEÑAS Y PALABRAS',
       tags: ['Ilustración', 'Editorial', 'Educativo'],
       desc: 'Cuadernillo ilustrado para el aprendizaje de Lengua de Señas Mexicana (LSM). Responsable de toda la ilustración del proyecto, creando recursos visuales accesibles para facilitar la comunicación inclusiva.'
@@ -80,7 +94,11 @@ const ProjectsSection = () => {
     }
   };
 
-  const projects = getProjects();
+  const handleProjectClick = (projectId) => {
+    navigate(`/project/${projectId}`);
+  };
+
+  const displayedProjects = getProjects();
   
   return (
     <section id="projects">
@@ -109,8 +127,8 @@ const ProjectsSection = () => {
         </button>
       </div>
       <div className="projects-grid">
-        {projects.map((proj, idx) => (
-          <div className="project-card" key={idx}>
+        {displayedProjects.map((proj, idx) => (
+          <div className="project-card" key={idx} onClick={() => handleProjectClick(proj.id)}>
             <div className="project-head-link">
               <span>about</span><span>learn</span><span>portfolio</span><span>blog</span><span>contact</span>
             </div>

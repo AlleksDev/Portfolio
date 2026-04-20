@@ -29,7 +29,7 @@
 .tech-cat-title { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1.2rem; display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
 .tech-items { display: flex; flex-wrap: wrap; gap: 16px; }
 .tech-item { display: flex; flex-direction: column; gap: 12px; padding: 16px; background: var(--card); border: 1px solid var(--border); flex: 1 1 auto; min-width: calc(50% - 8px); box-sizing: border-box; transition: all 0.3s ease; cursor: pointer; }
-.tech-item:hover:not(.empty) { border-color: rgba(255, 184, 0, 0.5); box-shadow: 0 0 12px rgba(255, 184, 0, 0.1); }
+.tech-item:hover:not(.empty) { flex-basis: 100%; border-color: rgba(255, 184, 0, 0.5); box-shadow: 0 0 12px rgba(255, 184, 0, 0.1); }
 .tech-item.empty { border: none; background: transparent; cursor: auto; }
 .tech-name { font-size: 1.1rem; display: flex; align-items: center; gap: 8px; white-space: nowrap; }
 .tech-name i { color: var(--orange); }
