@@ -16,7 +16,9 @@
 .form-group input, .form-group textarea { width: 100%; padding: 14px; background: transparent; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 2px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 1rem; outline: none; transition: 0.3s; }
 .form-group input:focus, .form-group textarea:focus { border-color: var(--orange); }
 .form-group textarea { min-height: 140px; resize: none; }
-.btn-submit { align-self: center; margin-top: 16px; padding: 16px 48px; background: var(--orange); color: var(--white); font-family: 'DM Sans', sans-serif; font-weight: bold; font-size: 1rem; border: none; border-radius: 4px; cursor: pointer; transition: 0.3s; letter-spacing: 0.05em; }
+.buttons-group { display: flex; gap: 16px; justify-content: space-between; }
+.btn-clear { flex: 1; display: block; box-sizing: border-box; background: none; color: var(--muted); border: 2px solid var(--muted); border-radius: 4px; padding: 6px 48px; font-family: 'DM Sans', sans-serif; font-weight: bold; font-size: 1rem; cursor: pointer; transition: 0.3s; letter-spacing: 0.05em; }
+.btn-submit { flex: 1; padding: 16px 48px; background: var(--orange); color: var(--white); font-family: 'DM Sans', sans-serif; font-weight: bold; font-size: 1rem; border: none; border-radius: 4px; cursor: pointer; transition: 0.3s; letter-spacing: 0.05em; }
 .btn-submit:hover { background: var(--orange-dim); }
 
 @media (max-width: 1024px) {

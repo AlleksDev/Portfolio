@@ -47,7 +47,10 @@ const ContactSection = () => {
             <label>Mensaje</label>
             <textarea placeholder="Escribe aquí el mensaje que deseas enviar"></textarea>
           </div>
-          <button type="button" className="btn-submit">ENVIAR MENSAJE</button>
+          <div className="buttons-group">
+            <button type="button" className="btn-clear">LIMPIAR</button>
+            <button type="button" className="btn-submit">ENVIAR MENSAJE</button>
+          </div>
         </form>
       </div>
     </section>
