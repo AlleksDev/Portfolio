@@ -34,6 +34,12 @@ export const webProjects = [
     tags: ['UX/UI', 'Front-End', 'Wireframing'],
     technologies: ['figma', 'javascript', 'react', 'css3'].map(createTechIcon),
     designPatterns: ['MVC', 'Observer', 'Factory'].map(createPatternIcon),
+    mainFeatures: [
+      'Interfaz intuitiva de juego relajante',
+      'Mecánicas de desestresamiento activo',
+      'Sistema de progresión personalizado',
+      'Animaciones fluidas y responsivas'
+    ],
     color: '#ffb800',
     type: 'web'
   },
@@ -53,6 +59,12 @@ export const webProjects = [
     tags: ['Front-End', 'MercadoPago', 'UX/UI'],
     technologies: ['react', 'javascript', 'nodejs', 'mongodb'].map(createTechIcon),
     designPatterns: ['MVC', 'Singleton', 'Strategy'].map(createPatternIcon),
+    mainFeatures: [
+      'Recomendaciones personalizadas de lugares',
+      'Integración segura con MercadoPago',
+      'Filtros avanzados por preferencia y presupuesto',
+      'Sistema de calificaciones y reviews'
+    ],
     color: '#ffb800',
     type: 'web'
   },
@@ -72,6 +84,12 @@ export const webProjects = [
     tags: ['Web3', 'Game Assets', 'UX/UI'],
     technologies: ['react', 'web3', 'solidity', 'blender'].map(createTechIcon),
     designPatterns: ['Observer', 'Composite', 'Decorator'].map(createPatternIcon),
+    mainFeatures: [
+      'Torneos descentralizados con blockchain',
+      'Sistema de streaming integrado',
+      'Assets 3D optimizados de alta calidad',
+      'Wallets y pagos en criptomonedas'
+    ],
     color: '#ffb800',
     type: 'web'
   },
@@ -91,6 +109,12 @@ export const webProjects = [
     tags: ['IoT', '3D Design', 'Hardware'],
     technologies: ['react', 'python', 'solidworks', 'arduino'].map(createTechIcon),
     designPatterns: ['MVC', 'Observer', 'Factory'].map(createPatternIcon),
+    mainFeatures: [
+      'Dispositivo IoT portátil y preciso',
+      'Dashboard web en tiempo real',
+      'Calibración automática del sensor',
+      'Exportación de datos en múltiples formatos'
+    ],
     color: '#ffb800',
     type: 'web'
   },
@@ -110,6 +134,12 @@ export const webProjects = [
     tags: ['Arquitectura de Red', 'Full Stack', 'VPN'],
     technologies: ['react', 'nodejs', 'postgresql', 'tailscale'].map(createTechIcon),
     designPatterns: ['MVC', 'Singleton', 'Strategy'].map(createPatternIcon),
+    mainFeatures: [
+      'VPN Tailscale para acceso remoto seguro',
+      'Control de acceso granular por roles',
+      'Sistema completo de auditoría',
+      'Gestión centralizada de documentos'
+    ],
     color: '#ffb800',
     type: 'web'
   },
@@ -129,6 +159,12 @@ export const webProjects = [
     tags: ['Ciberseguridad', 'Encriptación', 'Back-End'],
     technologies: ['nodejs', 'mongodb', 'cryptojs', 'aws'].map(createTechIcon),
     designPatterns: ['Strategy', 'Decorator', 'Proxy'].map(createPatternIcon),
+    mainFeatures: [
+      'Encriptación de extremo a extremo AES-256',
+      'Análisis de vulnerabilidades en tiempo real',
+      'Auditoría completa de accesos',
+      'Cumplimiento de estándares de seguridad'
+    ],
     color: '#ffb800',
     type: 'web'
   },
@@ -148,6 +184,12 @@ export const webProjects = [
     tags: ['Game Dev', 'Assets 2D', 'Animación'],
     technologies: ['phaser', 'javascript', 'affinity', 'aseprite'].map(createTechIcon),
     designPatterns: ['State', 'Composite', 'Observer'].map(createPatternIcon),
+    mainFeatures: [
+      'Mecánicas educativas interactivas',
+      'Animaciones frame-by-frame detalladas',
+      'Niveles progresivos de dificultad',
+      'Sistema de puntuación y logros'
+    ],
     color: '#ffb800',
     type: 'web'
   },
@@ -171,6 +213,12 @@ export const mobileProjects = [
     tags: ['Android', 'Kotlin', 'API REST'],
     technologies: ['kotlin', 'android', 'retrofit', 'roomdb'].map(createTechIcon),
     designPatterns: ['MVC', 'Repository', 'ViewModel'].map(createPatternIcon),
+    mainFeatures: [
+      'Algoritmo de recomendación colaborativo',
+      'Búsqueda avanzada de películas',
+      'Listas personalizadas de favoritos',
+      'Integración con APIs de cine'
+    ],
     color: '#ffb800',
     type: 'mobile'
   },
@@ -190,6 +238,12 @@ export const mobileProjects = [
     tags: ['Android', 'Productividad', 'UX/UI'],
     technologies: ['kotlin', 'android', 'firebase', 'jetpackcompose'].map(createTechIcon),
     designPatterns: ['MVVM', 'Repository', 'LiveData'].map(createPatternIcon),
+    mainFeatures: [
+      'Sistema de gamificación completo',
+      'Seguimiento de progreso en tiempo real',
+      'Notificaciones motivacionales',
+      'Estadísticas detalladas de estudio'
+    ],
     color: '#ffb800',
     type: 'mobile'
   },
@@ -209,6 +263,12 @@ export const mobileProjects = [
     tags: ['Android', 'Finanzas', 'UX/UI'],
     technologies: ['kotlin', 'android', 'roomdb', 'coroutines'].map(createTechIcon),
     designPatterns: ['MVC', 'Repository', 'ViewModel'].map(createPatternIcon),
+    mainFeatures: [
+      'Algoritmo inteligente de división de gastos',
+      'Historial detallado de transacciones',
+      'Liquidación automática de deudas',
+      'Notificaciones de pagos pendientes'
+    ],
     color: '#ffb800',
     type: 'mobile'
   },
@@ -232,6 +292,12 @@ export const illustrationProjects = [
     tags: ['Ilustración', 'Editorial', 'Educativo'],
     technologies: ['affinity', 'figma', 'indesign'].map(createTechIcon),
     designPatterns: ['Diseño editorial', 'Accesibilidad'].map(createPatternIcon),
+    mainFeatures: [
+      'Ilustraciones inclusivas y accesibles',
+      'Diagramación pedagógica optimizada',
+      'Precisión anatómica en señas',
+      'Recursos didácticos complementarios'
+    ],
     color: '#ffb800',
     type: 'illustration'
   },

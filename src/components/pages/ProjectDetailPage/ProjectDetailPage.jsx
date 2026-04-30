@@ -30,7 +30,7 @@ function ProjectDetailPage() {
                 className="project-detail__back"
                 onClick={() => navigate("/")}
               >
-                ← Volver
+                <i className="fa-solid fa-arrow-left"></i> Volver
               </button>
               <h1 className="project-detail__title">{project.title}</h1>
 
@@ -51,6 +51,20 @@ function ProjectDetailPage() {
 
               <h2 className="project-detail__subtitle">Mi participación</h2>
               <p className="project-detail__desc">{project.myJob}</p>
+
+              {project.mainFeatures && (
+                <div className="project-detail__features-section">
+                  <h2 className="project-detail__subtitle">Funcionalidades principales</h2>
+
+                  <ul className="project-detail__features-list">
+                    {project.mainFeatures.map((feature, i) => (
+                      <li key={i} className="project-detail__feature-item">
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
 
             <div className="project-detail__right">
