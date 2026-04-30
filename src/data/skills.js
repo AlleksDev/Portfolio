@@ -27,6 +27,30 @@ import pressureIcon from '../assets/icons/softSkills/pressure.svg';
 // Función auxiliar para generar URLs de devicons
 const devIcon = (name) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${name}/${name}-original.svg`;
 
+// Mapeo de iconos de tecnologías (local + devicons)
+export const techIconsMap = {
+  affinity: affinityIcon,
+  aws: awsIcon,
+  github: githubIcon,
+  mysql: mysqlIcon,
+  solidworks: solidworksIcon,
+  express: expressIcon,
+  // Otros por defecto usan devicons
+};
+
+// Mapeo de iconos de patrones de diseño y arquitecturas
+export const patternIconsMap = {
+  'Arquitectura limpia': cleanArchIcon,
+  'Clean Architecture': cleanArchIcon,
+  'Hexagonal': hexagonIcon,
+  'Hexagonal / Puertos y adaptadores': hexagonIcon,
+  'MVC': triangleIcon,
+  'Modelo Vista Controlador': triangleIcon,
+  'Event Driven': eventDrivenIcon,
+  'MVVM': mvvmIcon,
+  'Modelo Vista ViewModel': mvvmIcon,
+};
+
 // Habilidades técnicas
 export const techSkillsCategories = [
   {

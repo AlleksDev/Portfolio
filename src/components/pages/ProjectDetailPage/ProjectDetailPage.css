@@ -101,6 +101,19 @@
   gap: 16px;
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
+}
+
+.project-detail__cta > button {
+  flex: 1;
+  min-width: 0;
+}
+
+.project-detail__cta > button:first-child {
+  font-weight: 700;
+  background: none;
+  color: var(--orange);
+  border: 2px solid var(--orange);
 }
 
 .project-detail__preview {
@@ -137,10 +150,20 @@
   background: #28ca41;
 }
 
+.project-detail__image-container {
+  width: 100%;
+  min-height: 400px;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .project-detail__screenshot {
   width: 100%;
   display: block;
   object-fit: cover;
+  min-height: 350px;
   max-height: 400px;
   background: #0a0a0a;
 }

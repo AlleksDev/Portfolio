@@ -1,3 +1,21 @@
+// Importar mapeos de iconos desde skills.js
+import { techIconsMap, patternIconsMap } from './skills.js';
+
+// Función auxiliar para generar URLs de devicons
+const devIcon = (name) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${name}/${name}-original.svg`;
+
+// Mapeo de nombres de tecnologías a iconos
+const createTechIcon = (name) => ({
+  name,
+  icon: techIconsMap[name] || devIcon(name) // Usa icon local si existe, sino devicon
+});
+
+// Mapeo de nombres de patrones a iconos
+const createPatternIcon = (name) => ({
+  name,
+  icon: patternIconsMap[name] || 'https://via.placeholder.com/40?text=' + name // Usa icon si existe, sino placeholder
+});
+
 // Proyectos Web
 export const webProjects = [
   {
@@ -14,8 +32,8 @@ export const webProjects = [
     imagePath: '/images/projects/coiners-drift.jpg',
     link: '#',
     tags: ['UX/UI', 'Front-End', 'Wireframing'],
-    technologies: ['figma', 'javascript', 'react', 'css3'],
-    designPatterns: ['MVC', 'Observer', 'Factory'],
+    technologies: ['figma', 'javascript', 'react', 'css3'].map(createTechIcon),
+    designPatterns: ['MVC', 'Observer', 'Factory'].map(createPatternIcon),
     color: '#ffb800',
     type: 'web'
   },
@@ -33,8 +51,8 @@ export const webProjects = [
     imagePath: '/images/projects/frimeet.jpg',
     link: '#',
     tags: ['Front-End', 'MercadoPago', 'UX/UI'],
-    technologies: ['react', 'javascript', 'nodejs', 'mongodb'],
-    designPatterns: ['MVC', 'Singleton', 'Strategy'],
+    technologies: ['react', 'javascript', 'nodejs', 'mongodb'].map(createTechIcon),
+    designPatterns: ['MVC', 'Singleton', 'Strategy'].map(createPatternIcon),
     color: '#ffb800',
     type: 'web'
   },
@@ -52,8 +70,8 @@ export const webProjects = [
     imagePath: '/images/projects/vixel.jpg',
     link: '#',
     tags: ['Web3', 'Game Assets', 'UX/UI'],
-    technologies: ['react', 'web3', 'solidity', 'blender'],
-    designPatterns: ['Observer', 'Composite', 'Decorator'],
+    technologies: ['react', 'web3', 'solidity', 'blender'].map(createTechIcon),
+    designPatterns: ['Observer', 'Composite', 'Decorator'].map(createPatternIcon),
     color: '#ffb800',
     type: 'web'
   },
@@ -71,8 +89,8 @@ export const webProjects = [
     imagePath: '/images/projects/geova.jpg',
     link: '#',
     tags: ['IoT', '3D Design', 'Hardware'],
-    technologies: ['react', 'python', 'solidworks', 'arduino'],
-    designPatterns: ['MVC', 'Observer', 'Factory'],
+    technologies: ['react', 'python', 'solidworks', 'arduino'].map(createTechIcon),
+    designPatterns: ['MVC', 'Observer', 'Factory'].map(createPatternIcon),
     color: '#ffb800',
     type: 'web'
   },
@@ -90,8 +108,8 @@ export const webProjects = [
     imagePath: '/images/projects/notaria-178.jpg',
     link: '#',
     tags: ['Arquitectura de Red', 'Full Stack', 'VPN'],
-    technologies: ['react', 'nodejs', 'postgresql', 'tailscale'],
-    designPatterns: ['MVC', 'Singleton', 'Strategy'],
+    technologies: ['react', 'nodejs', 'postgresql', 'tailscale'].map(createTechIcon),
+    designPatterns: ['MVC', 'Singleton', 'Strategy'].map(createPatternIcon),
     color: '#ffb800',
     type: 'web'
   },
@@ -109,8 +127,8 @@ export const webProjects = [
     imagePath: '/images/projects/vaultdoc.jpg',
     link: '#',
     tags: ['Ciberseguridad', 'Encriptación', 'Back-End'],
-    technologies: ['nodejs', 'mongodb', 'cryptojs', 'aws'],
-    designPatterns: ['Strategy', 'Decorator', 'Proxy'],
+    technologies: ['nodejs', 'mongodb', 'cryptojs', 'aws'].map(createTechIcon),
+    designPatterns: ['Strategy', 'Decorator', 'Proxy'].map(createPatternIcon),
     color: '#ffb800',
     type: 'web'
   },
@@ -128,8 +146,8 @@ export const webProjects = [
     imagePath: '/images/projects/videojuego-2d.jpg',
     link: '#',
     tags: ['Game Dev', 'Assets 2D', 'Animación'],
-    technologies: ['phaser', 'javascript', 'affinity', 'aseprite'],
-    designPatterns: ['State', 'Composite', 'Observer'],
+    technologies: ['phaser', 'javascript', 'affinity', 'aseprite'].map(createTechIcon),
+    designPatterns: ['State', 'Composite', 'Observer'].map(createPatternIcon),
     color: '#ffb800',
     type: 'web'
   },
@@ -151,8 +169,8 @@ export const mobileProjects = [
     imagePath: '/images/projects/cineradar.jpg',
     link: '#',
     tags: ['Android', 'Kotlin', 'API REST'],
-    technologies: ['kotlin', 'android', 'retrofit', 'roomdb'],
-    designPatterns: ['MVC', 'Repository', 'ViewModel'],
+    technologies: ['kotlin', 'android', 'retrofit', 'roomdb'].map(createTechIcon),
+    designPatterns: ['MVC', 'Repository', 'ViewModel'].map(createPatternIcon),
     color: '#ffb800',
     type: 'mobile'
   },
@@ -170,8 +188,8 @@ export const mobileProjects = [
     imagePath: '/images/projects/scoreup.jpg',
     link: '#',
     tags: ['Android', 'Productividad', 'UX/UI'],
-    technologies: ['kotlin', 'android', 'firebase', 'jetpackcompose'],
-    designPatterns: ['MVVM', 'Repository', 'LiveData'],
+    technologies: ['kotlin', 'android', 'firebase', 'jetpackcompose'].map(createTechIcon),
+    designPatterns: ['MVVM', 'Repository', 'LiveData'].map(createPatternIcon),
     color: '#ffb800',
     type: 'mobile'
   },
@@ -189,8 +207,8 @@ export const mobileProjects = [
     imagePath: '/images/projects/splitmeet.jpg',
     link: '#',
     tags: ['Android', 'Finanzas', 'UX/UI'],
-    technologies: ['kotlin', 'android', 'roomdb', 'coroutines'],
-    designPatterns: ['MVC', 'Repository', 'ViewModel'],
+    technologies: ['kotlin', 'android', 'roomdb', 'coroutines'].map(createTechIcon),
+    designPatterns: ['MVC', 'Repository', 'ViewModel'].map(createPatternIcon),
     color: '#ffb800',
     type: 'mobile'
   },
@@ -212,8 +230,8 @@ export const illustrationProjects = [
     imagePath: '/images/projects/entre-senas.jpg',
     link: '#',
     tags: ['Ilustración', 'Editorial', 'Educativo'],
-    technologies: ['affinity', 'figma', 'indesign'],
-    designPatterns: ['Diseño editorial', 'Accesibilidad'],
+    technologies: ['affinity', 'figma', 'indesign'].map(createTechIcon),
+    designPatterns: ['Diseño editorial', 'Accesibilidad'].map(createPatternIcon),
     color: '#ffb800',
     type: 'illustration'
   },

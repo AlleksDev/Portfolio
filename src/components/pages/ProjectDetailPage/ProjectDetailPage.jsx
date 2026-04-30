@@ -60,18 +60,23 @@ function ProjectDetailPage() {
                   <span className="project-detail__browser-dot project-detail__browser-dot--yellow" />
                   <span className="project-detail__browser-dot project-detail__browser-dot--green" />
                 </div>
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="project-detail__screenshot"
-                />
+                <div className="project-detail__image-container">
+                  <span className="project-detail__coming-soon">¡Próximamente más imágenes!</span>
+                  {project.images && project.images[0] && (
+                    <img
+                      src={project.images[0]}
+                      alt={project.title}
+                      className="project-detail__screenshot"
+                    />
+                  )}
+                </div>
               </div>
               <div className="project-detail__cta">
                 <Button
                   variant="primary"
                   onClick={() => window.open(project.link, "_blank")}
                 >
-                  Repositorio
+                  Ir al repositorio
                 </Button>
                 <Button
                   variant="primary"
@@ -89,11 +94,11 @@ function ProjectDetailPage() {
                   {project.technologies.map((tech, i) => (
                     <div key={i} className="project-detail__tech-badge">
                       <img
-                        src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`}
-                        alt={tech}
+                        src={tech.icon}
+                        alt={tech.name}
                         className="project-detail__tech-icon"
                       />
-                      <span className="project-detail__tech-name">{tech}</span>
+                      <span className="project-detail__tech-name">{tech.name}</span>
                     </div>
                   ))}
                 </div>
@@ -107,10 +112,11 @@ function ProjectDetailPage() {
                   {project.designPatterns.map((pattern, i) => (
                     <div key={i} className="project-detail__tech-badge">
                       <img
-                        src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${pattern}/${pattern}-original.svg`}
-                        alt={pattern}
+                        src={pattern.icon}
+                        alt={pattern.name}
                         className="project-detail__tech-icon"
                       />
+                      <span className="project-detail__tech-name">{pattern.name}</span>
                     </div>
                   ))}
                 </div>
