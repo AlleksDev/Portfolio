@@ -32,7 +32,7 @@
   inset: 0;
   border-radius: 8px;
   border: 2px solid var(--orange, #e15a1a);
-  background: linear-gradient(135deg, rgba(225, 90, 26, 0.1), rgba(225, 90, 26, 0.05));
+  background: linear-gradient(135deg, rgba(225, 90, 26, 0.25), rgba(225, 90, 26, 0.1));
   transition: all 0.3s ease-out;
   box-sizing: border-box;
 }
