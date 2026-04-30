@@ -1,31 +1,6 @@
 import React from 'react';
 import './SkillsSection.css';
-
-// Architecture icons
-import cleanArchIcon from '../../../assets/icons/architectures/clean-architecture.svg';
-import hexagonIcon from '../../../assets/icons/architectures/hexagon.svg';
-import triangleIcon from '../../../assets/icons/architectures/triangle.svg';
-import eventDrivenIcon from '../../../assets/icons/architectures/event-driven.svg';
-import mvvmIcon from '../../../assets/icons/architectures/mvvm.svg';
-import designPatternsIcon from '../../../assets/icons/architectures/design-design.svg';
-
-// Program icons (fallbacks for missing devicons)
-import affinityIcon from '../../../assets/icons/programs/affinity.svg';
-import awsIcon from '../../../assets/icons/programs/aws.svg';
-import githubIcon from '../../../assets/icons/programs/github.svg';
-import mysqlIcon from '../../../assets/icons/programs/mysql.svg';
-import solidworksIcon from '../../../assets/icons/programs/solidworks.svg';
-import express from '../../../assets/icons/programs/express.svg';
-
-// Soft skills icons
-import teamworkIcon from '../../../assets/icons/softSkills/teamwork.svg';
-import communicationIcon from '../../../assets/icons/softSkills/communication.svg';
-import creativityIcon from '../../../assets/icons/softSkills/creativity.svg';
-import leadershipIcon from '../../../assets/icons/softSkills/leadership.svg';
-import fastLearningIcon from '../../../assets/icons/softSkills/fast.svg';
-import criticalThinkingIcon from '../../../assets/icons/softSkills/criticalThinking.svg';
-import adaptableIcon from '../../../assets/icons/softSkills/adaptable.svg';
-import pressureIcon from '../../../assets/icons/softSkills/pressure.svg';
+import { techSkillsCategories, softSkills, patternsAndArchitectures } from '../../../data/skills';
 
 const SoftSkills = () => (
   <section id="soft-skills">
@@ -38,16 +13,7 @@ const SoftSkills = () => (
         <div className="soft-cube"></div>
       </div>
       <div className="soft-items">
-        {[
-          { icon: teamworkIcon, title: 'TRABAJO EN EQUIPO', desc: 'Colaboración efectiva en células multidisciplinarias para alcanzar metas comunes de proyecto.' },
-          { icon: communicationIcon, title: 'COMUNICACIÓN', desc: 'Expresión clara de ideas técnicas tanto para desarrolladores como para perfiles de negocio.' },
-          { icon: creativityIcon, title: 'CREATIVIDAD', desc: 'Aportación de enfoques innovadores tanto en interfaces gráficas como en soluciones lógicas.' },
-          { icon: leadershipIcon, title: 'LIDERAZGO', desc: 'Guía técnica y de conceptualización, asumiendo responsabilidad o propiedad (ownership) del producto.' },
-          { icon: fastLearningIcon, title: 'APRENDIZAJE RÁPIDO', desc: 'Capacidad de investigar e implementar nuevos lenguajes, frameworks o SDKs velozmente.' },
-          { icon: criticalThinkingIcon, title: 'PENSAMIENTO CRÍTICO', desc: 'Análisis profundo de requerimientos para encontrar soluciones eficientes y escalables.' },
-          { icon: adaptableIcon, title: 'ADAPTABILIDAD', desc: 'Facilidad para ajustarme a cambios de requerimientos en entornos ágiles y competitivos.' },
-          { icon: pressureIcon, title: 'TRABAJO BAJO PRESIÓN', desc: 'Experiencia demostrada entregando desarrollos de alta calidad con fechas límite estrictas.' }
-        ].map((item, idx) => (
+        {softSkills.map((item, idx) => (
           <div className="soft-item" key={idx}>
             <h4><img src={item.icon} alt={item.title} className="soft-skill-icon" /> {item.title}</h4>
             <p>{item.desc}</p>
@@ -65,14 +31,7 @@ const Patterns = () => (
       <h2 className="section-title">PATRONES & ARQUITECTURAS</h2>
     </div>
     <div className="patterns-grid">
-      {[
-        { icon: cleanArchIcon, title: 'Arquitectura limpia', desc: 'Separación de responsabilidades en capas para lograr un código independiente, testeable y muy mantenible.' },
-        { icon: hexagonIcon, title: 'Hexagonal / Puertos y adaptadores', desc: 'Aislamiento de la lógica de negocio central de las bases de datos y frameworks mediante puertos e implementaciones externas.' },
-        { icon: triangleIcon, title: 'Modelo Vista Controlador (MVC)', desc: 'Estructuración clásica separando la interfaz de usuario, la lógica de datos y el flujo de control para facilitar el desarrollo.' },
-        { icon: eventDrivenIcon, title: 'Event Driven', desc: 'Arquitectura dirigida por eventos enfocada en el bajo acoplamiento y flujos asíncronos para sistemas altamente reactivos.' },
-        { icon: mvvmIcon, title: 'Modelo Vista ViewModel (MVVM)', desc: 'Desacoplamiento especializado en desarrollo Front-End (ej. con Android/Jetpack) que facilita el enlace bidireccional de datos.' },
-        { icon: designPatternsIcon, title: 'Patrones de diseño', desc: 'Aplicación de patrones creacionales, estructurales y de comportamiento (Singleton, Observer, Factory, etc) para resolver problemas comunes.' }
-      ].map((item, idx) => (
+      {patternsAndArchitectures.map((item, idx) => (
         <div className="pattern-card" key={idx}>
           <div className="pattern-icon"><img src={item.icon} alt={item.title} className="pattern-svg-icon" /></div>
           <div className="pattern-info">
@@ -86,76 +45,6 @@ const Patterns = () => (
 );
 
 const TechSkills = () => {
-  const devIcon = (name) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${name}/${name}-original.svg`;
-  // const devIconPlain = (name) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${name}/${name}-plain.svg`;
-
-  const categories = [
-    {
-      title: 'Frontend', icon: 'fa-code',
-      items: [
-        { name: 'HTML', icon: devIcon('html5'), level: 'Avanzado', levelClass: 'level-high' },
-        { name: 'CSS', icon: devIcon('css3'), level: 'Avanzado', levelClass: 'level-high' },
-        { name: 'Tailwind', icon: devIcon('tailwindcss'), level: 'Medio', levelClass: 'level-mid' },
-        { name: 'Jetpack Compose', icon: devIcon('jetpackcompose'), level: 'Principiante', levelClass: 'level-low' },
-        { name: 'Angular', icon: devIcon('angular'), level: 'Medio', levelClass: 'level-mid' },
-        { name: 'React', icon: devIcon('react'), level: 'Medio', levelClass: 'level-mid' }
-      ]
-    },
-    {
-      title: 'Diseño', icon: 'fa-pen-nib',
-      items: [
-        { name: 'Blender', icon: devIcon('blender'), level: 'Principiante', levelClass: 'level-low' },
-        { name: 'Affinity', icon: affinityIcon, level: 'Avanzado', levelClass: 'level-high' },
-        { name: 'Gimp', icon: devIcon('gimp'), level: 'Principiante', levelClass: 'level-low' },
-        { name: 'Figma', icon: devIcon('figma'), level: 'Avanzado', levelClass: 'level-high' },
-        { name: 'SolidWorks', icon: solidworksIcon, level: 'Medio', levelClass: 'level-mid' }
-      ]
-    },
-    {
-      title: 'Backend', icon: 'fa-server',
-      items: [
-        { name: 'PostgreSQL', icon: devIcon('postgresql'), level: 'Medio', levelClass: 'level-mid' },
-        { name: 'MySQL', icon: mysqlIcon, level: 'Avanzado', levelClass: 'level-high' },
-        { name: 'MongoDB', icon: devIcon('mongodb'), level: 'Avanzado', levelClass: 'level-high' },
-        { name: 'FastAPI', icon: devIcon('fastapi'), level: 'Principiante', levelClass: 'level-low' },
-        { name: 'Express', icon: express, level: 'Avanzado', levelClass: 'level-high' },
-        { name: 'Node.js', icon: devIcon('nodejs'), level: 'Medio', levelClass: 'level-mid' }
-      ]
-    },
-    {
-      title: 'DevOps', icon: 'fa-cloud',
-      items: [
-        { name: 'Ubuntu', icon: devIcon('ubuntu'), level: 'Medio', levelClass: 'level-mid' },
-        { name: 'AWS', icon: awsIcon, level: 'Medio', levelClass: 'level-mid' },
-        { name: 'Docker', icon: devIcon('docker'), level: 'Principiante', levelClass: 'level-low' },
-        { name: 'Cloudflare', icon: devIcon('cloudflare'), level: 'Medio', levelClass: 'level-mid' },
-        { name: 'Nginx', icon: devIcon('nginx'), level: 'Principiante', levelClass: 'level-low' },
-        { name: 'GitHub', icon: githubIcon, level: 'Avanzado', levelClass: 'level-high' }
-      ]
-    },
-    {
-      title: 'IOT & herramientas', icon: 'fa-microchip',
-      items: [
-        { name: 'Raspberry Pi', icon: devIcon('raspberrypi'), level: 'Principiante', levelClass: 'level-low' },
-        { name: 'ESP32', icon: devIcon('arduino'), level: 'Avanzado', levelClass: 'level-high' },
-        { name: 'Arduino', icon: devIcon('arduino'), level: 'Avanzado', levelClass: 'level-high' },
-        { name: 'RabbitMQ', icon: devIcon('rabbitmq'), level: 'Medio', levelClass: 'level-mid' },
-        { name: 'Git', icon: devIcon('git'), level: 'Avanzado', levelClass: 'level-high' }
-      ]
-    },
-    {
-      title: 'Lenguajes', icon: 'fa-code-branch',
-      items: [
-        { name: 'C++', icon: devIcon('cplusplus'), level: 'Principiante', levelClass: 'level-low' },
-        { name: 'Python', icon: devIcon('python'), level: 'Medio', levelClass: 'level-mid' },
-        { name: 'JavaScript', icon: devIcon('javascript'), level: 'Medio', levelClass: 'level-mid' },
-        { name: 'Go', icon: devIcon('go'), level: 'Avanzado', levelClass: 'level-high' },
-        { name: 'Kotlin', icon: devIcon('kotlin'), level: 'Avanzado', levelClass: 'level-high' },
-        { name: 'Java', icon: devIcon('java'), level: 'Medio', levelClass: 'level-mid' }
-      ]
-    }
-  ];
-
   return (
     <section id="skills">
       <div className="section-header">
@@ -163,7 +52,7 @@ const TechSkills = () => {
         <h2 className="section-title">CONOCIMIENTOS TÉCNICOS</h2>
       </div>
       <div className="tech-grid">
-        {categories.map((cat, idx) => (
+        {techSkillsCategories.map((cat, idx) => (
           <div className="tech-category" key={idx}>
             <h3 className="tech-cat-title"><i className={`fa-solid ${cat.icon}`}></i> {cat.title}</h3>
             <div className="tech-items">

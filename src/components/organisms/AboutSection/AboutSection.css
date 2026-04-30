@@ -2,13 +2,10 @@
 .about-text p { font-size: 1.1rem; line-height: 1.8; color: var(--muted); margin-bottom: 24px; }
 .about-text p strong { color: var(--orange); font-weight: bold; }
 .about-btn { background: none; display: inline-flex; align-items: center; gap: 12px; padding: 12px 24px; border: 1px solid var(--orange); border-radius: 100px; color: var(--orange); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: bold; text-decoration: none; margin-top: 16px; transition: 0.3s; }
-.about-btn:hover { border-color: var(--orange); background-color: rgba(225, 90, 26, 0.15); }
+.about-btn:hover { border-color: var(--orange); background-color: rgba(225, 90, 26, 0.15); transform: translateY(-12px);}
 .about-btn .dot { width: 8px; height: 8px; background: var(--orange); border-radius: 50%; box-shadow: 0 0 8px var(--orange); }
 
-.about-image {  position: relative; width: 100%; max-width: 450px; aspect-ratio: 4/5; margin: auto; }
-.about-image-frame { position: absolute; inset: 0; border: 2px solid var(--orange); transform: rotate(5deg) scale(1.02); z-index: 0; }
-.about-image-inner { position: absolute; inset: 0; background: var(--card); z-index: 1; border: 1px solid var(--border); border-radius: 4px; }
-.about-image-inner img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
+.about-image {  display: flex; align-items: center; justify-content: center; width: 100%; max-width: 450px; margin: auto; }
 
 @media (max-width: 1024px) {
   .about-grid { grid-template-columns: 1fr; gap: 48px; }

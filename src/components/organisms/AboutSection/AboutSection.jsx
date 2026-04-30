@@ -1,6 +1,7 @@
 import React from 'react';
 import './AboutSection.css';
-import profilePic from '../../../assets/me.png';
+import profilePic from '../../../assets/img/me.png';
+import StackedCardImage from '../../molecules/StackedCardImage/StackedCardImage';
 
 const AboutSection = () => {
   return (
@@ -17,10 +18,7 @@ const AboutSection = () => {
           <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="about-btn"><div className="dot"></div> Open to work</button>
         </div>
         <div className="about-image">
-          <div className="about-image-frame"></div>
-          <div className="about-image-inner">
-            <img src={profilePic} alt="Foto de perfil" className="about-profile-pic" />
-          </div>
+          <StackedCardImage src={profilePic} alt="Foto de perfil" />
         </div>
       </div>
     </section>
