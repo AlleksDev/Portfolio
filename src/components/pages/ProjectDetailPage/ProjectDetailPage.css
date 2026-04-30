@@ -23,12 +23,20 @@
   background: none;
   border: none;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 1.2rem;
+  font-weight: bold;
   cursor: pointer;
   margin-bottom: 1rem;
   padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   transition: color 0.3s ease;
   font-family: 'DM Sans', sans-serif;
+}
+
+.project-detail__back i {
+  font-size: 1rem;
 }
 
 .project-detail__back:hover {
