@@ -3,15 +3,15 @@
 .proj-filter.active { border-color: var(--yellow); color: var(--yellow); }
 
 .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-.project-card { background: var(--card); border: 1px solid var(--border); overflow: hidden; display: flex; flex-direction: column; position: relative; transition: all 0.3s ease; cursor: pointer; }
+.project-card { background: none; border: 1px solid var(--border); overflow: hidden; display: flex; flex-direction: column; position: relative; transition: all 0.3s ease; cursor: pointer; z-index: 10;}
 .project-card:hover { border-color: var(--yellow); box-shadow: 0 0 20px rgba(255, 184, 0, 0.2); }
-.project-card::after { content: ''; position: absolute; bottom: -500px; left: -500px; width: 1000px; height: 1000px; background: radial-gradient(circle at center, rgba(255, 196, 0, 0.1) 0%, rgba(255, 184, 0, 0.1) 40%, transparent 70%); pointer-events: none; opacity: 0; transition: opacity 0.3s ease; z-index: 0; }
+.project-card::after { content: ''; position: absolute; bottom: -500px; left: -500px; width: 1000px; height: 1000px; background: radial-gradient(circle at center, rgba(255, 196, 0, 0.1) 0%, rgba(255, 184, 0, 0.1) 40%, transparent 70%); pointer-events: none; opacity: 0; transition: opacity 0.3s ease; z-index: -1; }
 .project-card:hover::after { opacity: 1; }
 .project-card:nth-child(3n):hover { grid-column: span 1; }
 .project-card:nth-child(3n+1):hover, .project-card:nth-child(3n+2):hover { grid-column: span 2; }
 .project-card::before { content: 'EXPLORAR'; position: absolute; top: 12px; right: 12px; background: var(--yellow); color: var(--black); padding: 6px 14px; font-family: 'Bebas Neue', sans-serif; font-size: 0.8rem; letter-spacing: 0.05em; border-radius: 20px; opacity: 0; transform: scale(0.8) translateY(-10px); transition: all 0.3s ease; z-index: 10; pointer-events: none; }
 .project-card:hover::before { opacity: 1; transform: scale(1) translateY(0); }
-.project-img { height: 240px; background: #222; position: relative; border-bottom: 1px solid var(--border); }
+.project-img { min-height: 240px; background: #222; position: relative; border-bottom: 1px solid var(--border); }
 .project-info { padding: 24px; display: flex; flex-direction: column; flex: 1; position: relative; z-index: 1; }
 .project-tags { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
 .project-tag { padding: 4px 10px; background: rgba(225,90,26,0.1); color: var(--orange); font-size: 0.75rem; font-family: 'Space Mono', monospace; border: 1px solid rgba(225,90,26,0.2); }

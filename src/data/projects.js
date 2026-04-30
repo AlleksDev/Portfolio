@@ -1,4 +1,5 @@
-const projects = [
+// Proyectos Web
+export const webProjects = [
   {
     id: 'coiners-drift',
     title: 'COINERS DRIFT',
@@ -9,7 +10,7 @@ const projects = [
       'Los usuarios necesitaban una plataforma de entretenimiento que proporcionara una forma efectiva de desestresarse y relajarse, con una experiencia de juego intuitiva e innovadora que se diferenciara de las opciones existentes.',
     myJob:
       'Lideré la conceptualización del proyecto desde cero, realizando investigación de mercado y análisis de competencia. Responsable del diseño completo de wireframes y mockups, definiendo la estructura de información y flujos de usuario.',
-    image: '',
+    images: [],
     imagePath: '/images/projects/coiners-drift.jpg',
     link: '#',
     tags: ['UX/UI', 'Front-End', 'Wireframing'],
@@ -28,7 +29,7 @@ const projects = [
       'Los usuarios tenían dificultades para encontrar lugares recomendados basados en sus preferencias y presupuesto. Existía una brecha entre descubrir nuevos lugares y poder realizar pagos de forma segura.',
     myJob:
       'Desarrollé la identidad visual completa del proyecto. Diseñé la interfaz de usuario centrada en la experiencia, implementé la lógica de recomendación y realicé la integración de MercadoPago para pagos seguros.',
-    image: '',
+    images: [],
     imagePath: '/images/projects/frimeet.jpg',
     link: '#',
     tags: ['Front-End', 'MercadoPago', 'UX/UI'],
@@ -47,7 +48,7 @@ const projects = [
       'La comunidad gamer necesitaba una plataforma descentralizada que permitiera crear y participar en torneos con blockchain, con una interfaz intuitiva y assets visuales de alta calidad.',
     myJob:
       'Responsable de la dirección creativa completa, incluyendo branding, diseño de interfaz y producción de todos los assets visuales. Optimicé los gráficos para garantizar rendimiento sin comprometer la calidad visual.',
-    image: '',
+    images: [],
     imagePath: '/images/projects/vixel.jpg',
     link: '#',
     tags: ['Web3', 'Game Assets', 'UX/UI'],
@@ -66,7 +67,7 @@ const projects = [
       'Los agrimensores enfrentaban limitaciones en precisión y portabilidad de herramientas de medición. Se requería una solución que combinara hardware IoT confiable con una interfaz web intuitiva.',
     myJob:
       'Diseñé la interfaz web responsiva para visualizar datos de medición. Arquitecturé los circuitos del dispositivo IoT y realicé el modelado 3D de la carcasa considerando factores ergonómicos y de durabilidad.',
-    image: '',
+    images: [],
     imagePath: '/images/projects/geova.jpg',
     link: '#',
     tags: ['IoT', '3D Design', 'Hardware'],
@@ -85,7 +86,7 @@ const projects = [
       'La notaría requería un sistema centralizado de gestión de documentos con acceso remoto seguro desde múltiples sucursales, manteniendo altos estándares de seguridad y confidencialidad.',
     myJob:
       'Diseñé la arquitectura de red con VPN Tailscale. Desarrollé la plataforma full-stack con gestión de usuarios, control de acceso granular y sistema de auditoría completo.',
-    image: '',
+    images: [],
     imagePath: '/images/projects/notaria-178.jpg',
     link: '#',
     tags: ['Arquitectura de Red', 'Full Stack', 'VPN'],
@@ -104,7 +105,7 @@ const projects = [
       'Las instituciones gubernamentales necesitaban una plataforma confiable para almacenar y gestionar documentos sensibles con conformidad de seguridad de nivel empresarial.',
     myJob:
       'Implementé los algoritmos de encriptación de extremo a extremo. Desarrollé el motor de análisis de vulnerabilidades en tiempo real y el sistema completo de auditoría y trazabilidad.',
-    image: '',
+    images: [],
     imagePath: '/images/projects/vaultdoc.jpg',
     link: '#',
     tags: ['Ciberseguridad', 'Encriptación', 'Back-End'],
@@ -123,7 +124,7 @@ const projects = [
       'El museo requería una herramienta interactiva para educar a visitantes sobre la formación del cuerpo humano de manera lúdica y atractiva para todas las edades.',
     myJob:
       'Responsable de toda la dirección artística y producción visual. Creé diseños de personajes, ambientes, sprites y animaciones frame-by-frame. Optimicé assets para garantizar rendimiento.',
-    image: '',
+    images: [],
     imagePath: '/images/projects/videojuego-2d.jpg',
     link: '#',
     tags: ['Game Dev', 'Assets 2D', 'Animación'],
@@ -132,6 +133,10 @@ const projects = [
     color: '#ffb800',
     type: 'web'
   },
+];
+
+// Proyectos Mobile
+export const mobileProjects = [
   {
     id: 'cineradar',
     title: 'CINERADAR',
@@ -142,7 +147,7 @@ const projects = [
       'Los usuarios tenían dificultades para encontrar películas que coincidieran con sus gustos en medio de la sobrecarga de contenido disponible.',
     myJob:
       'Diseñé la interfaz de usuario intuitiva. Implementé algoritmo de recomendación colaborativo y desarrollé la lógica de filtrado y búsqueda con integración a APIs de películas.',
-    image: '',
+    images: [],
     imagePath: '/images/projects/cineradar.jpg',
     link: '#',
     tags: ['Android', 'Kotlin', 'API REST'],
@@ -161,7 +166,7 @@ const projects = [
       'Los estudiantes luchan con la motivación y la organización del estudio. Necesitaban una herramienta que transformara el aprendizaje en una experiencia gamificada y motivadora.',
     myJob:
       'Diseñé el sistema de gamificación completo. Desarrollé el motor de seguimiento de progreso, cálculo de puntos y estadísticas personalizadas del usuario.',
-    image: '',
+    images: [],
     imagePath: '/images/projects/scoreup.jpg',
     link: '#',
     tags: ['Android', 'Productividad', 'UX/UI'],
@@ -180,7 +185,7 @@ const projects = [
       'Los usuarios enfrentaban conflictos y confusión al dividir gastos en salidas grupales. Se requería una solución simple y justa para gestionar y resolver quién debe pagar qué.',
     myJob:
       'Implementé el algoritmo de división de gastos optimizado. Diseñé la interfaz para visualizar historial de transacciones y desarrollé el sistema de liquidación de cuentas.',
-    image: '',
+    images: [],
     imagePath: '/images/projects/splitmeet.jpg',
     link: '#',
     tags: ['Android', 'Finanzas', 'UX/UI'],
@@ -189,6 +194,10 @@ const projects = [
     color: '#ffb800',
     type: 'mobile'
   },
+];
+
+// Proyectos Ilustración
+export const illustrationProjects = [
   {
     id: 'entre-senas-palabras',
     title: 'ENTRE SEÑAS Y PALABRAS',
@@ -199,7 +208,7 @@ const projects = [
       'Existía una falta de recursos visuales educativos accesibles para el aprendizaje de LSM. Se requería material ilustrado que fuera inclusivo, claro y pedagógicamente efectivo.',
     myJob:
       'Realicé toda la investigación de LSM. Creé ilustraciones detalladas de cada seña, asegurando precisión anatómica y claridad pedagógica. Diseñé la diagramación del cuadernillo.',
-    image: '',
+    images: [],
     imagePath: '/images/projects/entre-senas.jpg',
     link: '#',
     tags: ['Ilustración', 'Editorial', 'Educativo'],
@@ -208,6 +217,13 @@ const projects = [
     color: '#ffb800',
     type: 'illustration'
   },
+];
+
+// Todos los proyectos (combinado para compatibilidad hacia atrás)
+const projects = [
+  ...webProjects,
+  ...mobileProjects,
+  ...illustrationProjects,
 ];
 
 export default projects;
