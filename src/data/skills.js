@@ -5,6 +5,8 @@ import githubIcon from '../assets/icons/programs/github.svg';
 import mysqlIcon from '../assets/icons/programs/mysql.svg';
 import solidworksIcon from '../assets/icons/programs/solidworks.svg';
 import expressIcon from '../assets/icons/programs/express.svg';
+import varaIcon from '../assets/icons/programs/vara.svg';
+import rustIcon from '../assets/icons/programs/rust.svg';
 
 // Iconos de arquitecturas
 import cleanArchIcon from '../assets/icons/architectures/clean-architecture.svg';
@@ -23,6 +25,7 @@ import fastLearningIcon from '../assets/icons/softSkills/fast.svg';
 import criticalThinkingIcon from '../assets/icons/softSkills/criticalThinking.svg';
 import adaptableIcon from '../assets/icons/softSkills/adaptable.svg';
 import pressureIcon from '../assets/icons/softSkills/pressure.svg';
+import tailscaleIcon from '../assets/icons/programs/tailscale.svg';
 
 // Función auxiliar para generar URLs de devicons
 const devIcon = (name) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${name}/${name}-original.svg`;
@@ -35,6 +38,10 @@ export const techIconsMap = {
   mysql: mysqlIcon,
   solidworks: solidworksIcon,
   express: expressIcon,
+  vara: varaIcon,
+  rust: rustIcon,
+  tailscale: tailscaleIcon,
+  esp32: devIcon('arduino'), // No hay icono específico para ESP32, se usa el de Arduino
   // Otros por defecto usan devicons
 };
 

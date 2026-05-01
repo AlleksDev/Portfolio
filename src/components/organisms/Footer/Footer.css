@@ -15,9 +15,9 @@ footer { background: var(--card); border-top: 1px solid var(--border); padding: 
 
 @media (max-width: 768px) {
   footer { padding: 32px 16px; margin-top: 80px; gap: 24px; }
-  .footer-logo { font-size: 2rem; }
-  .footer-subtitle { font-size: 0.7rem; }
-  .footer-copy { font-size: 0.8rem; }
+  .footer-logo { font-size: 2rem; margin-bottom: 16px; }
+  .footer-subtitle { font-size: 0.7rem; padding-top: 16px; border-top: 2px solid var(--border); }
+  .footer-copy { font-size: 0.8rem;  }
   .footer-follow { flex-direction: column; gap: 16px; }
   .footer-follow span { font-size: 0.85rem; }
   .footer-socials { font-size: 1.2rem; gap: 20px; }

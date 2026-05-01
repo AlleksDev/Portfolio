@@ -125,7 +125,7 @@ function ProjectDetailPage() {
 
               <div className="project-detail__tech-section">
                 <h3 className="project-detail__tech-title">
-                  Patrones de diseño utilizados
+                  Patrones y tecnologías aplicadas
                 </h3>
                 <div className="project-detail__tech-icons">
                   {project.designPatterns.map((pattern, i) => (

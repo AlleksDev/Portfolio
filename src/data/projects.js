@@ -20,7 +20,7 @@ export const webProjects = [
     title: 'COINERS DRIFT',
     shortDescription: 'Plataforma de entretenimiento recreativo',
     description:
-      'Plataforma de entretenimiento recreativo que redefine la experiencia de juego. Su diseño busca la desestimulación activa para aliviar el estrés. Este proyecto fue el tercer lugar del Hackathon Tech Sin Fronteras 2023.',
+      'Plataforma Web3 de entretenimiento recreativo que redefine la experiencia de juego. Su diseño busca la desestimulación activa para aliviar el estrés e implementa un sistema de recompensas con tokens por medio de blockchain. Este proyecto fue el tercer lugar del Hackathon Tech Sin Fronteras 2023.',
     problem:
       'Los usuarios suelen jugar para relajarse, pero en muchas ocasiones, las opciones disponibles pueden llegar a aumentar su estrés o sobreestimularlos.',
     myJob:
@@ -31,7 +31,7 @@ export const webProjects = [
     mainTag: '3er Lugar Hackathon',
     tags: ['UX/UI', 'Front-End', 'Wireframing'],
     technologies: ['Figma', 'JavaScript', 'CSS3'].map(createTechIcon),
-    designPatterns: ['MVC'].map(createPatternIcon),
+    designPatterns: ['Web3', 'Blockchain', 'MVC'].map(createPatternIcon),
     mainFeatures: [
       'Interfaz intuitiva de juego relajante',
       'Mecánicas de desestresamiento activo',
@@ -55,7 +55,7 @@ export const webProjects = [
     imagePath: '/images/projects/frimeet.jpg',
     link: '#',
     tags: ['Front-End', 'MercadoPago', 'UX/UI'],
-    technologies: ['Angular', 'Typescript', 'nodejs', 'mongodb'].map(createTechIcon),
+    technologies: ['Angular', 'Typescript', 'Nodejs', 'MongoDB', 'Express', 'PostgreSQL'].map(createTechIcon),
     designPatterns: ['MVC', 'Atomic design'].map(createPatternIcon),
     mainFeatures: [
       'Recomendaciones personalizadas de lugares',
@@ -71,22 +71,24 @@ export const webProjects = [
     title: 'VIXEL',
     shortDescription: 'Plataforma descentralizada Web3 para torneos',
     description:
-      'Plataforma descentralizada Web3 enfocada a la creación de torneos y streaming. Creé el branding y diseño UI/UX, además de ser el responsable principal de la producción y optimización de assets funcionales y visuales del juego.',
+      'Plataforma descentralizada Web3 enfocada a la creación de torneos y streaming para videojuegos. Integra Blockchain para garantizar transparencia y seguridad de los usuarios. Este proyecto ganó el primer lugar en un hackathon a nivel estatal y el segundo lugar a nivel internacional en la categoría avanzada.',
     problem:
-      'La comunidad gamer necesitaba una plataforma descentralizada que permitiera crear y participar en torneos con blockchain, con una interfaz intuitiva y assets visuales de alta calidad.',
+      'Los torneos competitivos de videojuegos a menudo enfrentan problemas de transparencia, seguridad y centralización, lo que genera desconfianza en los participantes y puede afectar la integridad del torneo.',
     myJob:
       'Responsable de la dirección creativa completa, incluyendo branding, diseño de interfaz y producción de todos los assets visuales. Optimicé los gráficos para garantizar rendimiento sin comprometer la calidad visual.',
     images: [],
     imagePath: '/images/projects/vixel.jpg',
     link: '#',
+    mainTag: '2do Lugar Internacional',
     tags: ['Web3', 'Game Assets', 'UX/UI'],
-    technologies: ['react', 'web3', 'solidity', 'blender'].map(createTechIcon),
-    designPatterns: ['Observer', 'Composite', 'Decorator'].map(createPatternIcon),
+    technologies: ['react', 'TypeScript', 'Nodejs', 'Rust', 'Vara', 'Affinity'].map(createTechIcon),
+    designPatterns: ['Web3', 'Blockchain', 'MVC'].map(createPatternIcon),
     mainFeatures: [
+      'Videojuegos originales con assets personalizados',
       'Torneos descentralizados con blockchain',
       'Sistema de streaming integrado',
-      'Assets 3D optimizados de alta calidad',
-      'Wallets y pagos en criptomonedas'
+      'Wallets y pagos en criptomonedas',
+      'Assets optimizados de alta calidad',
     ],
     color: '#ffb800',
     type: 'web'
@@ -96,21 +98,22 @@ export const webProjects = [
     title: 'GEOVA',
     shortDescription: 'Solución IoT para medición de terrenos',
     description:
-      'Solución avanzada para medición de terrenos que incorpora un dispositivo IoT. A cargo del diseño UI/UX de la app web, arquitectura de los circuitos y modelado mecánico 3D estructural de la carcasa del dispositivo.',
+      'Solución avanzada para medición de terrenos que incorpora un dispositivo IoT. El dispositivo se conecta a una interfaz web responsiva que muestra datos de medición en tiempo real, con calibración automática del sensor y exportación de datos en múltiples formatos.',
     problem:
-      'Los agrimensores enfrentaban limitaciones en precisión y portabilidad de herramientas de medición. Se requería una solución que combinara hardware IoT confiable con una interfaz web intuitiva.',
+      'Los agrimensores enfrentan limitaciones en precisión y portabilidad de herramientas de medición, las herramientas existentes son voluminosas, costosas y complicadas de usar.',
     myJob:
-      'Diseñé la interfaz web responsiva para visualizar datos de medición. Arquitecturé los circuitos del dispositivo IoT y realicé el modelado 3D de la carcasa considerando factores ergonómicos y de durabilidad.',
+      'Diseñé la interfaz web responsiva para visualizar datos de medición. Arquitecturé los circuitos del dispositivo IoT y realicé el modelado 3D de la carcasa para el dispositivo IOT, considerando factores ergonómicos y de durabilidad.',
     images: [],
     imagePath: '/images/projects/geova.jpg',
     link: '#',
     tags: ['IoT', '3D Design', 'Hardware'],
-    technologies: ['react', 'python', 'solidworks', 'arduino'].map(createTechIcon),
-    designPatterns: ['MVC', 'Observer', 'Factory'].map(createPatternIcon),
+    technologies: ['TypeScript', 'Angular', 'Python', 'Go', 'RabbitMQ', 'Docker', 'RaspberryPi', 'ESP32', 'solidworks', 'Blender'].map(createTechIcon),
+    designPatterns: ['IOT', 'WebSocket',  'MVVM', 'Arquitectura hexagonal'].map(createPatternIcon),
     mainFeatures: [
       'Dispositivo IoT portátil y preciso',
       'Dashboard web en tiempo real',
-      'Calibración automática del sensor',
+      'Interfaz intuitiva y responsiva para múltiples dispositivos',
+      'Calibración automática de sensores',
       'Exportación de datos en múltiples formatos'
     ],
     color: '#ffb800',
@@ -121,17 +124,17 @@ export const webProjects = [
     title: 'NOTARÍA 178',
     shortDescription: 'Plataforma de gestión operativa con VPN',
     description:
-      'Plataforma web robusta para la gestión operativa. Incluye servidor local configurado con VPN Tailscale para acceso remoto cifrado desde sucursales y sistema avanzado de gestión con control de acceso.',
+      'Plataforma web diseñada para la gestión operativa de una notaría. Con un servidor local configurado con VPN Tailscale para acceso remoto cifrado desde sucursales y sistema avanzado de gestión con control de acceso.',
     problem:
-      'La notaría requería un sistema centralizado de gestión de documentos con acceso remoto seguro desde múltiples sucursales, manteniendo altos estándares de seguridad y confidencialidad.',
+      'La notaría a menudo enfrenta problemas para llevar un control eficiente de sus operaciones, especialmente al gestionar múltiples sucursales y garantizar la seguridad de los datos sensibles.',
     myJob:
-      'Diseñé la arquitectura de red con VPN Tailscale. Desarrollé la plataforma full-stack con gestión de usuarios, control de acceso granular y sistema de auditoría completo.',
+      'Lideré el diseño de identidad visual y la experiencia de usuario, optimizando la interfaz para facilitar la gestión operativa. Generé todos los assets visuales necesarios para la plataforma.',
     images: [],
     imagePath: '/images/projects/notaria-178.jpg',
     link: '#',
     tags: ['Arquitectura de Red', 'Full Stack', 'VPN'],
-    technologies: ['react', 'nodejs', 'postgresql', 'tailscale'].map(createTechIcon),
-    designPatterns: ['MVC', 'Singleton', 'Strategy'].map(createPatternIcon),
+    technologies: ['TypeScript', 'React', 'Go', 'PostgreSQL', 'Redis', 'Firebase', 'Docker', 'Tailscale'].map(createTechIcon),
+    designPatterns: ['WebSocket', 'Arquitectura Hexagonal', 'MVVM', 'Atomic Design'].map(createPatternIcon),
     mainFeatures: [
       'VPN Tailscale para acceso remoto seguro',
       'Control de acceso granular por roles',
