@@ -116,6 +116,14 @@ function ProjectDetailPage() {
                         src={tech.icon}
                         alt={tech.name}
                         className="project-detail__tech-icon"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          if (e.target.parentElement) {
+                            const fallback = document.createElement('i');
+                            fallback.className = 'fa-solid fa-cube project-detail__tech-icon-fallback';
+                            e.target.parentElement.insertBefore(fallback, e.target.nextSibling);
+                          }
+                        }}
                       />
                       <span className="project-detail__tech-name">{tech.name}</span>
                     </div>

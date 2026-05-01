@@ -301,6 +301,13 @@
   object-fit: contain;
 }
 
+.project-detail__tech-icon-fallback {
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+  color: var(--yellow);
+}
+
 .project-detail__tech-name {
   font-size: 1rem;
   font-weight: bold;

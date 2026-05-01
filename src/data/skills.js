@@ -7,6 +7,8 @@ import solidworksIcon from '../assets/icons/programs/solidworks.svg';
 import expressIcon from '../assets/icons/programs/express.svg';
 import varaIcon from '../assets/icons/programs/vara.svg';
 import rustIcon from '../assets/icons/programs/rust.svg';
+import androidIcon from '../assets/icons/programs/android.svg';
+import pixelStudioIcon from '../assets/icons/programs/pixelstudio.svg';
 
 // Iconos de arquitecturas
 import cleanArchIcon from '../assets/icons/architectures/clean-architecture.svg';
@@ -41,6 +43,8 @@ export const techIconsMap = {
   vara: varaIcon,
   rust: rustIcon,
   tailscale: tailscaleIcon,
+  android: androidIcon,
+  pixelstudio: pixelStudioIcon,
   esp32: devIcon('arduino'), // No hay icono específico para ESP32, se usa el de Arduino
   // Otros por defecto usan devicons
 };

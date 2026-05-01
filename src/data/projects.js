@@ -55,7 +55,7 @@ export const webProjects = [
     imagePath: '/images/projects/frimeet.jpg',
     link: '#',
     tags: ['Front-End', 'MercadoPago', 'UX/UI'],
-    technologies: ['Angular', 'Typescript', 'Nodejs', 'MongoDB', 'Express', 'PostgreSQL'].map(createTechIcon),
+    technologies: ['Figma', 'Angular', 'Typescript', 'Nodejs', 'MongoDB', 'Express', 'PostgreSQL'].map(createTechIcon),
     designPatterns: ['MVC', 'Atomic design'].map(createPatternIcon),
     mainFeatures: [
       'Recomendaciones personalizadas de lugares',
@@ -81,7 +81,7 @@ export const webProjects = [
     link: '#',
     mainTag: '2do Lugar Internacional',
     tags: ['Web3', 'Game Assets', 'UX/UI'],
-    technologies: ['react', 'TypeScript', 'Nodejs', 'Rust', 'Vara', 'Affinity'].map(createTechIcon),
+    technologies: [ 'Affinity', 'Figma', 'TypeScript', 'React', 'Nodejs', 'Rust', 'Vara'].map(createTechIcon),
     designPatterns: ['Web3', 'Blockchain', 'MVC'].map(createPatternIcon),
     mainFeatures: [
       'Videojuegos originales con assets personalizados',
@@ -102,12 +102,12 @@ export const webProjects = [
     problem:
       'Los agrimensores enfrentan limitaciones en precisión y portabilidad de herramientas de medición, las herramientas existentes son voluminosas, costosas y complicadas de usar.',
     myJob:
-      'Diseñé la interfaz web responsiva para visualizar datos de medición. Arquitecturé los circuitos del dispositivo IoT y realicé el modelado 3D de la carcasa para el dispositivo IOT, considerando factores ergonómicos y de durabilidad.',
+      'Diseñé la interfaz web responsiva para visualizar datos de medición. Arquitecturé los circuitos del dispositivo IoT y realicé el modelado 3D de la carcasa para el dispositivo IOT, considerando factores ergonómicos y de durabilidad. Documenté procesos de calidad y planeación estratégica, asegurando la viabilidad técnica del producto.',
     images: [],
     imagePath: '/images/projects/geova.jpg',
     link: '#',
     tags: ['IoT', '3D Design', 'Hardware'],
-    technologies: ['TypeScript', 'Angular', 'Python', 'Go', 'RabbitMQ', 'Docker', 'RaspberryPi', 'ESP32', 'solidworks', 'Blender'].map(createTechIcon),
+    technologies: ['Figma', 'TypeScript', 'Angular', 'Python', 'Go', 'RabbitMQ', 'Docker', 'RaspberryPi', 'ESP32', 'solidworks', 'Blender'].map(createTechIcon),
     designPatterns: ['IOT', 'WebSocket',  'MVVM', 'Arquitectura hexagonal'].map(createPatternIcon),
     mainFeatures: [
       'Dispositivo IoT portátil y preciso',
@@ -133,13 +133,14 @@ export const webProjects = [
     imagePath: '/images/projects/notaria-178.jpg',
     link: '#',
     tags: ['Arquitectura de Red', 'Full Stack', 'VPN'],
-    technologies: ['TypeScript', 'React', 'Go', 'PostgreSQL', 'Redis', 'Firebase', 'Docker', 'Tailscale'].map(createTechIcon),
+    technologies: [ 'Affinity', 'Figma', 'TypeScript', 'React', 'Go', 'PostgreSQL', 'Redis', 'Firebase', 'Docker', 'Tailscale'].map(createTechIcon),
     designPatterns: ['WebSocket', 'Arquitectura Hexagonal', 'MVVM', 'Atomic Design'].map(createPatternIcon),
     mainFeatures: [
-      'VPN Tailscale para acceso remoto seguro',
+      'Gestión operativa y administrativa integral',
+      'Gestión centralizada de documentos',
       'Control de acceso granular por roles',
       'Sistema completo de auditoría',
-      'Gestión centralizada de documentos'
+      'Acceso remoto seguro con VPN Tailscale'
     ],
     color: '#ffb800',
     type: 'web'
@@ -149,75 +150,54 @@ export const webProjects = [
     title: 'VAULTDOC-VD',
     shortDescription: 'Plataforma de seguridad empresarial',
     description:
-      'Plataforma de seguridad empresarial para la gestión segura de archivos gubernamentales. Incluye análisis de vulnerabilidades en tiempo real, encriptación de extremo a extremo y auditoría completa.',
+      'Plataforma de seguridad para la gestión segura de archivos gubernamentales. Incluye subida de archivos y encriptación de extremo a extremo, además de auditoría completa.',
     problem:
-      'Las instituciones gubernamentales necesitaban una plataforma confiable para almacenar y gestionar documentos sensibles con conformidad de seguridad de nivel empresarial.',
+      'Las instituciones gubernamentales necesitan una plataforma confiable para almacenar y gestionar documentos sensibles con conformidad de seguridad de nivel empresarial.',
     myJob:
-      'Implementé los algoritmos de encriptación de extremo a extremo. Desarrollé el motor de análisis de vulnerabilidades en tiempo real y el sistema completo de auditoría y trazabilidad.',
+      'Realicé mantenimiento correctivo y perfectivo en la plataforma, optimizando la experiencia de usuario y agregando nuevas funcionalidades. Implementé mejoras en la interfaz para facilitar la gestión de archivos y auditorías.',
     images: [],
     imagePath: '/images/projects/vaultdoc.jpg',
     link: '#',
+    mainTag: 'Gubernamental',
     tags: ['Ciberseguridad', 'Encriptación', 'Back-End'],
-    technologies: ['nodejs', 'mongodb', 'cryptojs', 'aws'].map(createTechIcon),
-    designPatterns: ['Strategy', 'Decorator', 'Proxy'].map(createPatternIcon),
+    technologies: ['TypeScript', 'Angular', 'Go', 'Python', 'OpenCV', 'PostgreSQL', 'Redis', 'Docker'].map(createTechIcon),
+    designPatterns: ['MVVM', 'Arquitectura Hexagonal', 'Procesamiento de imágenes'].map(createPatternIcon),
     mainFeatures: [
       'Encriptación de extremo a extremo AES-256',
-      'Análisis de vulnerabilidades en tiempo real',
+      'Acceso seguro por roles',
+      'Gestión segura de archivos con control de acceso granular',
+      'Escaneo de documentos con OpenCV para corrección de perspectiva y mejora de legibilidad',
       'Auditoría completa de accesos',
       'Cumplimiento de estándares de seguridad'
     ],
     color: '#ffb800',
     type: 'web'
   },
-  {
-    id: 'videojuego-2d',
-    title: 'VIDEOJUEGO 2D EDUCATIVO',
-    shortDescription: 'Juego educativo para museo de ciencia',
-    description:
-      'Juego educativo 2D para el Museo Chiapas de Ciencia y Tecnología (MUCH) sobre la formación del cuerpo humano. Encargado de todos los assets visuales, sprites, frames y animaciones interactivas.',
-    problem:
-      'El museo requería una herramienta interactiva para educar a visitantes sobre la formación del cuerpo humano de manera lúdica y atractiva para todas las edades.',
-    myJob:
-      'Responsable de toda la dirección artística y producción visual. Creé diseños de personajes, ambientes, sprites y animaciones frame-by-frame. Optimicé assets para garantizar rendimiento.',
-    images: [],
-    imagePath: '/images/projects/videojuego-2d.jpg',
-    link: '#',
-    tags: ['Game Dev', 'Assets 2D', 'Animación'],
-    technologies: ['phaser', 'javascript', 'affinity', 'aseprite'].map(createTechIcon),
-    designPatterns: ['State', 'Composite', 'Observer'].map(createPatternIcon),
-    mainFeatures: [
-      'Mecánicas educativas interactivas',
-      'Animaciones frame-by-frame detalladas',
-      'Niveles progresivos de dificultad',
-      'Sistema de puntuación y logros'
-    ],
-    color: '#ffb800',
-    type: 'web'
-  },
+  //Falta corregir Jessy, OptaStek, Crehor, Arte digital
 ];
 
 // Proyectos Mobile
 export const mobileProjects = [
   {
     id: 'cineradar',
-    title: 'CINERADAR',
+    title: 'CineRadar',
     shortDescription: 'App móvil de recomendación de películas',
     description:
       'Aplicación móvil que recomienda películas personalizadas según los gustos del usuario. Implementa algoritmos de recomendación y una interfaz intuitiva para descubrir nuevo contenido cinematográfico.',
     problem:
-      'Los usuarios tenían dificultades para encontrar películas que coincidieran con sus gustos en medio de la sobrecarga de contenido disponible.',
+      'Con frecuencia, elegir una película para ver puede ser abrumador debido a la gran cantidad de opciones disponibles, esto puede generar estrés y dificultar la toma de decisiones para los usuarios, e incluso conllevar a discusiones al elegir en grupo.',
     myJob:
-      'Diseñé la interfaz de usuario intuitiva. Implementé algoritmo de recomendación colaborativo y desarrollé la lógica de filtrado y búsqueda con integración a APIs de películas.',
+      'Diseñé la interfaz de usuario intuitiva. Implementé algoritmo de recomendación colaborativo y desarrollé la lógica de filtrado y búsqueda con integración a APIs de películas ya existentes.',
     images: [],
     imagePath: '/images/projects/cineradar.jpg',
     link: '#',
-    tags: ['Android', 'Kotlin', 'API REST'],
-    technologies: ['kotlin', 'android', 'retrofit', 'roomdb'].map(createTechIcon),
-    designPatterns: ['MVC', 'Repository', 'ViewModel'].map(createPatternIcon),
+    tags: ['Android', 'Kotlin', 'API Integrations'],
+    technologies: ['kotlin', 'Android', 'JetpackCompose', 'TMDB API'].map(createTechIcon),
+    designPatterns: ['MVVM', 'Factory Pattern', 'SOLID', 'ViewModel'].map(createPatternIcon),
     mainFeatures: [
       'Algoritmo de recomendación colaborativo',
       'Búsqueda avanzada de películas',
-      'Listas personalizadas de favoritos',
+      'Lista de películas recientemente agregadas',
       'Integración con APIs de cine'
     ],
     color: '#ffb800',
@@ -225,24 +205,25 @@ export const mobileProjects = [
   },
   {
     id: 'scoreup',
-    title: 'SCOREUP',
+    title: 'ScoreUp',
     shortDescription: 'App de productividad académica gamificada',
     description:
-      'Aplicación diseñada para ayudar a estudiantes a organizar sus retos de estudio. Permite crear metas, hacer seguimiento del progreso y mantener la motivación académica de forma gamificada.',
+      'Aplicación diseñada para ayudar a estudiantes a organizar sus retos de estudio. Permite crear metas, hacer seguimiento del progreso propio y de sus compañeros en tiempo real para mantener la motivación académica de forma gamificada.',
     problem:
-      'Los estudiantes luchan con la motivación y la organización del estudio. Necesitaban una herramienta que transformara el aprendizaje en una experiencia gamificada y motivadora.',
+      'Los estudiantes luchan con la motivación y la organización del estudio, a menudo se sienten abrumados por la cantidad de tareas y la falta de un sistema efectivo para seguir su progreso, lo que puede llevar a la procrastinación y al estrés académico.',
     myJob:
-      'Diseñé el sistema de gamificación completo. Desarrollé el motor de seguimiento de progreso, cálculo de puntos y estadísticas personalizadas del usuario.',
+      'Diseñé el sistema de gamificación y las interfaces. Desarrollé y desplegué la API para el seguimiento de progreso en tiempo real y la lógica de ranking, implementando funcionalidades de interacción social entre usuarios.',
     images: [],
     imagePath: '/images/projects/scoreup.jpg',
     link: '#',
     tags: ['Android', 'Productividad', 'UX/UI'],
-    technologies: ['kotlin', 'android', 'firebase', 'jetpackcompose'].map(createTechIcon),
-    designPatterns: ['MVVM', 'Repository', 'LiveData'].map(createPatternIcon),
+    technologies: ['Kotlin', 'Android', 'JetpackCompose', 'Hilt', 'Go', 'AWS'].map(createTechIcon),
+    designPatterns: ['WebSocket', 'MVVM', 'Repository', 'ViewModel', 'Automated Dependency Injection', 'SOLID'].map(createPatternIcon),
     mainFeatures: [
-      'Sistema de gamificación completo',
+      'Sistema de gamificación por puntos y logros',
+      'Creación de metas y retos personalizados',
+      'Ranking global y entre amigos',
       'Seguimiento de progreso en tiempo real',
-      'Notificaciones motivacionales',
       'Estadísticas detalladas de estudio'
     ],
     color: '#ffb800',
@@ -253,17 +234,17 @@ export const mobileProjects = [
     title: 'SPLITMEET',
     shortDescription: 'App para gestión de gastos compartidos',
     description:
-      'Aplicación que facilita la organización de gastos compartidos en salidas con amigos, familia o pareja. Divide cuentas de forma equitativa y mantiene un historial claro de los gastos grupales.',
+      'Aplicación que facilita la organización de gastos compartidos en salidas con amigos, familia o pareja. Divide las cuentas según el método elegidopor el usuario y mantiene un historial claro de los gastos grupales.',
     problem:
-      'Los usuarios enfrentaban conflictos y confusión al dividir gastos en salidas grupales. Se requería una solución simple y justa para gestionar y resolver quién debe pagar qué.',
+      'Dividir los gastos en salidas grupales puede ser complicado y generar confusión o malentendidos, especialmente cuando se trata de diferentes métodos de división y la necesidad de mantener un registro claro de quién debe qué a quién.',
     myJob:
-      'Implementé el algoritmo de división de gastos optimizado. Diseñé la interfaz para visualizar historial de transacciones y desarrollé el sistema de liquidación de cuentas.',
+      'Diseñé la interfaz de usuario completa, implementé las funcionalidades en Kotlin, implementé uso de hardware y persistencia de datos local por medio de Rooms, asegurando una experiencia fluida y fácil de usar para los usuarios.',
     images: [],
     imagePath: '/images/projects/splitmeet.jpg',
     link: '#',
     tags: ['Android', 'Finanzas', 'UX/UI'],
-    technologies: ['kotlin', 'android', 'roomdb', 'coroutines'].map(createTechIcon),
-    designPatterns: ['MVC', 'Repository', 'ViewModel'].map(createPatternIcon),
+    technologies: ['Figma', 'Kotlin', 'Android', 'JetpackCompose', 'Go', 'PostgreSQL', 'Rooms', 'Firebase', 'AWS', 'Hilt'].map(createTechIcon),
+    designPatterns: ['WebSocket', 'MVVM', 'Repository', 'ViewModel', 'Automated Dependency Injection', 'SOLID', 'Clean Architecture'].map(createPatternIcon),
     mainFeatures: [
       'Algoritmo inteligente de división de gastos',
       'Historial detallado de transacciones',
@@ -279,19 +260,19 @@ export const mobileProjects = [
 export const illustrationProjects = [
   {
     id: 'entre-senas-palabras',
-    title: 'ENTRE SEÑAS Y PALABRAS',
+    title: 'Entre Señas y Palabras',
     shortDescription: 'Cuadernillo ilustrado de LSM',
     description:
-      'Cuadernillo ilustrado para el aprendizaje de Lengua de Señas Mexicana (LSM). Responsable de toda la ilustración del proyecto, creando recursos visuales accesibles para facilitar la comunicación inclusiva.',
+      'Cuadernillo ilustrado para el aprendizaje de Lengua de Señas Mexicana (LSM). Responsable parcial de la ilustración del proyecto, creando recursos visuales accesibles para facilitar la comunicación inclusiva.',
     problem:
-      'Existía una falta de recursos visuales educativos accesibles para el aprendizaje de LSM. Se requería material ilustrado que fuera inclusivo, claro y pedagógicamente efectivo.',
+      'Falta de recursos visuales educativos accesibles para el aprendizaje de LSM. Se requiere material ilustrado que fuera inclusivo, claro y pedagógicamente efectivo.',
     myJob:
-      'Realicé toda la investigación de LSM. Creé ilustraciones detalladas de cada seña, asegurando precisión anatómica y claridad pedagógica. Diseñé la diagramación del cuadernillo.',
+      'Creé ilustraciones detalladas de cada seña, asegurando precisión anatómica y claridad pedagógica con el asesoramiento de expertos en LSM.',
     images: [],
     imagePath: '/images/projects/entre-senas.jpg',
     link: '#',
     tags: ['Ilustración', 'Editorial', 'Educativo'],
-    technologies: ['affinity', 'figma', 'indesign'].map(createTechIcon),
+    technologies: ['Figma', 'Affinity', 'Google Drive'].map(createTechIcon),
     designPatterns: ['Diseño editorial', 'Accesibilidad'].map(createPatternIcon),
     mainFeatures: [
       'Ilustraciones inclusivas y accesibles',
@@ -301,6 +282,31 @@ export const illustrationProjects = [
     ],
     color: '#ffb800',
     type: 'illustration'
+  },
+   {
+    id: 'videojuego-2d',
+    title: 'VIDEOJUEGO 2D EDUCATIVO',
+    shortDescription: 'Juego educativo para museo de ciencia',
+    description:
+      'Juego educativo 2D para el Museo Chiapas de Ciencia y Tecnología (MUCH) sobre la formación del cuerpo humano. Encargado de todos los assets visuales, sprites, frames y animaciones interactivas.',
+    problem:
+      'El museo requería una herramienta interactiva para educar a visitantes sobre la formación del cuerpo humano de manera lúdica y atractiva para todas las edades.',
+    myJob:
+      'Responsable de toda la dirección artística y producción visual. Creé diseños de personajes, ambientes, sprites y animaciones frame-by-frame. Optimicé assets para garantizar rendimiento.',
+    images: [],
+    imagePath: '/images/projects/videojuego-2d.jpg',
+    link: '#',
+    tags: ['Game Dev', 'Assets 2D', 'Animación'],
+    technologies: ['Gimp', 'PixelStudio', 'Figma', 'Python', 'PyGame'].map(createTechIcon),
+    designPatterns: ['Clean Architecture', '2D Game Development', 'Game Design'].map(createPatternIcon),
+    mainFeatures: [
+      'Mecánicas educativas interactivas',
+      'Animaciones frame-by-frame detalladas',
+      'Niveles progresivos de dificultad',
+      'Sistema de puntuación y logros'
+    ],
+    color: '#ffb800',
+    type: 'web'
   },
 ];
 
