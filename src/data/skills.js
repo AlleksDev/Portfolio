@@ -40,15 +40,17 @@ export const techIconsMap = {
 
 // Mapeo de iconos de patrones de diseño y arquitecturas
 export const patternIconsMap = {
-  'Arquitectura limpia': cleanArchIcon,
-  'Clean Architecture': cleanArchIcon,
-  'Hexagonal': hexagonIcon,
-  'Hexagonal / Puertos y adaptadores': hexagonIcon,
-  'MVC': triangleIcon,
-  'Modelo Vista Controlador': triangleIcon,
+  'arquitectura limpia': cleanArchIcon,
+  'clean architecture': cleanArchIcon,
+  'hexagonal': hexagonIcon,
+  'hexagonal / puertos y adaptadores': hexagonIcon,
+  'mvc': triangleIcon,
+  'modelo vista controlador': triangleIcon,
   'Event Driven': eventDrivenIcon,
-  'MVVM': mvvmIcon,
+  'mvvm': mvvmIcon,
   'Modelo Vista ViewModel': mvvmIcon,
+  'patrones de diseño': designPatternsIcon,
+  'patterns': designPatternsIcon,
 };
 
 // Habilidades técnicas

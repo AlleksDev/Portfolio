@@ -52,7 +52,7 @@ const ProjectsSection = () => {
       </div>
       <div className="projects-grid">
         {displayedProjects.map((proj, idx) => (
-          <div className="project-card" key={idx} onClick={() => handleProjectClick(proj.id)}>
+          <div className="project-card" key={idx} onClick={() => handleProjectClick(proj.id)} data-main-tag={proj.mainTag}>
             <div className="project-head-link">
               <span>about</span><span>learn</span><span>portfolio</span><span>blog</span><span>contact</span>
             </div>
@@ -65,7 +65,7 @@ const ProjectsSection = () => {
             </div>
             <div className="project-info">
               <div className="project-tags">
-                {proj.tags.map(tag => <span key={tag} className="project-tag">{tag}</span>)}
+                {proj.tags.map( tag => <span key={tag} className="project-tag">{tag}</span>)}
               </div>
               <h3 className="project-title">{proj.title}</h3>
               <p className="project-desc">{proj.shortDescription || proj.description}</p>

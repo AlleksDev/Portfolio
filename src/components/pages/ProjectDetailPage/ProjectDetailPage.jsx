@@ -32,7 +32,12 @@ function ProjectDetailPage() {
               >
                 <i className="fa-solid fa-arrow-left"></i> Volver
               </button>
-              <h1 className="project-detail__title">{project.title}</h1>
+              <div className="project-detail__title-wrapper">
+                <h1 className="project-detail__title">{project.title}</h1>
+                {project.mainTag && (
+                  <span className="project-detail__main-tag">{project.mainTag}</span>
+                )}
+              </div>
 
               {project.tags && (
                 <div className="project-detail__tags">

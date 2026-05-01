@@ -4,36 +4,34 @@ import { techIconsMap, patternIconsMap } from './skills.js';
 // Función auxiliar para generar URLs de devicons
 const devIcon = (name) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${name}/${name}-original.svg`;
 
-// Mapeo de nombres de tecnologías a iconos
 const createTechIcon = (name) => ({
   name,
-  icon: techIconsMap[name] || devIcon(name) // Usa icon local si existe, sino devicon
+  icon: techIconsMap[name.toLowerCase()] || devIcon(name.toLowerCase()) // Usa icon local si existe, sino devicon
 });
 
-// Mapeo de nombres de patrones a iconos
 const createPatternIcon = (name) => ({
   name,
-  icon: patternIconsMap[name] || 'https://via.placeholder.com/40?text=' + name // Usa icon si existe, sino placeholder
+  icon: patternIconsMap[name.toLowerCase()] || 'https://via.placeholder.com/40?text=' + name.toLowerCase() // Usa icon si existe, sino placeholder
 });
 
-// Proyectos Web
 export const webProjects = [
   {
     id: 'coiners-drift',
     title: 'COINERS DRIFT',
     shortDescription: 'Plataforma de entretenimiento recreativo',
     description:
-      'Plataforma de entretenimiento recreativo que redefine la experiencia de juego. Su diseño busca la desestimulación activa para aliviar el estrés. Estuve a cargo de la conceptualización y el wireframing de principio a fin.',
+      'Plataforma de entretenimiento recreativo que redefine la experiencia de juego. Su diseño busca la desestimulación activa para aliviar el estrés. Este proyecto fue el tercer lugar del Hackathon Tech Sin Fronteras 2023.',
     problem:
-      'Los usuarios necesitaban una plataforma de entretenimiento que proporcionara una forma efectiva de desestresarse y relajarse, con una experiencia de juego intuitiva e innovadora que se diferenciara de las opciones existentes.',
+      'Los usuarios suelen jugar para relajarse, pero en muchas ocasiones, las opciones disponibles pueden llegar a aumentar su estrés o sobreestimularlos.',
     myJob:
-      'Lideré la conceptualización del proyecto desde cero, realizando investigación de mercado y análisis de competencia. Responsable del diseño completo de wireframes y mockups, definiendo la estructura de información y flujos de usuario.',
+      'Lideré la conceptualización del proyecto desde cero, realizando investigación de mercado. Responsable del diseño completo de wireframes, mockups y assets necesarios, definiendo la estructura de información y flujos de usuario.',
     images: [],
     imagePath: '/images/projects/coiners-drift.jpg',
     link: '#',
+    mainTag: '3er Lugar Hackathon',
     tags: ['UX/UI', 'Front-End', 'Wireframing'],
-    technologies: ['figma', 'javascript', 'react', 'css3'].map(createTechIcon),
-    designPatterns: ['MVC', 'Observer', 'Factory'].map(createPatternIcon),
+    technologies: ['Figma', 'JavaScript', 'CSS3'].map(createTechIcon),
+    designPatterns: ['MVC'].map(createPatternIcon),
     mainFeatures: [
       'Interfaz intuitiva de juego relajante',
       'Mecánicas de desestresamiento activo',

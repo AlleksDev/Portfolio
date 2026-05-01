@@ -50,13 +50,35 @@
   align-items: start;
 }
 
+.project-detail__title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
 .project-detail__title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 3rem;
   font-weight: lighter;
   letter-spacing: 0.05em;
   color: var(--white);
-  margin: 0 0 1.5rem 0;
+  margin: 0;
+}
+
+.project-detail__main-tag {
+  padding: 8px 16px;
+  background: none;
+  color: var(--yellow);
+  font-size: 1.2rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  border-radius: 20px;
+  border: solid 1px var(--yellow);
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .project-detail__tags {
@@ -117,11 +139,15 @@
   min-width: 0;
 }
 
+.project-detail__cta > button:hover {
+  transform: translateY(-8px);
+}
+
 .project-detail__cta > button:first-child {
   font-weight: 700;
   background: none;
   color: var(--orange);
-  border: 2px solid var(--orange);
+  border: 1px solid var(--orange);
 }
 
 .project-detail__features-section {
@@ -174,6 +200,7 @@
 }
 
 .project-detail__preview {
+  margin-top: 3rem;
   background: var(--card);
   border-radius: 12px;
   overflow: hidden;
@@ -248,11 +275,12 @@
 .project-detail__tech-badge {
   min-width: 55px;
   min-height: 55px;
-  padding: 12px;
-  background: rgba(255, 184, 0, 0.06);
+  padding: 16px;
+  padding-right: 20px;
+  background: none;
   border-radius: 8px;
   display: flex;
-  flex-direction: column;
+  gap: 8px;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
@@ -260,16 +288,22 @@
 }
 
 .project-detail__tech-badge:hover {
-  background: rgba(255, 184, 0, 0.15);
+  background: radial-gradient(circle at bottom right, var(--yellow-trans) 0%, transparent 70%);
   border-color: rgba(255, 184, 0, 0.5);
   transform: translateY(-3px);
   box-shadow: 0 8px 16px rgba(255, 184, 0, 0.1);
+  transition: all 0.3s ease ;
 }
 
 .project-detail__tech-icon {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
+}
+
+.project-detail__tech-name {
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {

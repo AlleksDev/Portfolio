@@ -9,7 +9,7 @@
 .project-card:hover::after { opacity: 1; }
 .project-card:nth-child(3n):hover { grid-column: span 1; }
 .project-card:nth-child(3n+1):hover, .project-card:nth-child(3n+2):hover { grid-column: span 2; }
-.project-card::before { content: 'EXPLORAR'; position: absolute; top: 12px; right: 12px; background: var(--yellow); color: var(--black); padding: 6px 14px; font-family: 'Bebas Neue', sans-serif; font-size: 0.8rem; letter-spacing: 0.05em; border-radius: 20px; opacity: 0; transform: scale(0.8) translateY(-10px); transition: all 0.3s ease; z-index: 10; pointer-events: none; }
+.project-card::before { content: attr(data-main-tag); position: absolute; top: 12px; right: 12px; background: var(--yellow); color: var(--black); padding: 6px 14px; font-family: 'Bebas Neue', sans-serif; font-size: 1rem; font-weight: medium; letter-spacing: 0.05em; border-radius: 20px; opacity: 0; transform: scale(0.8) translateY(-10px); transition: all 0.3s ease; z-index: 10; pointer-events: none; }
 .project-card:hover::before { opacity: 1; transform: scale(1) translateY(0); }
 .project-img { min-height: 240px; background: #222; position: relative; border-bottom: 1px solid var(--border); }
 .project-info { padding: 24px; display: flex; flex-direction: column; flex: 1; position: relative; z-index: 1; }

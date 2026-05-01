@@ -10,6 +10,8 @@
   --orange: #E15A1A;
   --orange-dim: #b84310;
   --yellow: #ffc400;
+  --yellow-trans: rgba(255, 196, 0, 0.1);
+  --orange-trans: rgba(225, 90, 26, 0.1);
   --text: #e8e8e8;
   --muted: #888888;
   --white: #ffffff;
