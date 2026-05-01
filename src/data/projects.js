@@ -46,20 +46,20 @@ export const webProjects = [
     title: 'FRIMEET',
     shortDescription: 'Plataforma de descubrimiento de lugares',
     description:
-      'Plataforma que ayuda a los usuarios a encontrar lugares perfectos para visitar. Lideré el branding, diseño UX/UI y el desarrollo Front-End. Además, integré la API de pagos usando el SDK de MercadoPago.',
+      'Plataforma de recomendaciones inteligente que ayuda a los usuarios a encontrar lugares perfectos para visitar.',
     problem:
-      'Los usuarios tenían dificultades para encontrar lugares recomendados basados en sus preferencias y presupuesto. Existía una brecha entre descubrir nuevos lugares y poder realizar pagos de forma segura.',
+      'Los usuarios tenían dificultades para encontrar nuevos lugares basados en sus preferencias y presupuesto y se pongan de acuerdoi para elegir un lugar en grupo.',
     myJob:
-      'Desarrollé la identidad visual completa del proyecto. Diseñé la interfaz de usuario centrada en la experiencia, implementé la lógica de recomendación y realicé la integración de MercadoPago para pagos seguros.',
+      'Desarrollé la identidad visual completa del proyecto. Diseñé la interfaz de usuario centrada en la experiencia, implementé la lógica de recomendación y realicé la integración con el SDK MercadoPago para pagos seguros.',
     images: [],
     imagePath: '/images/projects/frimeet.jpg',
     link: '#',
     tags: ['Front-End', 'MercadoPago', 'UX/UI'],
-    technologies: ['react', 'javascript', 'nodejs', 'mongodb'].map(createTechIcon),
-    designPatterns: ['MVC', 'Singleton', 'Strategy'].map(createPatternIcon),
+    technologies: ['Angular', 'Typescript', 'nodejs', 'mongodb'].map(createTechIcon),
+    designPatterns: ['MVC', 'Atomic design'].map(createPatternIcon),
     mainFeatures: [
       'Recomendaciones personalizadas de lugares',
-      'Integración segura con MercadoPago',
+      'Integración segura de pagos con MercadoPago',
       'Filtros avanzados por preferencia y presupuesto',
       'Sistema de calificaciones y reviews'
     ],

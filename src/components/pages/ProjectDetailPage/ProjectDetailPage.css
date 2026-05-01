@@ -315,4 +315,8 @@
   .project-detail__title {
     font-size: 1.8rem;
   }
+
+  .project-detail__cta {
+    flex-direction: column;
+  }
 }

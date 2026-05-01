@@ -130,11 +130,6 @@ function ProjectDetailPage() {
                 <div className="project-detail__tech-icons">
                   {project.designPatterns.map((pattern, i) => (
                     <div key={i} className="project-detail__tech-badge">
-                      <img
-                        src={pattern.icon}
-                        alt={pattern.name}
-                        className="project-detail__tech-icon"
-                      />
                       <span className="project-detail__tech-name">{pattern.name}</span>
                     </div>
                   ))}

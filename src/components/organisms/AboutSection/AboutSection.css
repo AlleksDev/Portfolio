@@ -25,4 +25,6 @@
 @media (max-width: 480px) {
   .about-text p { font-size: 0.9rem; }
   .about-image { max-width: 220px; }
+  .about-buttons {  gap: 8px; }
+  .cv-btn, .about-btn { padding: 8px 16px; font-size: 0.85rem; justify-content: center; }
 }
