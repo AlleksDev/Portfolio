@@ -1,6 +1,7 @@
 .projects-filters { display: flex; gap: 16px; margin-bottom: 48px; border-bottom: 1px solid var(--border); padding-bottom: 24px; flex-wrap: wrap; }
 .proj-filter { padding: 12px 24px; font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; border: 1px solid var(--border); color: var(--muted); background: transparent; cursor: pointer; border-radius: 100px; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
 .proj-filter.active { border-color: var(--yellow); color: var(--yellow); }
+.proj-filter:hover:not(.active) { border-color: var(--white); color: var(--white); background: linear-gradient(to right, transparent 40%, var(--yellow-trans) 100%); }
 
 .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
 .project-card { background: none; border: 1px solid var(--border); overflow: hidden; display: flex; flex-direction: column; position: relative; transition: all 0.3s ease; cursor: pointer; z-index: 10;}

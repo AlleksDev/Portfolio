@@ -26,3 +26,6 @@ const experiences = [
 ];
 
 export default experiences;
+
+
+//Compactar los hacks en una sola experiencia, poner notaria y torre chiapas
