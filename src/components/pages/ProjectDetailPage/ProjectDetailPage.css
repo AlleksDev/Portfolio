@@ -118,6 +118,20 @@
   border-radius: 50%;
 }
 
+.project-detail__subtitle::after {
+  content: '';
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--yellow));
+  width: 0px;
+  transition: flex 0.3s ease;
+}
+
+.project-detail__subtitle:hover::after {
+  opacity: 1;
+  transition: flex 0.3s ease;
+  flex: 1;
+}
+
 .project-detail__desc {
   font-size: 1rem;
   color: var(--muted);
