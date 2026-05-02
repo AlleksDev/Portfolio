@@ -30,7 +30,7 @@ export const webProjects = [
     link: '#',
     mainTag: '3er Lugar Hackathon',
     tags: ['UX/UI', 'Front-End', 'Wireframing'],
-    technologies: ['Figma', 'JavaScript', 'CSS3'].map(createTechIcon),
+    technologies: ['PixelStudio', 'Figma', 'HTML5', 'JavaScript', 'CSS3'].map(createTechIcon),
     designPatterns: ['Web3', 'Blockchain', 'MVC'].map(createPatternIcon),
     mainFeatures: [
       'Interfaz intuitiva de juego relajante',
@@ -254,6 +254,7 @@ export const mobileProjects = [
     color: '#ffb800',
     type: 'mobile'
   },
+  //Aqui falta Sebwave, Frimeet, etc
 ];
 
 // Proyectos Ilustración
