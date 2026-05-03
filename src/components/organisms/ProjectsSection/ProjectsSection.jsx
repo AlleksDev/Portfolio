@@ -5,6 +5,7 @@ import { webProjects, mobileProjects, illustrationProjects } from '../../../data
 
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState('web');
+  const [hoveredCardId, setHoveredCardId] = useState(null);
   const navigate = useNavigate();
 
   const getProjects = () => {
@@ -52,7 +53,14 @@ const ProjectsSection = () => {
       </div>
       <div className="projects-grid">
         {displayedProjects.map((proj, idx) => (
-          <div className="project-card" key={idx} onClick={() => handleProjectClick(proj.id)} data-main-tag={proj.mainTag}>
+          <div
+            className={`project-card ${hoveredCardId === idx ? 'hovered' : hoveredCardId !== null ? 'unhovered' : ''}`}
+            key={idx}
+            onClick={() => handleProjectClick(proj.id)}
+            onMouseEnter={() => setHoveredCardId(idx)}
+            onMouseLeave={() => setHoveredCardId(null)}
+            data-main-tag={proj.mainTag}
+          >
             <div className="project-head-link">
               <span>about</span><span>learn</span><span>portfolio</span><span>blog</span><span>contact</span>
             </div>
@@ -72,10 +80,10 @@ const ProjectsSection = () => {
             </div>
           </div>
         ))}
-        <div className="projects-more">
-          <h3>MÁS PROYECTOS PRONTO...</h3>
-          <p>Sigo desarrollando más proyectos.<br/>También puedes ver contribuciones menores en mi GitHub</p>
-        </div>
+      </div>
+      <div className="projects-more">
+        <h3>MÁS PROYECTOS PRONTO...</h3>
+        <p>Sigo desarrollando más proyectos.<br/>También puedes ver contribuciones menores en mi GitHub</p>
       </div>
     </section>
   );

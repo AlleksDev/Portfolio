@@ -27,17 +27,24 @@
 .tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); }
 .tech-category { padding: 40px; border: 1px solid var(--border); background: var(--black); }
 .tech-cat-title { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1.2rem; display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
-.tech-items { display: flex; flex-wrap: wrap; gap: 16px; }
-.tech-item { display: flex; flex-direction: column; gap: 12px; padding: 16px; background: var(--card); border: 1px solid var(--border); flex: 1 1 auto; min-width: calc(50% - 8px); box-sizing: border-box; transition: all 0.3s ease; cursor: pointer; }
-.tech-item:hover:not(.empty) { flex-basis: 100%; border-color: rgba(255, 184, 0, 0.5); box-shadow: 0 0 12px rgba(255, 184, 0, 0.1); }
+.tech-items { display: flex; flex-wrap: wrap; gap: 12px; }
+.tech-item { display: flex; flex-direction: row; gap: 12px; padding: 16px; background: var(--card); border: 1px solid var(--border); flex: 1 1 auto; min-width: calc(50% - 8px); box-sizing: border-box; transition: all 0.3s ease; cursor: pointer; }
+.tech-item:hover:not(.empty) { background: radial-gradient(at bottom right, var(--yellow-trans), var(--transparent)); border-color: rgba(255, 184, 0, 0.5); transition: all 0.3s ease;}
 .tech-item.empty { border: none; background: transparent; cursor: auto; }
-.tech-name { font-size: 1.1rem; display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.tech-name { font-size: 1rem; display: flex; align-items: center; gap: 8px; white-space: nowrap; }
 .tech-name i { color: var(--orange); }
-.tech-icon { width: 32px; height: 32px; object-fit: contain; }
-.tech-level { font-family: 'Space Mono', monospace; font-size: 0.8rem; padding: 4px 8px; border-radius: 2px; display: inline-block; width: max-content; }
-.level-high { background: rgba(225,255,255,0.15); color: var(--white); }
+.tech-icon { width: 40px; height: 40px; object-fit: contain; }
+.level-high,
+.level-low,
+.level-mid {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+/* .level-high { background: rgba(225,255,255,0.15); color: var(--white); }
 .level-mid { background: rgba(255,184,0,0.15); color: var(--yellow); }
-.level-low { background: rgba(225,90,26,0.15); color: var(--orange); }
+.level-low { background: rgba(225,90,26,0.15); color: var(--orange); } */
 
 /* RESPONSIVE - Tablet */
 @media (max-width: 1024px) {

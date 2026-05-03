@@ -58,8 +58,11 @@ const TechSkills = () => {
             <div className="tech-items">
               {cat.items.map((item, i) => item ? (
                 <div className="tech-item" key={i}>
-                  <span className="tech-name"><img src={item.icon} alt={item.name} className="tech-icon" /> {item.name}</span>
-                  <span className={`tech-level ${item.levelClass}`}>{item.level}</span>
+                  <img src={item.icon} alt={item.name} className="tech-icon" />
+                  <div className='tech-info'>
+                    <span className="tech-name"> {item.name}</span>
+                    <span className={`tech-level ${item.levelClass}`}>{item.level}</span>
+                  </div>
                 </div>
               ) : <div className="tech-item empty" key={i}></div>)}
             </div>
