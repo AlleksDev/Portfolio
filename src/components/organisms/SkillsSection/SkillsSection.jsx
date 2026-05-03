@@ -3,7 +3,8 @@ import './SkillsSection.css';
 import { techSkillsCategories, softSkills, patternsAndArchitectures } from '../../../data/skills';
 
 const SoftSkills = () => (
-  <section id="soft-skills">
+  <section id="soft-skills" className="reveal">
+    <div className="section-inner">
     <div className="section-header">
       <div className="section-dot"></div>
       <h2 className="section-title">HABILIDADES BLANDAS</h2>
@@ -21,11 +22,13 @@ const SoftSkills = () => (
         ))}
       </div>
     </div>
+    </div>
   </section>
 );
 
 const Patterns = () => (
-  <section id="patterns">
+  <section id="patterns" className="reveal">
+    <div className="section-inner">
     <div className="section-header">
       <div className="section-dot"></div>
       <h2 className="section-title">PATRONES & ARQUITECTURAS</h2>
@@ -41,12 +44,14 @@ const Patterns = () => (
         </div>
       ))}
     </div>
+    </div>
   </section>
 );
 
 const TechSkills = () => {
   return (
-    <section id="skills">
+    <section id="skills" className="reveal">
+      <div className="section-inner">
       <div className="section-header">
         <div className="section-dot"></div>
         <h2 className="section-title">CONOCIMIENTOS TÉCNICOS</h2>
@@ -68,6 +73,7 @@ const TechSkills = () => {
             </div>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );

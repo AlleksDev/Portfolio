@@ -1,4 +1,9 @@
 
+/* FONDOS POR SECCIÓN */
+#soft-skills { background: var(--bg-dark-1); }
+#patterns    { background: var(--bg-dark-2); }
+#skills      { background: var(--bg-dark-1); }
+
 /* HABILIDADES BLANDAS */
 .soft-grid { display: flex; align-items: center; gap: 40px;}
 .soft-graphic { width: auto; aspect-ratio: 1; position: relative; display: none; align-items: center; justify-content: center; }

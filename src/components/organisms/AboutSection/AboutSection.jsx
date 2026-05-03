@@ -5,7 +5,8 @@ import StackedCardImage from '../../molecules/StackedCardImage/StackedCardImage'
 
 const AboutSection = () => {
   return (
-    <section id="about">
+    <section id="about" className="reveal">
+      <div className="section-inner">
       <div className="section-header">
         <div className="section-dot"></div>
         <h2 className="section-title">SOBRE MÍ</h2>
@@ -25,6 +26,7 @@ const AboutSection = () => {
         <div className="about-image">
           <StackedCardImage src={profilePic} alt="Foto de perfil" />
         </div>
+      </div>
       </div>
     </section>
   );

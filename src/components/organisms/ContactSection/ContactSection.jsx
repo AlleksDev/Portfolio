@@ -3,7 +3,8 @@ import './ContactSection.css';
 
 const ContactSection = () => {
   return (
-    <section id="contact">
+    <section id="contact" className="reveal">
+      <div className="section-inner">
       <div className="section-header">
         <div className="section-dot"></div>
         <h2 className="section-title">PROYECTOS</h2>
@@ -52,6 +53,7 @@ const ContactSection = () => {
             <button type="button" className="btn-submit">ENVIAR MENSAJE</button>
           </div>
         </form>
+      </div>
       </div>
     </section>
   );

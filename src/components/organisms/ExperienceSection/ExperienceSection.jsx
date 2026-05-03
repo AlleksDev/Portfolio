@@ -5,7 +5,8 @@ import experiences from '../../../data/experiences';
 const ExperienceSection = () => {
 
   return (
-    <section id="experience">
+    <section id="experience" className="reveal">
+      <div className="section-inner">
       <div className="section-header">
         <div className="section-dot"></div>
         <h2 className="section-title">EXPERIENCIA</h2>
@@ -29,6 +30,7 @@ const ExperienceSection = () => {
             </div>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );

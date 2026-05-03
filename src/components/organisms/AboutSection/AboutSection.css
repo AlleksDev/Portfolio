@@ -1,3 +1,5 @@
+#about { background: var(--bg-dark-2); }
+
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 .about-text p { font-size: 1.1rem; line-height: 1.8; color: var(--muted); margin-bottom: 24px; }
 .about-text p strong { color: var(--orange); font-weight: bold; }

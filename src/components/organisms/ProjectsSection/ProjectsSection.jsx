@@ -26,7 +26,8 @@ const ProjectsSection = () => {
   const displayedProjects = getProjects();
   
   return (
-    <section id="projects">
+    <section id="projects" className="reveal">
+      <div className="section-inner">
       <div className="section-header">
         <div className="section-dot"></div>
         <h2 className="section-title">PROYECTOS</h2>
@@ -84,6 +85,7 @@ const ProjectsSection = () => {
       <div className="projects-more">
         <h3>MÁS PROYECTOS PRONTO...</h3>
         <p>Sigo desarrollando más proyectos.<br/>También puedes ver contribuciones menores en mi GitHub</p>
+      </div>
       </div>
     </section>
   );

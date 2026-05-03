@@ -1,3 +1,5 @@
+#projects { background: var(--bg-dark-2); }
+
 .projects-filters { display: flex; gap: 16px; margin-bottom: 48px; border-bottom: 1px solid var(--border); padding-bottom: 24px; flex-wrap: wrap; }
 .proj-filter { padding: 12px 24px; font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; border: 1px solid var(--border); color: var(--muted); background: transparent; cursor: pointer; border-radius: 100px; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
 .proj-filter.active { border-color: var(--yellow); color: var(--yellow); }
