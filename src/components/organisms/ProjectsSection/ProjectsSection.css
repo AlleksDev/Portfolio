@@ -19,7 +19,7 @@
 .project-desc { font-size: 0.95rem; color: var(--muted); line-height: 1.6; flex: 1; }
 .project-head-link { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--muted); display: flex; justify-content: space-between; padding: 12px 16px; border-bottom: 1px solid var(--border); text-transform: uppercase; }
 
-.projects-more { border: 1px solid var(--border); padding: 24px; display: flex; flex-direction: column; align-items: flex-start; margin-top: 48px; justify-content: end; }
+.projects-more { flex: 1 1 30%; border: 1px solid var(--border); padding: 24px; display: flex; flex-direction: column; align-items: flex-start; justify-content: end; }
 .projects-more h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--orange); margin-bottom: 8px; }
 .projects-more p { color: var(--muted); font-size: 0.95rem; }
 

@@ -254,6 +254,31 @@ export const mobileProjects = [
     color: '#ffb800',
     type: 'mobile'
   },
+  {
+    id: 'sebwave',
+    title: 'SEBWAVE',
+    shortDescription: 'App para gestión de gastos compartidos',
+    description:
+      'Aplicación que facilita la organización de gastos compartidos en salidas con amigos, familia o pareja. Divide las cuentas según el método elegidopor el usuario y mantiene un historial claro de los gastos grupales.',
+    problem:
+      'Dividir los gastos en salidas grupales puede ser complicado y generar confusión o malentendidos, especialmente cuando se trata de diferentes métodos de división y la necesidad de mantener un registro claro de quién debe qué a quién.',
+    myJob:
+      'Diseñé la interfaz de usuario completa, implementé las funcionalidades en Kotlin, implementé uso de hardware y persistencia de datos local por medio de Rooms, asegurando una experiencia fluida y fácil de usar para los usuarios.',
+    images: [],
+    imagePath: '/images/projects/splitmeet.jpg',
+    link: '#',
+    tags: ['Android', 'Finanzas', 'UX/UI'],
+    technologies: ['Figma', 'Kotlin', 'Android', 'JetpackCompose', 'Go', 'PostgreSQL', 'Rooms', 'Firebase', 'AWS', 'Hilt'].map(createTechIcon),
+    designPatterns: ['WebSocket', 'MVVM', 'Repository', 'ViewModel', 'Automated Dependency Injection', 'SOLID', 'Clean Architecture'].map(createPatternIcon),
+    mainFeatures: [
+      'Algoritmo inteligente de división de gastos',
+      'Historial detallado de transacciones',
+      'Liquidación automática de deudas',
+      'Notificaciones de pagos pendientes'
+    ],
+    color: '#ffb800',
+    type: 'mobile'
+  },
   //Aqui falta Sebwave, Frimeet, etc
 ];
 

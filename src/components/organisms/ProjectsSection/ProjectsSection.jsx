@@ -81,11 +81,12 @@ const ProjectsSection = () => {
             </div>
           </div>
         ))}
+        <div className="project-card projects-more">
+          <h3>MÁS PROYECTOS PRONTO...</h3>
+          <p>Sigo desarrollando más proyectos.<br/>También puedes ver contribuciones menores en mi GitHub</p>
+        </div>
       </div>
-      <div className="projects-more">
-        <h3>MÁS PROYECTOS PRONTO...</h3>
-        <p>Sigo desarrollando más proyectos.<br/>También puedes ver contribuciones menores en mi GitHub</p>
-      </div>
+      
       </div>
     </section>
   );
