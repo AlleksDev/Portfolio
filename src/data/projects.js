@@ -81,8 +81,8 @@ export const webProjects = [
     link: '#',
     mainTag: '2do Lugar Internacional',
     tags: ['Web3', 'Game Assets', 'UX/UI'],
-    technologies: [ 'Affinity', 'Figma', 'TypeScript', 'React', 'Nodejs', 'Rust', 'Vara'].map(createTechIcon),
-    designPatterns: ['Web3', 'Blockchain', 'MVC'].map(createPatternIcon),
+    technologies: [ 'PixelStudio','Affinity', 'Figma', 'TypeScript', 'React', 'Nodejs', 'Rust', 'Vara'].map(createTechIcon),
+    designPatterns: ['Web3', 'Blockchain', 'MVC', 'Smart Contracts'].map(createPatternIcon),
     mainFeatures: [
       'Videojuegos originales con assets personalizados',
       'Torneos descentralizados con blockchain',
@@ -256,25 +256,27 @@ export const mobileProjects = [
   },
   {
     id: 'sebwave',
-    title: 'SEBWAVE',
+    title: 'Sebwave',
     shortDescription: 'App para gestión de gastos compartidos',
     description:
-      'Aplicación que facilita la organización de gastos compartidos en salidas con amigos, familia o pareja. Divide las cuentas según el método elegidopor el usuario y mantiene un historial claro de los gastos grupales.',
+      'Aplicación que permite obtener información en tiempo real sobre las condiciones del tráfico en la ciudad, utilizando un dispositivo IoT para monitorear el tráfico y gestionar los estados de todos los semáforos por medio de modelos predictivos de IA, además de una plataforma web para visualizar los datos y gestionar rutas de manera inteligente.',
     problem:
-      'Dividir los gastos en salidas grupales puede ser complicado y generar confusión o malentendidos, especialmente cuando se trata de diferentes métodos de división y la necesidad de mantener un registro claro de quién debe qué a quién.',
+      'Los semáforos de tiempo fijo generan congestionamiento innecesario, emisiones evitables y retrasos en emergencias médicas que cuestan vidas.',
     myJob:
-      'Diseñé la interfaz de usuario completa, implementé las funcionalidades en Kotlin, implementé uso de hardware y persistencia de datos local por medio de Rooms, asegurando una experiencia fluida y fácil de usar para los usuarios.',
+      'Participé en la conceptualización del proyecto, diseñé la interfaz de usuario completa, asegurando una experiencia fluida y fácil para los usuarios, además de dirigir el diseño de la carcasa para el dispositivo IoT.',
     images: [],
     imagePath: '/images/projects/splitmeet.jpg',
     link: '#',
-    tags: ['Android', 'Finanzas', 'UX/UI'],
-    technologies: ['Figma', 'Kotlin', 'Android', 'JetpackCompose', 'Go', 'PostgreSQL', 'Rooms', 'Firebase', 'AWS', 'Hilt'].map(createTechIcon),
-    designPatterns: ['WebSocket', 'MVVM', 'Repository', 'ViewModel', 'Automated Dependency Injection', 'SOLID', 'Clean Architecture'].map(createPatternIcon),
+    mainTag: 'Talent Land 2026',
+    tags: ['Android', 'IoT', 'UX/UI'],
+    technologies: ['Figma', 'Kotlin', 'Android', 'JetpackCompose', 'Go', 'PostgreSQL', 'Firebase', 'AWS', 'C', 'Arduino UNOQ'].map(createTechIcon),
+    designPatterns: ['IoT', 'WebSocket', 'MVVM', 'Repository', 'ViewModel', 'Automated Dependency Injection', 'SOLID', 'Clean Architecture'].map(createPatternIcon),
     mainFeatures: [
-      'Algoritmo inteligente de división de gastos',
-      'Historial detallado de transacciones',
-      'Liquidación automática de deudas',
-      'Notificaciones de pagos pendientes'
+      'Integración con hardware para monitoreo de condiciones de tráfico',
+      'Modelo de prediccion de tráfico en tiempo real',
+      'Gestión inteligente de rutas para evitar tráfico',
+      'Gestión de semáforos en la ciudad',
+      'Detección de vehículos con alta prioridad (ambulancias, bomberos)'
     ],
     color: '#ffb800',
     type: 'mobile'

@@ -34,18 +34,19 @@ const devIcon = (name) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${
 
 // Mapeo de iconos de tecnologías (local + devicons)
 export const techIconsMap = {
-  affinity: affinityIcon,
-  aws: awsIcon,
-  github: githubIcon,
-  mysql: mysqlIcon,
-  solidworks: solidworksIcon,
-  express: expressIcon,
-  vara: varaIcon,
-  rust: rustIcon,
-  tailscale: tailscaleIcon,
-  android: androidIcon,
-  pixelstudio: pixelStudioIcon,
-  esp32: devIcon('arduino'), // No hay icono específico para ESP32, se usa el de Arduino
+  'affinity': affinityIcon,
+  'aws': awsIcon,
+  'github': githubIcon,
+  'mysql': mysqlIcon,
+  'solidworks': solidworksIcon,
+  'express': expressIcon,
+  'vara': varaIcon,
+  'rust': rustIcon,
+  'tailscale': tailscaleIcon,
+  'android': androidIcon,
+  'pixelstudio': pixelStudioIcon,
+  'arduino unoq': devIcon('arduino'),
+  'esp32': devIcon('arduino'), // No hay icono específico para ESP32, se usa el de Arduino
   // Otros por defecto usan devicons
 };
 
