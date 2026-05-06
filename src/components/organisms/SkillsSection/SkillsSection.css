@@ -13,7 +13,7 @@
 .soft-item { padding: 24px; border: 1px solid var(--border); border-left: 3px solid var(--orange); background: var(--black); transition: border-color 0.3s ease; cursor: pointer; position: relative; overflow: visible; }
 .soft-item::before { content: ''; position: absolute; inset: -1px; border: 2px solid var(--yellow); pointer-events: none; clip-path: polygon(0 0, 0 0, 0 0, 0 0); }
 .soft-item:hover::before { animation: border-sweep 0.8s ease-in-out forwards; }
-@keyframes border-sweep { 0% { clip-path: polygon(0 0, 0 0, 0 0, 0 0); } 25% { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); } 50% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0); } 75% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); } 100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); } }
+@keyframes border-sweep { 0% { clip-path: polygon( 0 0, 0 0, 0 0, 0 0); } 25% { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); } 50% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0); } 75% { clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%); } 100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); } }
 .soft-item:hover { border-left-color: var(--yellow); box-shadow: inset 0 0 12px rgba(225, 90, 26, 0.08); }
 .soft-item h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; margin-bottom: 8px; display: flex; align-items: center; gap: 12px; letter-spacing: 0.05em; font-weight: lighter; }
 .soft-skill-icon { width: 20px; height: 20px; object-fit: contain; }
@@ -22,7 +22,7 @@
 /* PATRONES */
 .patterns-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .pattern-card { display: flex; gap: 24px; padding: 32px; background: var(--black); border: 1px solid var(--border); transition: all 0.3s ease; cursor: pointer; }
-.pattern-card:hover { border-color: rgba(225, 90, 26, 0.4); background: rgba(225, 90, 26, 0.03); }
+.pattern-card:hover { border-color: rgba(225, 90, 26, 0.4); background: radial-gradient(at bottom right, var(--yellow-trans) 0%, var(--black) 30%); }
 .pattern-icon { width: 48px; height: 48px; flex-shrink: 0; background: rgba(255,184,0,0.1); border: 1px solid rgba(255,184,0,0.3); display: flex; align-items: center; justify-content: center; color: var(--yellow); font-size: 1.4rem; }
 .pattern-svg-icon { width: 28px; height: 28px; object-fit: contain; }
 .pattern-info h4 { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 1.1rem; margin-bottom: 12px; }
