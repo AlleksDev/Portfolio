@@ -92,8 +92,9 @@
   padding: 6px 12px;
   background: rgba(225, 90, 26, 0.1);
   color: var(--orange);
-  font-size: 0.75rem;
-  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.03rem;
+  font-family: 'DM Sans', sans-serif;
   border: 1px solid rgba(225, 90, 26, 0.2);
   border-radius: 4px;
 }
@@ -292,7 +293,7 @@
   padding: 16px;
   padding-right: 20px;
   background: none;
-  border-radius: 8px;
+  border-radius: 4px;
   display: flex;
   gap: 8px;
   align-items: center;
@@ -304,8 +305,6 @@
 .project-detail__tech-badge:hover {
   background: radial-gradient(circle at bottom right, var(--yellow-trans) 0%, transparent 70%);
   border-color: rgba(255, 184, 0, 0.5);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 16px rgba(255, 184, 0, 0.1);
   transition: all 0.3s ease ;
 }
 

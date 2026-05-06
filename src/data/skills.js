@@ -90,7 +90,7 @@ export const techSkillsCategories = [
     ],
   },
   {
-    title: 'Backend',
+    title: 'Backend & DB',
     icon: 'fa-server',
     items: [
       { name: 'PostgreSQL', icon: devIcon('postgresql'), level: 'Medio', levelClass: 'level-mid' },
