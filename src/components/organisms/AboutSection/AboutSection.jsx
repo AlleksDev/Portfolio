@@ -18,9 +18,9 @@ const AboutSection = () => {
           <p>Mi enfoque combina la <strong>resolución técnica de problemas</strong> con la creación de interfaces intuitivas y estéticas, buscando siempre el balance perfecto entre código limpio y una experiencia de usuario excepcional.</p>
           <div className='about-buttons'>
             <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="about-btn"><div className="dot"></div> Open to work</button>
-            <button onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })} className="cv-btn">
+            <a href="/Portfolio/cv.pdf" target="_blank" rel="noopener noreferrer" className="cv-btn">
               ¿Quieres ver mi CV?
-            </button>
+            </a>
           </div>
         </div>
         <div className="about-image">

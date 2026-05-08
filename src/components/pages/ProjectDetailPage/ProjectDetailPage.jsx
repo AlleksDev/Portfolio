@@ -59,7 +59,7 @@ function ProjectDetailPage() {
 
               {project.mainFeatures && (
                 <div className="project-detail__features-section">
-                  <h2 className="project-detail__subtitle">Funcionalidades principales</h2>
+                  <h2 className="project-detail__subtitle">Características principales</h2>
 
                   <ul className="project-detail__features-list">
                     {project.mainFeatures.map((feature, i) => (
@@ -120,7 +120,7 @@ function ProjectDetailPage() {
                           e.target.style.display = 'none';
                           if (e.target.parentElement) {
                             const fallback = document.createElement('i');
-                            fallback.className = 'fa-solid fa-cube project-detail__tech-icon-fallback';
+                            fallback.className = 'fa-regular fa-circle-dot project-detail__tech-icon-fallback';
                             e.target.parentElement.insertBefore(fallback, e.target.nextSibling);
                           }
                         }}

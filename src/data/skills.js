@@ -9,6 +9,7 @@ import varaIcon from '../assets/icons/programs/vara.svg';
 import rustIcon from '../assets/icons/programs/rust.svg';
 import androidIcon from '../assets/icons/programs/android.svg';
 import pixelStudioIcon from '../assets/icons/programs/pixelstudio.svg';
+import driveIcon from '../assets/icons/programs/drive.svg';
 
 // Iconos de arquitecturas
 import cleanArchIcon from '../assets/icons/architectures/clean-architecture.svg';
@@ -44,6 +45,8 @@ export const techIconsMap = {
   'rust': rustIcon,
   'tailscale': tailscaleIcon,
   'android': androidIcon,
+  'google drive': driveIcon,
+  'drive': driveIcon,
   'pixelstudio': pixelStudioIcon,
   'arduino unoq': devIcon('arduino'),
   'esp32': devIcon('arduino'), // No hay icono específico para ESP32, se usa el de Arduino
@@ -83,10 +86,10 @@ export const techSkillsCategories = [
     title: 'Diseño',
     icon: 'fa-pen-nib',
     items: [
-      { name: 'Blender', icon: devIcon('blender'), level: 'Principiante', levelClass: 'level-low' },
       { name: 'Affinity', icon: affinityIcon, level: 'Avanzado', levelClass: 'level-high' },
       { name: 'Gimp', icon: devIcon('gimp'), level: 'Principiante', levelClass: 'level-low' },
       { name: 'Figma', icon: devIcon('figma'), level: 'Avanzado', levelClass: 'level-high' },
+      { name: 'Blender', icon: devIcon('blender'), level: 'Principiante', levelClass: 'level-low' },
       { name: 'SolidWorks', icon: solidworksIcon, level: 'Medio', levelClass: 'level-mid' },
     ],
   },

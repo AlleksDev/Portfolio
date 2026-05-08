@@ -16,52 +16,55 @@ const createPatternIcon = (name) => ({
 
 export const webProjects = [
   {
-    id: 'coiners-drift',
-    title: 'COINERS DRIFT',
-    shortDescription: 'Plataforma de entretenimiento recreativo',
+    id: 'notaria-178',
+    title: 'NOTARÍA 178',
+    shortDescription: 'Plataforma de gestión operativa con VPN',
     description:
-      'Plataforma Web3 de entretenimiento recreativo que redefine la experiencia de juego. Su diseño busca la desestimulación activa para aliviar el estrés e implementa un sistema de recompensas con tokens por medio de blockchain. Este proyecto fue el tercer lugar del Hackathon Tech Sin Fronteras 2023.',
+      'Plataforma web diseñada para la gestión operativa de una notaría. Con un servidor local configurado con VPN Tailscale para acceso remoto cifrado desde sucursales y sistema avanzado de gestión con control de acceso.',
     problem:
-      'Los usuarios suelen jugar para relajarse, pero en muchas ocasiones, las opciones disponibles pueden llegar a aumentar su estrés o sobreestimularlos.',
+      'La notaría a menudo enfrenta problemas para llevar un control eficiente de sus operaciones, especialmente al gestionar múltiples sucursales y garantizar la seguridad de los datos sensibles.',
     myJob:
-      'Lideré la conceptualización del proyecto desde cero, realizando investigación de mercado. Responsable del diseño completo de wireframes, mockups y assets necesarios, definiendo la estructura de información y flujos de usuario.',
+      'Lideré el diseño de identidad visual y la experiencia de usuario, optimizando la interfaz para facilitar la gestión operativa. Generé todos los assets visuales necesarios para la plataforma.',
     images: [],
-    imagePath: '/images/projects/coiners-drift.jpg',
+    imagePath: '/images/projects/notaria-178.jpg',
     link: '#',
-    mainTag: '3er Lugar Hackathon',
-    tags: ['UX/UI', 'Front-End', 'Wireframing'],
-    technologies: ['PixelStudio', 'Figma', 'HTML5', 'JavaScript', 'CSS3'].map(createTechIcon),
-    designPatterns: ['Web3', 'Blockchain', 'MVC'].map(createPatternIcon),
+    tags: ['Arquitectura de Red', 'Full Stack', 'VPN'],
+    technologies: [ 'Affinity', 'Figma', 'TypeScript', 'React', 'Go', 'PostgreSQL', 'Redis', 'Firebase', 'Docker', 'Tailscale'].map(createTechIcon),
+    designPatterns: ['WebSocket', 'Arquitectura Hexagonal', 'MVVM', 'Atomic Design'].map(createPatternIcon),
     mainFeatures: [
-      'Interfaz intuitiva de juego relajante',
-      'Mecánicas de desestresamiento activo',
-      'Sistema de progresión personalizado',
-      'Animaciones fluidas y responsivas'
+      'Gestión operativa y administrativa integral',
+      'Gestión centralizada de documentos',
+      'Control de acceso granular por roles',
+      'Sistema completo de auditoría',
+      'Acceso remoto seguro con VPN Tailscale'
     ],
     color: '#ffb800',
     type: 'web'
   },
   {
-    id: 'frimeet',
-    title: 'FRIMEET',
-    shortDescription: 'Plataforma de descubrimiento de lugares',
+    id: 'vaultdoc-vd',
+    title: 'VAULTDOC-VD',
+    shortDescription: 'Plataforma de seguridad empresarial',
     description:
-      'Plataforma de recomendaciones inteligente que ayuda a los usuarios a encontrar lugares perfectos para visitar.',
+      'Plataforma de seguridad para la gestión segura de archivos gubernamentales. Incluye subida de archivos y encriptación de extremo a extremo, además de auditoría completa.',
     problem:
-      'Los usuarios tenían dificultades para encontrar nuevos lugares basados en sus preferencias y presupuesto y se pongan de acuerdoi para elegir un lugar en grupo.',
+      'Las instituciones gubernamentales necesitan una plataforma confiable para almacenar y gestionar documentos sensibles con conformidad de seguridad de nivel empresarial.',
     myJob:
-      'Desarrollé la identidad visual completa del proyecto. Diseñé la interfaz de usuario centrada en la experiencia, implementé la lógica de recomendación y realicé la integración con el SDK MercadoPago para pagos seguros.',
+      'Realicé mantenimiento correctivo y perfectivo en la plataforma, optimizando la experiencia de usuario y agregando nuevas funcionalidades. Implementé mejoras en la interfaz para facilitar la gestión de archivos y auditorías.',
     images: [],
-    imagePath: '/images/projects/frimeet.jpg',
+    imagePath: '/images/projects/vaultdoc.jpg',
     link: '#',
-    tags: ['Front-End', 'MercadoPago', 'UX/UI'],
-    technologies: ['Figma', 'Angular', 'Typescript', 'Nodejs', 'MongoDB', 'Express', 'PostgreSQL'].map(createTechIcon),
-    designPatterns: ['MVC', 'Atomic design'].map(createPatternIcon),
+    mainTag: 'Gubernamental',
+    tags: ['Ciberseguridad', 'Encriptación', 'Back-End'],
+    technologies: ['TypeScript', 'Angular', 'Go', 'Python', 'OpenCV', 'PostgreSQL', 'Redis', 'Docker'].map(createTechIcon),
+    designPatterns: ['MVVM', 'Arquitectura Hexagonal', 'Procesamiento de imágenes'].map(createPatternIcon),
     mainFeatures: [
-      'Recomendaciones personalizadas de lugares',
-      'Integración segura de pagos con MercadoPago',
-      'Filtros avanzados por preferencia y presupuesto',
-      'Sistema de calificaciones y reviews'
+      'Encriptación de extremo a extremo AES-256',
+      'Acceso seguro por roles',
+      'Gestión segura de archivos con control de acceso granular',
+      'Escaneo de documentos con OpenCV para corrección de perspectiva y mejora de legibilidad',
+      'Auditoría completa de accesos',
+      'Cumplimiento de estándares de seguridad'
     ],
     color: '#ffb800',
     type: 'web'
@@ -120,55 +123,77 @@ export const webProjects = [
     type: 'web'
   },
   {
-    id: 'notaria-178',
-    title: 'NOTARÍA 178',
-    shortDescription: 'Plataforma de gestión operativa con VPN',
+    id: 'frimeet',
+    title: 'FRIMEET',
+    shortDescription: 'Plataforma de descubrimiento de lugares',
     description:
-      'Plataforma web diseñada para la gestión operativa de una notaría. Con un servidor local configurado con VPN Tailscale para acceso remoto cifrado desde sucursales y sistema avanzado de gestión con control de acceso.',
+      'Plataforma de recomendaciones inteligente que ayuda a los usuarios a encontrar lugares perfectos para visitar.',
     problem:
-      'La notaría a menudo enfrenta problemas para llevar un control eficiente de sus operaciones, especialmente al gestionar múltiples sucursales y garantizar la seguridad de los datos sensibles.',
+      'Los usuarios tenían dificultades para encontrar nuevos lugares basados en sus preferencias y presupuesto y se pongan de acuerdoi para elegir un lugar en grupo.',
     myJob:
-      'Lideré el diseño de identidad visual y la experiencia de usuario, optimizando la interfaz para facilitar la gestión operativa. Generé todos los assets visuales necesarios para la plataforma.',
+      'Desarrollé la identidad visual completa del proyecto. Diseñé la interfaz de usuario centrada en la experiencia, implementé la lógica de recomendación y realicé la integración con el SDK MercadoPago para pagos seguros.',
     images: [],
-    imagePath: '/images/projects/notaria-178.jpg',
+    imagePath: '/images/projects/frimeet.jpg',
     link: '#',
-    tags: ['Arquitectura de Red', 'Full Stack', 'VPN'],
-    technologies: [ 'Affinity', 'Figma', 'TypeScript', 'React', 'Go', 'PostgreSQL', 'Redis', 'Firebase', 'Docker', 'Tailscale'].map(createTechIcon),
-    designPatterns: ['WebSocket', 'Arquitectura Hexagonal', 'MVVM', 'Atomic Design'].map(createPatternIcon),
+    tags: ['Front-End', 'MercadoPago', 'UX/UI'],
+    technologies: ['Figma', 'Angular', 'Typescript', 'Nodejs', 'MongoDB', 'Express', 'PostgreSQL'].map(createTechIcon),
+    designPatterns: ['MVC', 'Atomic design'].map(createPatternIcon),
     mainFeatures: [
-      'Gestión operativa y administrativa integral',
-      'Gestión centralizada de documentos',
-      'Control de acceso granular por roles',
-      'Sistema completo de auditoría',
-      'Acceso remoto seguro con VPN Tailscale'
+      'Recomendaciones personalizadas de lugares',
+      'Integración segura de pagos con MercadoPago',
+      'Filtros avanzados por preferencia y presupuesto',
+      'Sistema de calificaciones y reviews'
     ],
     color: '#ffb800',
     type: 'web'
   },
   {
-    id: 'vaultdoc-vd',
-    title: 'VAULTDOC-VD',
-    shortDescription: 'Plataforma de seguridad empresarial',
+    id: 'coiners-drift',
+    title: 'COINERS DRIFT',
+    shortDescription: 'Plataforma de entretenimiento recreativo',
     description:
-      'Plataforma de seguridad para la gestión segura de archivos gubernamentales. Incluye subida de archivos y encriptación de extremo a extremo, además de auditoría completa.',
+      'Plataforma Web3 de entretenimiento recreativo que redefine la experiencia de juego. Su diseño busca la desestimulación activa para aliviar el estrés e implementa un sistema de recompensas con tokens por medio de blockchain. Este proyecto fue el tercer lugar del Hackathon Tech Sin Fronteras 2023.',
     problem:
-      'Las instituciones gubernamentales necesitan una plataforma confiable para almacenar y gestionar documentos sensibles con conformidad de seguridad de nivel empresarial.',
+      'Los usuarios suelen jugar para relajarse, pero en muchas ocasiones, las opciones disponibles pueden llegar a aumentar su estrés o sobreestimularlos.',
     myJob:
-      'Realicé mantenimiento correctivo y perfectivo en la plataforma, optimizando la experiencia de usuario y agregando nuevas funcionalidades. Implementé mejoras en la interfaz para facilitar la gestión de archivos y auditorías.',
+      'Lideré la conceptualización del proyecto desde cero, realizando investigación de mercado. Responsable del diseño completo de wireframes, mockups y assets necesarios, definiendo la estructura de información y flujos de usuario.',
+    images: [],
+    imagePath: '/images/projects/coiners-drift.jpg',
+    link: '#',
+    mainTag: '3er Lugar Hackathon',
+    tags: ['UX/UI', 'Front-End', 'Wireframing'],
+    technologies: ['PixelStudio', 'Figma', 'HTML5', 'JavaScript', 'CSS3'].map(createTechIcon),
+    designPatterns: ['Web3', 'Blockchain', 'MVC'].map(createPatternIcon),
+    mainFeatures: [
+      'Interfaz intuitiva de juego relajante',
+      'Mecánicas de desestresamiento activo',
+      'Sistema de progresión personalizado',
+      'Animaciones fluidas y responsivas'
+    ],
+    color: '#ffb800',
+    type: 'web'
+  },
+  {
+    id: 'crehor',
+    title: 'CREHOR',
+    shortDescription: 'Plataforma para generación de horarios escolares',
+    description:
+      'Plataforma web para la generación de horarios escolares. Utiliza algoritmos de optimización para crear horarios eficientes y equilibrados, considerando restricciones como disponibilidad de profesores y grupos.',
+    problem:
+      'La generación de horarios escolares manualmente es un proceso tedioso y propenso a errores, lo que afecta la eficiencia y el bienestar de los estudiantes y docentes, que pueden sufrir por la falta de organización en estos procesos.',
+    myJob:
+      'Conceptualicé el sistema de generación de horarios, diseñé e implementé la interfaz de usuario, desarrollé el Back-End completo junto con la integración con bases de datos y desplegué la plataforma en un entorno de producción.',
     images: [],
     imagePath: '/images/projects/vaultdoc.jpg',
     link: '#',
-    mainTag: 'Gubernamental',
-    tags: ['Ciberseguridad', 'Encriptación', 'Back-End'],
-    technologies: ['TypeScript', 'Angular', 'Go', 'Python', 'OpenCV', 'PostgreSQL', 'Redis', 'Docker'].map(createTechIcon),
-    designPatterns: ['MVVM', 'Arquitectura Hexagonal', 'Procesamiento de imágenes'].map(createPatternIcon),
+    tags: ['UX/UI', 'Full-Stack', 'DevOps'],
+    technologies: [ 'Figma', 'TypeScript', 'Angular', 'JavaScript', 'Nodejs', 'Express', 'AWS', 'MySQL',].map(createTechIcon),
+    designPatterns: ['MVC', 'Rutas protegidas', 'Autenticación'].map(createPatternIcon),
     mainFeatures: [
-      'Encriptación de extremo a extremo AES-256',
-      'Acceso seguro por roles',
-      'Gestión segura de archivos con control de acceso granular',
-      'Escaneo de documentos con OpenCV para corrección de perspectiva y mejora de legibilidad',
-      'Auditoría completa de accesos',
-      'Cumplimiento de estándares de seguridad'
+      'Generación automática de horarios con algoritmos de optimización',
+      'Gestión de restricciones y preferencias',
+      'Gestión de horarios, grupos y profesores',
+      'Navegación de rutas protegidas y autenticación de usuarios'
     ],
     color: '#ffb800',
     type: 'web'
@@ -179,26 +204,53 @@ export const webProjects = [
 // Proyectos Mobile
 export const mobileProjects = [
   {
-    id: 'cineradar',
-    title: 'CineRadar',
-    shortDescription: 'App móvil de recomendación de películas',
+    id: 'sebwave',
+    title: 'Sebwave',
+    shortDescription: 'App para gestión de gastos compartidos',
     description:
-      'Aplicación móvil que recomienda películas personalizadas según los gustos del usuario. Implementa algoritmos de recomendación y una interfaz intuitiva para descubrir nuevo contenido cinematográfico.',
+      'Aplicación que permite obtener información en tiempo real sobre las condiciones del tráfico en la ciudad, utilizando un dispositivo IoT para monitorear el tráfico y gestionar los estados de todos los semáforos por medio de modelos predictivos de IA, además de una plataforma web para visualizar los datos y gestionar rutas de manera inteligente.',
     problem:
-      'Con frecuencia, elegir una película para ver puede ser abrumador debido a la gran cantidad de opciones disponibles, esto puede generar estrés y dificultar la toma de decisiones para los usuarios, e incluso conllevar a discusiones al elegir en grupo.',
+      'Los semáforos de tiempo fijo generan congestionamiento innecesario, emisiones evitables y retrasos en emergencias médicas que cuestan vidas.',
     myJob:
-      'Diseñé la interfaz de usuario intuitiva. Implementé algoritmo de recomendación colaborativo y desarrollé la lógica de filtrado y búsqueda con integración a APIs de películas ya existentes.',
+      'Participé en la conceptualización del proyecto, diseñé la interfaz de usuario completa, asegurando una experiencia fluida y fácil para los usuarios, además de dirigir el diseño de la carcasa para el dispositivo IoT.',
     images: [],
-    imagePath: '/images/projects/cineradar.jpg',
+    imagePath: '/images/projects/splitmeet.jpg',
     link: '#',
-    tags: ['Android', 'Kotlin', 'API Integrations'],
-    technologies: ['kotlin', 'Android', 'JetpackCompose', 'TMDB API'].map(createTechIcon),
-    designPatterns: ['MVVM', 'Factory Pattern', 'SOLID', 'ViewModel'].map(createPatternIcon),
+    mainTag: 'Talent Land 2026',
+    tags: ['Android', 'IoT', 'UX/UI'],
+    technologies: ['Figma', 'Kotlin', 'Android', 'JetpackCompose', 'Go', 'PostgreSQL', 'Firebase', 'AWS', 'C', 'Arduino UNOQ'].map(createTechIcon),
+    designPatterns: ['IoT', 'WebSocket', 'MVVM', 'Repository', 'ViewModel', 'Automated Dependency Injection', 'SOLID', 'Clean Architecture'].map(createPatternIcon),
     mainFeatures: [
-      'Algoritmo de recomendación colaborativo',
-      'Búsqueda avanzada de películas',
-      'Lista de películas recientemente agregadas',
-      'Integración con APIs de cine'
+      'Integración con hardware para monitoreo de condiciones de tráfico',
+      'Modelo de prediccion de tráfico en tiempo real',
+      'Gestión inteligente de rutas para evitar tráfico',
+      'Gestión de semáforos en la ciudad',
+      'Detección de vehículos con alta prioridad (ambulancias, bomberos)'
+    ],
+    color: '#ffb800',
+    type: 'mobile'
+  },
+  {
+    id: 'splitmeet',
+    title: 'SPLITMEET',
+    shortDescription: 'App para gestión de gastos compartidos',
+    description:
+      'Aplicación que facilita la organización de gastos compartidos en salidas con amigos, familia o pareja. Divide las cuentas según el método elegidopor el usuario y mantiene un historial claro de los gastos grupales.',
+    problem:
+      'Dividir los gastos en salidas grupales puede ser complicado y generar confusión o malentendidos, especialmente cuando se trata de diferentes métodos de división y la necesidad de mantener un registro claro de quién debe qué a quién.',
+    myJob:
+      'Diseñé la interfaz de usuario completa, implementé las funcionalidades en Kotlin, implementé uso de hardware y persistencia de datos local por medio de Rooms, asegurando una experiencia fluida y fácil de usar para los usuarios.',
+    images: [],
+    imagePath: '/images/projects/splitmeet.jpg',
+    link: '#',
+    tags: ['Android', 'Finanzas', 'UX/UI'],
+    technologies: ['Figma', 'Kotlin', 'Android', 'JetpackCompose', 'Go', 'PostgreSQL', 'Rooms', 'Firebase', 'AWS', 'Hilt'].map(createTechIcon),
+    designPatterns: ['WebSocket', 'MVVM', 'Repository', 'ViewModel', 'Automated Dependency Injection', 'SOLID', 'Clean Architecture'].map(createPatternIcon),
+    mainFeatures: [
+      'Algoritmo inteligente de división de gastos',
+      'Historial detallado de transacciones',
+      'Liquidación automática de deudas',
+      'Notificaciones de pagos pendientes'
     ],
     color: '#ffb800',
     type: 'mobile'
@@ -230,53 +282,26 @@ export const mobileProjects = [
     type: 'mobile'
   },
   {
-    id: 'splitmeet',
-    title: 'SPLITMEET',
-    shortDescription: 'App para gestión de gastos compartidos',
+    id: 'cineradar',
+    title: 'CineRadar',
+    shortDescription: 'App móvil de recomendación de películas',
     description:
-      'Aplicación que facilita la organización de gastos compartidos en salidas con amigos, familia o pareja. Divide las cuentas según el método elegidopor el usuario y mantiene un historial claro de los gastos grupales.',
+      'Aplicación móvil que recomienda películas personalizadas según los gustos del usuario. Implementa algoritmos de recomendación y una interfaz intuitiva para descubrir nuevo contenido cinematográfico.',
     problem:
-      'Dividir los gastos en salidas grupales puede ser complicado y generar confusión o malentendidos, especialmente cuando se trata de diferentes métodos de división y la necesidad de mantener un registro claro de quién debe qué a quién.',
+      'Con frecuencia, elegir una película para ver puede ser abrumador debido a la gran cantidad de opciones disponibles, esto puede generar estrés y dificultar la toma de decisiones para los usuarios, e incluso conllevar a discusiones al elegir en grupo.',
     myJob:
-      'Diseñé la interfaz de usuario completa, implementé las funcionalidades en Kotlin, implementé uso de hardware y persistencia de datos local por medio de Rooms, asegurando una experiencia fluida y fácil de usar para los usuarios.',
+      'Diseñé la interfaz de usuario intuitiva. Implementé algoritmo de recomendación colaborativo y desarrollé la lógica de filtrado y búsqueda con integración a APIs de películas ya existentes.',
     images: [],
-    imagePath: '/images/projects/splitmeet.jpg',
+    imagePath: '/images/projects/cineradar.jpg',
     link: '#',
-    tags: ['Android', 'Finanzas', 'UX/UI'],
-    technologies: ['Figma', 'Kotlin', 'Android', 'JetpackCompose', 'Go', 'PostgreSQL', 'Rooms', 'Firebase', 'AWS', 'Hilt'].map(createTechIcon),
-    designPatterns: ['WebSocket', 'MVVM', 'Repository', 'ViewModel', 'Automated Dependency Injection', 'SOLID', 'Clean Architecture'].map(createPatternIcon),
+    tags: ['Android', 'Kotlin', 'API Integrations'],
+    technologies: ['kotlin', 'Android', 'JetpackCompose', 'TMDB API'].map(createTechIcon),
+    designPatterns: ['MVVM', 'Factory Pattern', 'SOLID', 'ViewModel'].map(createPatternIcon),
     mainFeatures: [
-      'Algoritmo inteligente de división de gastos',
-      'Historial detallado de transacciones',
-      'Liquidación automática de deudas',
-      'Notificaciones de pagos pendientes'
-    ],
-    color: '#ffb800',
-    type: 'mobile'
-  },
-  {
-    id: 'sebwave',
-    title: 'Sebwave',
-    shortDescription: 'App para gestión de gastos compartidos',
-    description:
-      'Aplicación que permite obtener información en tiempo real sobre las condiciones del tráfico en la ciudad, utilizando un dispositivo IoT para monitorear el tráfico y gestionar los estados de todos los semáforos por medio de modelos predictivos de IA, además de una plataforma web para visualizar los datos y gestionar rutas de manera inteligente.',
-    problem:
-      'Los semáforos de tiempo fijo generan congestionamiento innecesario, emisiones evitables y retrasos en emergencias médicas que cuestan vidas.',
-    myJob:
-      'Participé en la conceptualización del proyecto, diseñé la interfaz de usuario completa, asegurando una experiencia fluida y fácil para los usuarios, además de dirigir el diseño de la carcasa para el dispositivo IoT.',
-    images: [],
-    imagePath: '/images/projects/splitmeet.jpg',
-    link: '#',
-    mainTag: 'Talent Land 2026',
-    tags: ['Android', 'IoT', 'UX/UI'],
-    technologies: ['Figma', 'Kotlin', 'Android', 'JetpackCompose', 'Go', 'PostgreSQL', 'Firebase', 'AWS', 'C', 'Arduino UNOQ'].map(createTechIcon),
-    designPatterns: ['IoT', 'WebSocket', 'MVVM', 'Repository', 'ViewModel', 'Automated Dependency Injection', 'SOLID', 'Clean Architecture'].map(createPatternIcon),
-    mainFeatures: [
-      'Integración con hardware para monitoreo de condiciones de tráfico',
-      'Modelo de prediccion de tráfico en tiempo real',
-      'Gestión inteligente de rutas para evitar tráfico',
-      'Gestión de semáforos en la ciudad',
-      'Detección de vehículos con alta prioridad (ambulancias, bomberos)'
+      'Algoritmo de recomendación colaborativo',
+      'Búsqueda avanzada de películas',
+      'Lista de películas recientemente agregadas',
+      'Integración con APIs de cine'
     ],
     color: '#ffb800',
     type: 'mobile'
