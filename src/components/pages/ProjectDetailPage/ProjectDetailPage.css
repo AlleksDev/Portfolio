@@ -150,6 +150,10 @@
 }
 
 .project-detail__cta > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   flex: 1;
   min-width: 0;
 }
@@ -158,11 +162,19 @@
   transform: translateY(-8px);
 }
 
+.project-detail__cta > button i {
+  font-size: 1.4rem;
+}
+
 .project-detail__cta > button:first-child {
   font-weight: 700;
   background: none;
   color: var(--orange);
   border: 1px solid var(--orange);
+}
+
+.project-detail__cta > button:last-child i {
+  font-size: 1.1rem;
 }
 
 .project-detail__features-section {

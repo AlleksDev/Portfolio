@@ -154,15 +154,17 @@ function ProjectDetailPage() {
               <div className="project-detail__cta">
                 <Button
                   variant="primary"
-                  onClick={() => window.open(project.link, "_blank")}
+                  onClick={() => window.open(project.github, "_blank")}
                 >
-                  Ir al repositorio
+                  <i class="fa-brands fa-github"></i>
+                  Github
                 </Button>
                 <Button
                   variant="primary"
-                  onClick={() => window.open(project.link, "_blank")}
+                  onClick={() => window.open(project.demo, "_blank")}
                 >
-                  Ir al proyecto
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  Demo del proyecto
                 </Button>
               </div>
 
