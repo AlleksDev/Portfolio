@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import MainLayout from "../../templates/MainLayout/MainLayout";
 import Button from "../../atoms/Button/Button";
@@ -8,6 +9,7 @@ function ProjectDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const project = projects.find((p) => p.id === id);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   if (!project) {
     return (
@@ -19,6 +21,22 @@ function ProjectDetailPage() {
       </MainLayout>
     );
   }
+
+  const hasImages = project.images && project.images.length > 0;
+
+  const handlePrevImage = () => {
+    if (!hasImages) return;
+    setCurrentImageIndex((prev) => 
+      prev === 0 ? project.images.length - 1 : prev - 1
+    );
+  };
+
+  const handleNextImage = () => {
+    if (!hasImages) return;
+    setCurrentImageIndex((prev) => 
+      prev === project.images.length - 1 ? 0 : prev + 1
+    );
+  };
 
   return (
     <MainLayout>
@@ -80,15 +98,56 @@ function ProjectDetailPage() {
                   <span className="project-detail__browser-dot project-detail__browser-dot--green" />
                 </div>
                 <div className="project-detail__image-container">
-                  { !project.images || project.images.length === 0 &&
-                  <span className="project-detail__coming-soon">¡Próximamente más imágenes!</span>
-                  }
-                  {project.images && project.images[0] && (
-                    <img
-                      src={project.images[0]}
-                      alt={project.title}
-                      className="project-detail__screenshot"
-                    />
+                  {!hasImages ? (
+                    <span className="project-detail__coming-soon">¡Próximamente más imágenes!</span>
+                  ) : (
+                    <>
+                      <div className="project-detail__carousel-inner">
+                        {project.images.length > 1 && (
+                          <button 
+                            className="project-detail__carousel-btn project-detail__carousel-btn--prev" 
+                            onClick={handlePrevImage}
+                            aria-label="Imagen anterior"
+                          >
+                            <i className="fa-solid fa-chevron-left"></i>
+                          </button>
+                        )}
+                        
+                        <div className="project-detail__images-track">
+                          {project.images.map((img, idx) => (
+                            <img
+                              key={idx}
+                              src={img}
+                              alt={`${project.title} - imagen ${idx + 1}`}
+                              className={`project-detail__screenshot ${idx === currentImageIndex ? 'project-detail__screenshot--active' : ''}`}
+                            />
+                          ))}
+                        </div>
+
+                        {project.images.length > 1 && (
+                          <button 
+                            className="project-detail__carousel-btn project-detail__carousel-btn--next" 
+                            onClick={handleNextImage}
+                            aria-label="Siguiente imagen"
+                          >
+                            <i className="fa-solid fa-chevron-right"></i>
+                          </button>
+                        )}
+                      </div>
+                      
+                      {project.images.length > 1 && (
+                        <div className="project-detail__carousel-dots">
+                          {project.images.map((_, idx) => (
+                            <button
+                              key={idx}
+                              className={`project-detail__carousel-dot ${idx === currentImageIndex ? 'project-detail__carousel-dot--active' : ''}`}
+                              onClick={() => setCurrentImageIndex(idx)}
+                              aria-label={`Ir a imagen ${idx + 1}`}
+                            />
+                          ))}
+                        </div>
+                      )}
+                    </>
                   )}
                 </div>
               </div>
