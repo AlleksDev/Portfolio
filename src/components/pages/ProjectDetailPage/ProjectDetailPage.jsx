@@ -80,7 +80,9 @@ function ProjectDetailPage() {
                   <span className="project-detail__browser-dot project-detail__browser-dot--green" />
                 </div>
                 <div className="project-detail__image-container">
+                  { !project.images || project.images.length === 0 &&
                   <span className="project-detail__coming-soon">¡Próximamente más imágenes!</span>
+                  }
                   {project.images && project.images[0] && (
                     <img
                       src={project.images[0]}
