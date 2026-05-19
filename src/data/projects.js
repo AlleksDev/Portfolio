@@ -25,7 +25,42 @@ export const webProjects = [
       'La notaría a menudo enfrenta problemas para llevar un control eficiente de sus operaciones, especialmente al gestionar múltiples sucursales y garantizar la seguridad de los datos sensibles.',
     myJob:
       'Lideré el diseño de identidad visual y la experiencia de usuario, optimizando la interfaz para facilitar la gestión operativa. Generé todos los assets visuales necesarios para la plataforma.',
-    images: [],
+    images:  [
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213844/n01_w0hdn0.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213844/n02_p3pfch.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213843/n03_dmrxv1.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213843/n04_ulnrq3.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213843/n05_iaip1k.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213842/n06_er8t8y.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213842/n07_adsedm.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213842/n08_ixwbie.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213841/n09_op5ud6.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213841/n10_eih0uv.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213834/n10.1_bx5cxt.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213840/n11_bkku6a.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213840/n12_ajnufn.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213840/n13_l7ylro.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213833/n13.1_gaxsnm.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213833/n13.2_qxh6ti.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213839/n14_upvtwm.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213839/n15_ucdwan.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213838/n16_nbf7wy.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213838/n17_borhju.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213838/n18_zcxz09.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213837/n19_uiarbe.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213837/n20_wtqogs.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213836/n21_kwstfd.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213836/n22_rp4dss.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213836/n23_efrkw9.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213835/n24_zjoov7.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213835/n25_j0c5ru.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213835/n26_jznxtc.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213834/n27_scsged.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213833/n28_rbl0tx.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213833/n29_v66uvt.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213833/n30_jgfn5x.png",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213833/n31_f8fmnv.png"
+        ],
     imagePath: '/images/projects/notaria-178.jpg',
     link: '#',
     tags: ['Arquitectura de Red', 'Full Stack', 'VPN'],
@@ -51,7 +86,27 @@ export const webProjects = [
       'Las instituciones gubernamentales necesitan una plataforma confiable para almacenar y gestionar documentos sensibles con conformidad de seguridad de nivel empresarial.',
     myJob:
       'Realicé mantenimiento correctivo y perfectivo en la plataforma, optimizando la experiencia de usuario y agregando nuevas funcionalidades. Implementé mejoras en la interfaz para facilitar la gestión de archivos y auditorías.',
-    images: [],
+    images: [
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1777673444/VaultDoc_pmwuov.jpg",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1777673455/VaultDoc2_m1gfnc.jpg",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1777673457/VaultDoc0_w0pqhh.jpg",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1777673456/VaultDoc1_afkk1b.jpg",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1777673458/VaultDoc1.1_qslsqn.jpg",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1777673451/VaultDoc12_woxznq.jpg",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1777673450/VaultDoc11_nqkqvm.jpg",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1777673453/VaultDoc14_vcp3k8.jpg",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1777673447/VaultDoc4_xythsl.jpg",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1777673448/VaultDoc6_ljzyk9.jpg",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1777673449/VaultDoc10_yl3la9.jpg",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1777673454/VaultDoc15_jta5hw.jpg",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1777673454/VaultDoc16_om5ghz.jpg",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1777673452/VaultDoc13_ng2kju.jpg",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1777673447/VaultDoc9_gst3nx.jpg",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1777673446/VaultDoc8_tqgx9n.jpg",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1777673445/VaultDoc7_nrdeaf.jpg",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1777673444/VaultDoc3_yfq4zj.jpg",
+            "https://res.cloudinary.com/dahkwcslh/image/upload/v1777673459/VaultDoc5_gyndtp.jpg"
+        ],
     imagePath: '/images/projects/vaultdoc.jpg',
     link: '#',
     mainTag: 'Gubernamental',
@@ -106,7 +161,9 @@ export const webProjects = [
       'Los agrimensores enfrentan limitaciones en precisión y portabilidad de herramientas de medición, las herramientas existentes son voluminosas, costosas y complicadas de usar.',
     myJob:
       'Diseñé la interfaz web responsiva para visualizar datos de medición. Arquitecturé los circuitos del dispositivo IoT y realicé el modelado 3D de la carcasa para el dispositivo IOT, considerando factores ergonómicos y de durabilidad. Documenté procesos de calidad y planeación estratégica, asegurando la viabilidad técnica del producto.',
-    images: [],
+    images: [
+      "https://res.cloudinary.com/dahkwcslh/image/upload/f_auto,q_auto,w_920/v1779014412/Geova_bmiwj1.jpg"
+    ],
     imagePath: '/images/projects/geova.jpg',
     link: '#',
     tags: ['IoT', '3D Design', 'Hardware'],
@@ -132,7 +189,9 @@ export const webProjects = [
       'Los usuarios tenían dificultades para encontrar nuevos lugares basados en sus preferencias y presupuesto y se pongan de acuerdoi para elegir un lugar en grupo.',
     myJob:
       'Desarrollé la identidad visual completa del proyecto. Diseñé la interfaz de usuario centrada en la experiencia, implementé la lógica de recomendación y realicé la integración con el SDK MercadoPago para pagos seguros.',
-    images: [],
+    images: [
+      "https://res.cloudinary.com/dahkwcslh/image/upload/f_auto,q_auto,w_920/v1778984455/LandingPage_w5bh98.png"
+    ],
     imagePath: '/images/projects/frimeet.jpg',
     link: '#',
     tags: ['Front-End', 'MercadoPago', 'UX/UI'],
@@ -198,7 +257,7 @@ export const webProjects = [
     color: '#ffb800',
     type: 'web'
   },
-  //Falta corregir Jessy, OptaStek, Crehor, Arte digital
+  //Falta corregir Jessy, OptaStek, Arte digital
 ];
 
 // Proyectos Mobile
