@@ -1,11 +1,16 @@
 import { useEffect } from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import HomePage from './components/pages/HomePage/HomePage';
 import ProjectDetailPage from './components/pages/ProjectDetailPage/ProjectDetailPage';
 import './App.css';
 
-function App() {
+function ScrollToTopAndAnimate() {
+  const location = useLocation();
+
   useEffect(() => {
+    // Reiniciar el scroll al cambiar de ruta
+    window.scrollTo(0, 0);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -18,13 +23,24 @@ function App() {
       { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
     );
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    // Darle un pequeño tiempo de gracia a React para montar el DOM
+    const timeoutId = setTimeout(() => {
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }, 50);
 
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      clearTimeout(timeoutId);
+      observer.disconnect();
+    };
+  }, [location.pathname]);
 
+  return null;
+}
+
+function App() {
   return (
     <HashRouter>
+      <ScrollToTopAndAnimate />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/project/:id" element={<ProjectDetailPage />} />
