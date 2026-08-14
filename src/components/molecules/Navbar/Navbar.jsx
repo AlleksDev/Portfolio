@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Navbar.css';
+import logo from '../../../assets/logo.svg';
 
 const navItems = [
   { id: 'about', label: 'SOBRE MÍ' },
@@ -77,8 +78,7 @@ const Navbar = () => {
     <nav className={`site-nav ${isScrolled ? 'is-scrolled' : ''}`} aria-label="Navegación principal">
       <div className="nav-inner">
         <a href="/" onClick={scrollToTop} className="nav-logo" aria-label="Alleks, volver al inicio">
-          <span className="nav-logo__dot" aria-hidden="true" />
-          <span>Alleks</span>
+          <img className="nav-logo__image" src={logo} alt="Logo de Alleks" />
         </a>
 
         <ul id="primary-navigation" className={`nav-links ${isMenuOpen ? 'is-open' : ''}`}>
