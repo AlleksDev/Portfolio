@@ -53,14 +53,13 @@ const HeroSection = () => {
                   <a href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="btn-primary">CONTACTAME</a>
                   <a href="#experience" onClick={(e) => handleScroll(e, 'experience')} className="btn-outline">MI EXPERIENCIA</a>
                 </div>
+                <div className="hero-socials">
+                  <a href="#" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                  <a href="#" aria-label="GitHub"><i className="fa-brands fa-github" aria-hidden="true"></i></a>
+                  <a href="#" aria-label="Twitter / X"><i className="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+                  <a href="#" aria-label="Instagram"><i className="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                </div>
               </div>
-            </div>
-
-            <div className="hero-socials">
-              <a href="#" aria-label="X / Twitter"><i className="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
-              <a href="#" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-              <a href="#" aria-label="GitHub"><i className="fa-brands fa-github" aria-hidden="true"></i></a>
-              <a href="#" aria-label="Instagram"><i className="fa-brands fa-instagram" aria-hidden="true"></i></a>
             </div>
 
             <h1 className="sr-only">Código más diseño</h1>

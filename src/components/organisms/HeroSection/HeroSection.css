@@ -110,7 +110,6 @@
   display: flex;
   align-items: flex-end;
   gap: clamp(2rem, 4vw, 4rem);
-  margin-bottom: var(--space-8);
 }
 
 /* ─── Headline block (compact title) ─── */
@@ -226,7 +225,7 @@
 
 .hero-support {
   position: relative;
-  max-width: 22rem;
+  max-width: 26rem;
   padding-inline-start: var(--space-5);
   padding-bottom: 0.35em;
   animation: enter-up var(--duration-slow) var(--ease) var(--stagger-2) both;
@@ -300,7 +299,9 @@
 
 .hero-socials {
   display: flex;
+  align-items: center;
   gap: var(--space-2);
+  margin-top: var(--space-4);
   animation: enter-up var(--duration-slow) var(--ease) var(--stagger-4) both;
 }
 
@@ -308,11 +309,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: var(--touch-target);
-  height: var(--touch-target);
+  width: 2.375rem;
+  height: 2.375rem;
   border: var(--line-width) solid var(--color-border-strong);
   border-radius: var(--radius-circle);
   color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
   background: color-mix(in srgb, var(--color-surface) 62%, var(--color-transparent));
   transition:
     color var(--duration-fast) var(--ease),

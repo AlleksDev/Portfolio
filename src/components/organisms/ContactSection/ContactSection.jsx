@@ -23,7 +23,6 @@ const ContactSection = () => {
             Disponible ahora
           </div>
           <div className="contact-socials">
-            <a href="#" aria-label="X / Twitter"><i className="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
             <a href="#" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
             <a href="#" aria-label="GitHub"><i className="fa-brands fa-github" aria-hidden="true"></i></a>
             <a href="#" aria-label="Instagram"><i className="fa-brands fa-instagram" aria-hidden="true"></i></a>
