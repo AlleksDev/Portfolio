@@ -154,6 +154,7 @@
   --shadow-red: 0 1rem 2.5rem var(--color-red-glow);
   --shadow-focus: 0 0 0 0.1875rem var(--color-red-glow);
   --gradient-progress: linear-gradient(90deg, var(--color-red), var(--color-teal));
+  --gradient-progress-vertical: linear-gradient(180deg, var(--color-red), var(--color-teal));
   --gradient-hero: radial-gradient(circle at 20% 24%, var(--color-red-glow), var(--color-transparent) 34%), radial-gradient(circle at 82% 36%, var(--color-teal-glow), var(--color-transparent) 38%);
   --gradient-card: linear-gradient(160deg, var(--color-surface), var(--color-bg-alt));
   --gradient-media: linear-gradient(135deg, var(--color-teal-glow), var(--color-red-glow));

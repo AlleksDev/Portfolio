@@ -237,7 +237,7 @@
   position: absolute;
   inset: var(--space-0) auto var(--space-0) var(--space-0);
   width: var(--line-accent-width);
-  background: var(--gradient-progress);
+  background: var(--gradient-progress-vertical);
   transform: scaleY(0);
   transform-origin: top;
   animation: hero-rule-enter var(--duration-slow) var(--ease) var(--stagger-2) forwards;
