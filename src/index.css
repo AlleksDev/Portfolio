@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 :root {
@@ -44,6 +44,7 @@
 
   /* Tipografía */
   --font-display: 'Space Grotesk', sans-serif;
+  --font-hero: 'Syne', 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --font-size-2xs: 0.68rem;
@@ -54,7 +55,8 @@
   --font-size-lg: 1.15rem;
   --font-size-xl: 1.9rem;
   --font-size-section: clamp(1.9rem, 3.4vw, 2.6rem);
-  --font-size-hero: clamp(3.5rem, 8.4vw, 7.2rem);
+  --font-size-hero: clamp(4.4rem, 10.7vw, 10.75rem);
+  --font-size-hero-mobile: clamp(3.25rem, 17vw, 4.5rem);
   --line-height-tight: 1.12;
   --line-height-body: 1.55;
   --line-height-copy: 1.75;
@@ -93,6 +95,30 @@
   --patterns-ring-inner-size: 51%;
   --patterns-core-size: 28%;
   --patterns-label-max-width: 78%;
+  --hero-grid-size: 4rem;
+  --hero-grid-opacity: 0.34;
+  --hero-title-line-height: 0.74;
+  --hero-title-tracking: -0.075em;
+  --hero-title-shift: clamp(2rem, 6vw, 5rem);
+  --hero-title-outline-offset: 0.045em;
+  --hero-title-outline-opacity: 0.48;
+  --hero-support-width: 35rem;
+  --hero-system-size: clamp(31rem, 44vw, 45rem);
+  --hero-system-size-tablet: min(72vw, 35rem);
+  --hero-system-size-mobile: clamp(20rem, 88vw, 28rem);
+  --hero-system-offset-inline: clamp(-8rem, -4vw, -3rem);
+  --hero-system-opacity: 0.82;
+  --hero-system-opacity-tablet: 0.46;
+  --hero-system-opacity-mobile: 0.32;
+  --hero-system-tilt: -7deg;
+  --hero-system-axis-extension: 16%;
+  --hero-system-ring-middle: 70%;
+  --hero-system-ring-inner: 38%;
+  --hero-system-core-size: 4.5rem;
+  --hero-system-node-size: 0.75rem;
+  --hero-system-connector-length: 48%;
+  --hero-blob-red-size: min(50rem, 62vw);
+  --hero-blob-teal-size: min(46rem, 56vw);
 
   /* Formas */
   --radius-xs: 0.25rem;
