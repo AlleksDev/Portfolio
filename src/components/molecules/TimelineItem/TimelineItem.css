@@ -9,9 +9,9 @@
 .timeline-item__dot {
   width: 14px;
   height: 14px;
-  background: #333;
-  border: 3px solid #555;
-  border-radius: 50%;
+  background: var(--color-border-strong);
+  border: var(--progress-height) solid var(--color-text-faint);
+  border-radius: var(--radius-circle);
   position: relative;
   top: 1.5rem;
   justify-self: center;
@@ -25,7 +25,7 @@
   transform: translateX(-50%);
   width: 2px;
   height: 120px;
-  background: #333;
+  background: var(--color-border-strong);
 }
 
 .timeline-item:last-child .timeline-item__dot::after {
@@ -33,7 +33,7 @@
 }
 
 .timeline-item__period {
-  color: #888;
+  color: var(--muted);
   font-size: 0.85rem;
   text-align: right;
   padding-top: 1.5rem;
@@ -41,58 +41,58 @@
 }
 
 .timeline-item__content {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  background: var(--color-surface);
+  border: var(--line-width) solid var(--color-border);
+  border-radius: var(--radius-lg);
   padding: 1.5rem;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
 }
 
 .timeline-item__content:hover {
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: var(--color-border-strong);
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-card);
 }
 
 .timeline-item--highlighted .timeline-item__content {
-  border-color: #e67e22;
-  background: rgba(230, 126, 34, 0.08);
+  border-color: var(--orange);
+  background: var(--color-red-soft);
 }
 
 .timeline-item--highlighted .timeline-item__dot {
-  background: #e67e22;
-  border-color: #e67e22;
-  box-shadow: 0 0 12px rgba(230, 126, 34, 0.4);
+  background: var(--orange);
+  border-color: var(--orange);
+  box-shadow: 0 0 var(--space-3) var(--color-red-glow);
 }
 
 .timeline-item--highlighted .timeline-item__period {
-  color: #e67e22;
+  color: var(--orange);
   font-weight: 600;
 }
 
 .timeline-item__company {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--white);
   margin: 0 0 0.5rem 0;
 }
 
 .timeline-item__description {
   font-size: 0.9rem;
-  color: #aaa;
+  color: var(--text-dim);
   line-height: 1.6;
   margin: 0;
 }
 
 .timeline-item--placeholder .timeline-item__content {
   background: transparent;
-  border: 2px dashed rgba(255, 255, 255, 0.1);
+  border: var(--line-accent-width) dashed var(--color-border);
   text-align: center;
   padding: 1rem;
 }
 
 .timeline-item--placeholder .timeline-item__company {
-  color: #666;
+  color: var(--text-faint);
   font-style: italic;
   font-weight: 400;
 }

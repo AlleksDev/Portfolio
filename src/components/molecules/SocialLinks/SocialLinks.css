@@ -7,20 +7,20 @@
 .social-links__item {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-circle);
+  background: var(--color-surface);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ccc;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+  transition: all var(--transition-normal);
+  border: var(--line-width) solid var(--color-border);
 }
 
 .social-links__item:hover {
-  background: #e67e22;
-  color: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+  background: var(--orange);
+  color: var(--white);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-red);
   border-color: transparent;
 }

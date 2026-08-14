@@ -71,15 +71,17 @@ export const patternIconsMap = {
 // Habilidades técnicas
 export const techSkillsCategories = [
   {
-    title: 'Frontend',
+    title: 'Frontend & Mobile',
     icon: 'fa-code',
     items: [
       { name: 'HTML', icon: devIcon('html5'), level: 'Avanzado', levelClass: 'level-high' },
       { name: 'CSS', icon: devIcon('css3'), level: 'Avanzado', levelClass: 'level-high' },
       { name: 'Tailwind', icon: devIcon('tailwindcss'), level: 'Medio', levelClass: 'level-mid' },
-      { name: 'Jetpack Compose', icon: devIcon('jetpackcompose'), level: 'Principiante', levelClass: 'level-low' },
       { name: 'Angular', icon: devIcon('angular'), level: 'Medio', levelClass: 'level-mid' },
       { name: 'React', icon: devIcon('react'), level: 'Medio', levelClass: 'level-mid' },
+      { name: 'Next.js', icon: devIcon('nextjs'), level: 'Medio', levelClass: 'level-mid' },
+      { name: 'Jetpack Compose', icon: devIcon('jetpackcompose'), level: 'Principiante', levelClass: 'level-low' },
+      { name: 'Flutter', icon: devIcon('flutter'), level: 'Principiante', levelClass: 'level-low' },
     ],
   },
   {
@@ -103,6 +105,7 @@ export const techSkillsCategories = [
       { name: 'FastAPI', icon: devIcon('fastapi'), level: 'Principiante', levelClass: 'level-low' },
       { name: 'Express', icon: expressIcon, level: 'Avanzado', levelClass: 'level-high' },
       { name: 'Node.js', icon: devIcon('nodejs'), level: 'Medio', levelClass: 'level-mid' },
+      { name: 'Nest.js', icon: devIcon('nestjs'), level: 'Medio', levelClass: 'level-mid' },
     ],
   },
   {
@@ -138,6 +141,7 @@ export const techSkillsCategories = [
       { name: 'Go', icon: devIcon('go'), level: 'Avanzado', levelClass: 'level-high' },
       { name: 'Kotlin', icon: devIcon('kotlin'), level: 'Avanzado', levelClass: 'level-high' },
       { name: 'Java', icon: devIcon('java'), level: 'Medio', levelClass: 'level-mid' },
+      { name: 'Dart', icon: devIcon('dart'), level: 'Medio', levelClass: 'level-mid' },
     ],
   },
 ];

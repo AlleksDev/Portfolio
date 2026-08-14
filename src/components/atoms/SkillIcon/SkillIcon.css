@@ -3,9 +3,9 @@
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-normal);
   padding: 1rem 0.5rem;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   min-width: 100px;
 }
 
@@ -16,29 +16,29 @@
 .skill-icon__image-wrapper {
   width: 164px;
   height: 256px;
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 20px;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
   padding: 24px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all var(--transition-normal);
+  border: var(--line-width) solid var(--color-border);
   position: relative;
 }
 
 .skill-icon:hover .skill-icon__image-wrapper {
-  background: rgba(230, 126, 34, 0.12);
-  border-color: rgba(230, 126, 34, 0.35);
-  box-shadow: 0 6px 24px rgba(230, 126, 34, 0.2)  , 0 0 40px rgba(230, 126, 34, 0.08);
+  background: var(--color-red-soft);
+  border-color: var(--color-red-glow);
+  box-shadow: var(--shadow-red);
 }
 
 .skill-icon__image {
   width: 72px;
   height: 72px;
   object-fit: contain;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-normal);
 }
 
 .skill-icon:hover .skill-icon__image {
@@ -47,15 +47,15 @@
 
 .skill-icon__name {
   font-size: 1.2rem;
-  color: #bbb;
+  color: var(--text-tertiary);
   text-align: center;
   font-weight: 600;
   letter-spacing: 0.02em;
-  transition: color 0.3s ease;
+  transition: color var(--transition-normal);
 }
 
 .skill-icon:hover .skill-icon__name {
-  color: #e67e22;
+  color: var(--orange);
 }
 
 /* Level badge */
@@ -63,29 +63,29 @@
   font-size: 0.8rem;
   font-weight: 600;
   padding: 0.15rem 0.55rem;
-  border-radius: 50px;
+  border-radius: var(--radius-pill);
   letter-spacing: 0.03em;
   text-transform: capitalize;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   opacity: 0.85;
 }
 
 .skill-icon__level--avanzado {
-  background: rgba(46, 204, 113, 0.15);
-  color: #2ecc71;
-  border: 1px solid rgba(46, 204, 113, 0.25);
+  background: var(--color-teal-soft);
+  color: var(--color-teal-ink);
+  border: var(--line-width) solid var(--color-teal-glow);
 }
 
 .skill-icon__level--intermedio {
-  background: rgba(230, 126, 34, 0.15);
-  color: #e67e22;
-  border: 1px solid rgba(230, 126, 34, 0.25);
+  background: var(--color-red-soft);
+  color: var(--orange);
+  border: var(--line-width) solid var(--color-red-glow);
 }
 
 .skill-icon__level--básico {
-  background: rgba(52, 152, 219, 0.15);
-  color: #3498db;
-  border: 1px solid rgba(52, 152, 219, 0.25);
+  background: var(--color-teal-soft);
+  color: var(--color-teal-ink);
+  border: var(--line-width) solid var(--color-teal-glow);
 }
 
 .skill-icon:hover .skill-icon__level {
@@ -102,7 +102,7 @@
     width: 130px;
     height: 200px;
     padding: 16px 0;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
   }
 
   .skill-icon__image {

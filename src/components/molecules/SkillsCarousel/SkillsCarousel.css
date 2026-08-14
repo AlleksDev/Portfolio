@@ -1,5 +1,5 @@
 .skills-carousel {
-  background: #e67e22;
+  background: var(--orange);
   padding: 1rem 0;
   overflow: hidden;
   position: relative;
@@ -20,7 +20,7 @@
   gap: 1rem;
   font-weight: 700;
   font-size: 0.95rem;
-  color: #000;
+  color: var(--color-on-accent);
   flex-shrink: 0;
   letter-spacing: 0.5px;
 }

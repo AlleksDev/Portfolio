@@ -3,6 +3,18 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 
+let storedTheme = null
+
+try {
+  storedTheme = localStorage.getItem('portfolio-theme')
+} catch {
+  storedTheme = null
+}
+const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+
+document.documentElement.dataset.theme = storedTheme || systemTheme
+document.documentElement.classList.add('js')
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />

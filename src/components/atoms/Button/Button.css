@@ -1,49 +1,54 @@
 .btn {
-  padding: 0.85rem 2.5rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 0.95rem;
-  font-weight: 700;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--touch-target);
+  overflow: hidden;
+  padding: var(--space-3) var(--space-7);
+  border: var(--line-width) solid var(--color-transparent);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  outline: none;
+  transition: color var(--duration-fast) var(--ease), background var(--duration-fast) var(--ease), border-color var(--duration-fast) var(--ease), transform var(--duration-fast) var(--ease), box-shadow var(--duration-fast) var(--ease);
 }
 
 .btn--primary {
-  background: var(--orange);
-  color: #000;
+  border-color: var(--color-red);
+  color: var(--color-on-accent);
+  background: var(--color-red);
 }
 
 .btn--primary:hover,
-.btn--primary:focus {
-  background: var(--orange-dim);
+.btn--primary:focus-visible {
+  transform: translateY(var(--motion-lift-xs));
+  box-shadow: 0 0.75rem 1.75rem var(--color-red-glow);
 }
 
 .btn--secondary {
-  background: transparent;
-  color: #e67e22;
-  border: 2px solid #e67e22;
+  border-color: var(--color-teal);
+  color: var(--color-teal-ink);
+  background: var(--color-teal-soft);
 }
 
 .btn--secondary:hover,
-.btn--secondary:focus {
-  background: #e67e22;
-  color: #000;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(230, 126, 34, 0.3);
+.btn--secondary:focus-visible {
+  transform: translateY(var(--motion-lift-xs));
+  box-shadow: var(--shadow-s);
 }
 
 .btn--ghost {
-  background: transparent;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-color: var(--color-border-strong);
+  color: var(--color-text);
+  background: var(--color-transparent);
 }
 
 .btn--ghost:hover,
-.btn--ghost:focus {
-  border-color: #e67e22;
-  color: #e67e22;
+.btn--ghost:focus-visible {
+  border-color: var(--color-red);
+  color: var(--color-red-ink);
+  background: var(--color-red-soft);
+  transform: translateY(var(--motion-lift-xs));
 }

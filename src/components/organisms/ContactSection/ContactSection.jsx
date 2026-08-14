@@ -23,30 +23,30 @@ const ContactSection = () => {
             Disponible ahora
           </div>
           <div className="contact-socials">
-            <a href="#"><i className="fa-brands fa-x-twitter"></i></a>
-            <a href="#"><i className="fa-brands fa-linkedin-in"></i></a>
-            <a href="#"><i className="fa-brands fa-github"></i></a>
-            <a href="#"><i className="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="X / Twitter"><i className="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="#" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="#" aria-label="GitHub"><i className="fa-brands fa-github" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Instagram"><i className="fa-brands fa-instagram" aria-hidden="true"></i></a>
           </div>
         </div>
         <form className="contact-form">
           <div className="form-row">
             <div className="form-group">
-              <label>Nombre</label>
-              <input type="text" placeholder="Escribe aquí tu nombre" />
+              <label htmlFor="contact-name">Nombre</label>
+              <input id="contact-name" type="text" placeholder="Escribe aquí tu nombre" />
             </div>
             <div className="form-group">
-              <label>Correo electrónico</label>
-              <input type="email" placeholder="ejemplo@example.com" />
+              <label htmlFor="contact-email">Correo electrónico</label>
+              <input id="contact-email" type="email" placeholder="ejemplo@example.com" />
             </div>
           </div>
           <div className="form-group">
-            <label>Asunto</label>
-            <input type="text" placeholder="Pon un asunto" />
+            <label htmlFor="contact-subject">Asunto</label>
+            <input id="contact-subject" type="text" placeholder="Pon un asunto" />
           </div>
           <div className="form-group">
-            <label>Mensaje</label>
-            <textarea placeholder="Escribe aquí el mensaje que deseas enviar"></textarea>
+            <label htmlFor="contact-message">Mensaje</label>
+            <textarea id="contact-message" placeholder="Escribe aquí el mensaje que deseas enviar"></textarea>
           </div>
           <div className="buttons-group">
             <button type="button" className="btn-clear">LIMPIAR</button>

@@ -1,40 +1,188 @@
-#experience { background: var(--bg-dark-1); }
-
-.exp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-.exp-card { border: 1px solid var(--border); border-radius: 12px; padding: 32px; background: var(--card); display: flex; flex-direction: column; gap: 16px; transition: transform 0.3s ease, border-color 0.3s ease; position: relative; overflow: hidden; }
-.exp-card:hover { border-color: var(--orange); transform: translateY(-4px); background: radial-gradient(circle at bottom right, var(--orange-trans) 0%, var(--transparent) 70%); }
-.exp-card:hover::before { opacity: 1; }
-.exp-header { display: flex; align-items: center; gap: 16px; }
-.exp-num { font-family: 'Bebas Neue', sans-serif; font-size: 6rem; color: var(--yellow); line-height: 0.85; }
-.exp-line { flex: 1; height: 1px; background: linear-gradient(to right, rgba(255,184,0,0), var(--yellow)); }
-.exp-subheader { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-.exp-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--white); letter-spacing: 0.05em; line-height: 1; }
-.exp-date { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--muted); }
-.exp-company { text-transform: uppercase; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--muted); font-weight: 600; }
-.exp-desc { font-size: 1rem; color: var(--muted); line-height: 1.7; flex: 1; }
-.exp-tags { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
-.exp-tag { padding: 8px 16px; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; border: 1px solid var(--border); color: var(--muted); border-radius: 4px; }
-.exp-tag.highlight { border-color: var(--orange); color: var(--orange); background: rgba(225,90,26,0.08); }
-.exp-tag.highlight i { margin-right: 4px;}
-
-@media (max-width: 1024px) {
-  .exp-grid { grid-template-columns: repeat(2, 1fr); }
+#experience {
+  background: var(--color-bg);
 }
 
-@media (max-width: 768px) {
-  .exp-grid { grid-template-columns: 1fr; gap: 24px; }
-  .exp-card { padding: 24px; gap: 12px; }
-  .exp-num { font-size: 3.5rem; }
-  .exp-title { font-size: 1.4rem; }
-  .exp-date { font-size: 0.85rem; }
-  .exp-desc { font-size: 0.9rem; }
-  .exp-tags { gap: 8px; }
-  .exp-tag { padding: 6px 12px; font-size: 0.8rem; }
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
+  gap: var(--space-5);
+}
+
+.exp-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+  padding: var(--space-7) var(--space-6);
+  overflow: hidden;
+  border: var(--line-width) solid var(--color-border);
+  border-radius: var(--radius-m);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-s);
+  transition: border-color var(--duration-normal) var(--ease), transform var(--duration-normal) var(--ease), box-shadow var(--duration-normal) var(--ease), opacity var(--duration-normal) var(--ease);
+}
+
+.exp-card:nth-child(1) {
+  grid-column: 3;
+}
+
+.exp-card:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+  padding-block: var(--space-9);
+  border-color: var(--color-red);
+  box-shadow: var(--shadow-red);
+}
+
+.exp-card:nth-child(3) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.exp-card:hover {
+  border-color: var(--color-border-strong);
+  transform: translateY(var(--motion-lift-l));
+  box-shadow: var(--shadow-m);
+}
+
+.exp-card:nth-child(2):hover {
+  border-color: var(--color-red);
+  box-shadow: var(--shadow-red);
+}
+
+.exp-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.exp-num {
+  display: inline-flex;
+  flex: 0 0 var(--touch-target);
+  align-items: center;
+  justify-content: center;
+  width: var(--touch-target);
+  height: var(--touch-target);
+  border-radius: var(--radius-circle);
+  color: var(--color-on-accent);
+  background: var(--gradient-bronze);
+  font-family: var(--font-display);
+  font-size: var(--font-size-base);
+  font-weight: 700;
+}
+
+.exp-card:nth-child(2) .exp-num {
+  background: var(--gradient-gold);
+}
+
+.exp-card:nth-child(3) .exp-num {
+  background: var(--gradient-silver);
+}
+
+.exp-line {
+  flex: 1;
+  height: var(--line-width);
+  background: var(--color-border-strong);
+}
+
+.exp-subheader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.exp-title {
+  font-size: var(--font-size-lg);
+}
+
+.exp-date,
+.exp-company {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+}
+
+.exp-date {
+  flex: 0 0 auto;
+}
+
+.exp-company {
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+}
+
+.exp-desc {
+  flex: 1;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-copy);
+}
+
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.exp-tag {
+  padding: var(--space-2) var(--space-3);
+  border: var(--line-width) solid var(--color-border-strong);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-2xs);
+  transition: color var(--duration-fast) var(--ease), border-color var(--duration-fast) var(--ease), background var(--duration-fast) var(--ease);
+}
+
+.exp-tag:hover {
+  border-color: var(--color-teal);
+  color: var(--color-teal-ink);
+  background: var(--color-teal-soft);
+}
+
+.exp-tag.highlight {
+  border-color: var(--color-red-glow);
+  color: var(--color-red-ink);
+  background: var(--color-red-soft);
+}
+
+.exp-tag.highlight i {
+  margin-right: var(--space-1);
+}
+
+.reveal.is-visible .exp-card {
+  animation: enter-up var(--duration-normal) var(--ease) backwards;
+}
+
+.reveal.is-visible .exp-card:nth-child(2) {
+  animation-delay: var(--stagger-step);
+}
+
+.reveal.is-visible .exp-card:nth-child(1) {
+  animation-delay: var(--stagger-2);
+}
+
+@media (max-width: 880px) {
+  .exp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exp-card,
+  .exp-card:nth-child(1),
+  .exp-card:nth-child(2),
+  .exp-card:nth-child(3) {
+    grid-column: 1;
+    grid-row: auto;
+    padding: var(--space-6);
+  }
 }
 
 @media (max-width: 480px) {
-  .exp-card { padding: 20px; }
-  .exp-num { font-size: 3rem; }
-  .exp-title { font-size: 1.3rem; }
-  .exp-subheader { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .exp-subheader {
+    flex-direction: column;
+  }
 }

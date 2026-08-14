@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import MainLayout from "../../templates/MainLayout/MainLayout";
 import Button from "../../atoms/Button/Button";
 import projects from "../../../data/projects";
+import { getProjectImageUrl } from "../../../utils/imageLoader";
 import "./ProjectDetailPage.css";
 
 function ProjectDetailPage() {
@@ -22,19 +23,25 @@ function ProjectDetailPage() {
     );
   }
 
-  const hasImages = project.images && project.images.length > 0;
+  const fallbackImage = getProjectImageUrl(project);
+  const projectImages = project.images && project.images.length > 0
+    ? project.images
+    : fallbackImage
+      ? [fallbackImage]
+      : [];
+  const hasImages = projectImages.length > 0;
 
   const handlePrevImage = () => {
     if (!hasImages) return;
     setCurrentImageIndex((prev) => 
-      prev === 0 ? project.images.length - 1 : prev - 1
+      prev === 0 ? projectImages.length - 1 : prev - 1
     );
   };
 
   const handleNextImage = () => {
     if (!hasImages) return;
     setCurrentImageIndex((prev) => 
-      prev === project.images.length - 1 ? 0 : prev + 1
+      prev === projectImages.length - 1 ? 0 : prev + 1
     );
   };
 
@@ -43,7 +50,7 @@ function ProjectDetailPage() {
       <div className="project-detail">
         <div className="project-detail__container">
           <div className="project-detail__grid">
-            <div className="project-detail__info">
+            <div className="project-detail__info reveal">
               <button
                 className="project-detail__back"
                 onClick={() => navigate("/")}
@@ -90,7 +97,7 @@ function ProjectDetailPage() {
               )}
             </div>
 
-            <div className="project-detail__right">
+            <div className="project-detail__right reveal">
               <div className="project-detail__preview">
                 <div className="project-detail__browser-bar">
                   <span className="project-detail__browser-dot project-detail__browser-dot--red" />
@@ -103,7 +110,7 @@ function ProjectDetailPage() {
                   ) : (
                     <>
                       <div className="project-detail__carousel-inner">
-                        {project.images.length > 1 && (
+                        {projectImages.length > 1 && (
                           <button 
                             className="project-detail__carousel-btn project-detail__carousel-btn--prev" 
                             onClick={handlePrevImage}
@@ -114,7 +121,7 @@ function ProjectDetailPage() {
                         )}
                         
                         <div className="project-detail__images-track">
-                          {project.images.map((img, idx) => (
+                          {projectImages.map((img, idx) => (
                             <img
                               key={idx}
                               src={img}
@@ -124,7 +131,7 @@ function ProjectDetailPage() {
                           ))}
                         </div>
 
-                        {project.images.length > 1 && (
+                        {projectImages.length > 1 && (
                           <button 
                             className="project-detail__carousel-btn project-detail__carousel-btn--next" 
                             onClick={handleNextImage}
@@ -135,9 +142,9 @@ function ProjectDetailPage() {
                         )}
                       </div>
                       
-                      {project.images.length > 1 && (
+                      {projectImages.length > 1 && (
                         <div className="project-detail__carousel-dots">
-                          {project.images.map((_, idx) => (
+                          {projectImages.map((_, idx) => (
                             <button
                               key={idx}
                               className={`project-detail__carousel-dot ${idx === currentImageIndex ? 'project-detail__carousel-dot--active' : ''}`}
@@ -156,14 +163,14 @@ function ProjectDetailPage() {
                   variant="primary"
                   onClick={() => window.open(project.github, "_blank")}
                 >
-                  <i class="fa-brands fa-github"></i>
+                  <i className="fa-brands fa-github"></i>
                   Github
                 </Button>
                 <Button
                   variant="primary"
                   onClick={() => window.open(project.demo, "_blank")}
                 >
-                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  <i className="fa-solid fa-arrow-up-right-from-square"></i>
                   Demo del proyecto
                 </Button>
               </div>

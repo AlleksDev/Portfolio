@@ -5,13 +5,13 @@
 .skill-category__title {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #ddd;
+  color: var(--text-highlight);
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
   gap: 0.6rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: var(--line-width) solid var(--color-border);
 }
 
 .skill-category__icon {
@@ -33,11 +33,11 @@
 }
 
 .skill-category__card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  background: var(--color-surface);
+  border: var(--line-width) solid var(--color-border);
+  border-radius: var(--radius-lg);
   padding: 1.2rem;
-  transition: all 0.3s ease;
+  transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
 }
@@ -49,16 +49,16 @@
   left: 0;
   width: 3px;
   height: 100%;
-  background: linear-gradient(to bottom, #e67e22, #d35400);
+  background: linear-gradient(to bottom, var(--orange), var(--orange-dim));
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition-normal);
 }
 
 .skill-category__card:hover {
-  border-color: rgba(230, 126, 34, 0.3);
-  background: rgba(230, 126, 34, 0.06);
+  border-color: var(--color-red-glow);
+  background: var(--color-red-soft);
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-card);
 }
 
 .skill-category__card:hover::before {
@@ -74,7 +74,7 @@
 
 .skill-category__card-number {
   font-size: 0.75rem;
-  color: #e67e22;
+  color: var(--orange);
   font-weight: 700;
   font-family: monospace;
   opacity: 0.7;
@@ -83,13 +83,13 @@
 .skill-category__card-title {
   font-size: 0.95rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--white);
   margin: 0;
 }
 
 .skill-category__card-desc {
   font-size: 0.8rem;
-  color: #999;
+  color: var(--text-soft);
   line-height: 1.5;
   margin: 0;
 }
