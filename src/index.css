@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 :root {
@@ -44,7 +45,7 @@
 
   /* Tipografía */
   --font-display: 'Space Grotesk', sans-serif;
-  --font-hero: 'Syne', 'Space Grotesk', sans-serif;
+  --font-hero: 'Clash Display', 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --font-size-2xs: 0.68rem;
@@ -55,7 +56,7 @@
   --font-size-lg: 1.15rem;
   --font-size-xl: 1.9rem;
   --font-size-section: clamp(1.9rem, 3.4vw, 2.6rem);
-  --font-size-hero: clamp(4.4rem, 10.7vw, 10.75rem);
+  --font-size-hero: clamp(4rem, 9vw, 10.75rem);
   --font-size-hero-mobile: clamp(3.25rem, 17vw, 4.5rem);
   --line-height-tight: 1.12;
   --line-height-body: 1.55;
@@ -97,8 +98,8 @@
   --patterns-label-max-width: 78%;
   --hero-grid-size: 4rem;
   --hero-grid-opacity: 0.34;
-  --hero-title-line-height: 0.74;
-  --hero-title-tracking: -0.075em;
+  --hero-title-line-height: 0.82;
+  --hero-title-tracking: -0.04em;
   --hero-title-shift: clamp(2rem, 6vw, 5rem);
   --hero-title-outline-offset: 0.045em;
   --hero-title-outline-opacity: 0.48;

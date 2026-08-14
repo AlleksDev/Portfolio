@@ -36,29 +36,34 @@ const HeroSection = () => {
 
         <div className="hero-inner">
           <div className="hero-copy">
-            <h1 className="hero-title" aria-label="Código más diseño">
-              <span className="hero-title-line hero-title-line--code">
-                <span className="hero-title-word" data-word="CÓDIGO">CÓDIGO</span>
-              </span>
-              <span className="hero-title-line hero-title-line--design">
-                <span className="hero-title-plus" aria-hidden="true">+</span>
-                <span className="hero-title-word" data-word="DISEÑO">DISEÑO</span>
-              </span>
-            </h1>
-
-            <div className="hero-support">
-              <p className="hero-desc">Construyo experiencias digitales, busco la excelencia del código y el diseño, de la arquitectura a la gráfica</p>
-              <div className="hero-actions">
-                <a href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="btn-primary">CONTACTAME</a>
-                <a href="#experience" onClick={(e) => handleScroll(e, 'experience')} className="btn-outline">MI EXPERIENCIA</a>
+            <div className="hero-layout">
+              <div className="hero-headline">
+                <span className="hero-title-line hero-title-line--code" aria-hidden="true">
+                  <span className="hero-title-word" data-word="CÓDIGO">CÓDIGO</span>
+                </span>
+                <span className="hero-title-line hero-title-line--design" aria-hidden="true">
+                  <span className="hero-title-plus" aria-hidden="true">+</span>
+                  <span className="hero-title-word" data-word="DISEÑO">DISEÑO</span>
+                </span>
               </div>
-              <div className="hero-socials">
-                <a href="#" aria-label="X / Twitter"><i className="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
-                <a href="#" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-                <a href="#" aria-label="GitHub"><i className="fa-brands fa-github" aria-hidden="true"></i></a>
-                <a href="#" aria-label="Instagram"><i className="fa-brands fa-instagram" aria-hidden="true"></i></a>
+
+              <div className="hero-support">
+                <p className="hero-desc">Construyo experiencias digitales, busco la excelencia del código y el diseño, de la arquitectura a la gráfica</p>
+                <div className="hero-actions">
+                  <a href="#contact" onClick={(e) => handleScroll(e, 'contact')} className="btn-primary">CONTACTAME</a>
+                  <a href="#experience" onClick={(e) => handleScroll(e, 'experience')} className="btn-outline">MI EXPERIENCIA</a>
+                </div>
               </div>
             </div>
+
+            <div className="hero-socials">
+              <a href="#" aria-label="X / Twitter"><i className="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+              <a href="#" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+              <a href="#" aria-label="GitHub"><i className="fa-brands fa-github" aria-hidden="true"></i></a>
+              <a href="#" aria-label="Instagram"><i className="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            </div>
+
+            <h1 className="sr-only">Código más diseño</h1>
           </div>
         </div>
       </section>

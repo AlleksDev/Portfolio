@@ -11,9 +11,9 @@ function HomePage() {
     <MainLayout>
       <HeroSection />
       <AboutSection />
+      <ProjectsSection />
       <SkillsSection />
       <ExperienceSection />
-      <ProjectsSection />
       <ContactSection />
     </MainLayout>
   );

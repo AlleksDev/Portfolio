@@ -114,9 +114,9 @@ const TechSkills = () => {
 const SkillsSection = () => {
   return (
     <>
-      <SoftSkills />
-      <Patterns />
       <TechSkills />
+      <Patterns />
+      <SoftSkills />
     </>
   );
 };
