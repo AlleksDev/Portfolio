@@ -47,7 +47,6 @@ export const webProjects = [
     myJob:
       'Lideré el diseño de identidad visual y la experiencia de usuario, optimizando la interfaz para facilitar la gestión operativa. Generé todos los assets visuales necesarios para la plataforma.',
     images: [
-      notariaCover,
       "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213844/n01_w0hdn0.png",
       "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213844/n02_p3pfch.png",
       "https://res.cloudinary.com/dahkwcslh/image/upload/v1778213843/n03_dmrxv1.png",
