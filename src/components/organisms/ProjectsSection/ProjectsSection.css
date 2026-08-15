@@ -135,9 +135,38 @@
   transition: transform var(--duration-slow) var(--ease), filter var(--duration-normal) var(--ease);
 }
 
+.project-img-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  color: var(--color-text-muted);
+  background: var(--color-bg-alt);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  text-align: center;
+}
+
+.project-img-placeholder i {
+  font-size: var(--font-size-xl);
+  color: var(--color-teal);
+  opacity: 0.8;
+}
+
 #projects .project-card:hover .project-img img,
 #projects .project-card:focus-visible .project-img img {
   transform: scale(1.06) rotate(-1deg);
+}
+
+#projects .project-card:hover .project-img-placeholder i,
+#projects .project-card:focus-visible .project-img-placeholder i {
+  transform: scale(1.1);
+  color: var(--color-red);
+  transition: transform var(--duration-fast) var(--ease), color var(--duration-fast) var(--ease);
 }
 
 .project-info {

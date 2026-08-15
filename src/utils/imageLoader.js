@@ -9,13 +9,20 @@
  * @returns {string} - URL de la imagen o string vacío si no está disponible
  */
 export const getProjectImageUrl = (project) => {
-  // Si existe URL directa, úsala (para desarrollo con placehold.co, etc)
+  if (!project) return '';
+
+  // Si existe array de imágenes con elementos, usa el primero
+  if (Array.isArray(project.images) && project.images.length > 0 && project.images[0]) {
+    return project.images[0];
+  }
+
+  // Si existe URL directa o import
   if (project.image) {
     return project.image;
   }
   
-  // Si existe imagePath, será usada para cargar imágenes locales después
-  if (project.imagePath) {
+  // Si existe imagePath y no es una ruta fija rota inexistente
+  if (project.imagePath && !project.imagePath.startsWith('/images/')) {
     return project.imagePath;
   }
   
@@ -28,7 +35,7 @@ export const getProjectImageUrl = (project) => {
  * @returns {string} - Color de fondo o imagen placeholder
  */
 export const getProjectPlaceholder = (project) => {
-  return project.color || '#1a1a1a';
+  return project?.color || '#1a1a1a';
 };
 
 /**
@@ -37,7 +44,12 @@ export const getProjectPlaceholder = (project) => {
  * @returns {boolean} - true si la imagen está disponible
  */
 export const isImageAvailable = (project) => {
-  return !!(project.image || project.imagePath);
+  if (!project) return false;
+  return !!(
+    (Array.isArray(project.images) && project.images.length > 0 && project.images[0]) ||
+    project.image ||
+    (project.imagePath && !project.imagePath.startsWith('/images/'))
+  );
 };
 
 // Estructura para cuando se carguen imágenes reales

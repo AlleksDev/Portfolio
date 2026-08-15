@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import MainLayout from "../../templates/MainLayout/MainLayout";
 import Button from "../../atoms/Button/Button";
@@ -12,6 +12,47 @@ function ProjectDetailPage() {
   const project = projects.find((p) => p.id === id);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // Reiniciar el índice de imagen cuando cambie el proyecto
+  useEffect(() => {
+    setCurrentImageIndex(0);
+  }, [id]);
+
+  const fallbackImage = project ? getProjectImageUrl(project) : '';
+  const projectImages = (project?.images && project.images.length > 0)
+    ? project.images
+    : fallbackImage
+      ? [fallbackImage]
+      : [];
+  const hasImages = projectImages.length > 0;
+
+  const handlePrevImage = useCallback(() => {
+    if (!hasImages || projectImages.length <= 1) return;
+    setCurrentImageIndex((prev) => 
+      prev === 0 ? projectImages.length - 1 : prev - 1
+    );
+  }, [hasImages, projectImages.length]);
+
+  const handleNextImage = useCallback(() => {
+    if (!hasImages || projectImages.length <= 1) return;
+    setCurrentImageIndex((prev) => 
+      prev === projectImages.length - 1 ? 0 : prev + 1
+    );
+  }, [hasImages, projectImages.length]);
+
+  // Navegación con flechas del teclado
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!hasImages || projectImages.length <= 1) return;
+      if (e.key === 'ArrowLeft') {
+        handlePrevImage();
+      } else if (e.key === 'ArrowRight') {
+        handleNextImage();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [hasImages, projectImages.length, handlePrevImage, handleNextImage]);
+
   if (!project) {
     return (
       <MainLayout>
@@ -22,28 +63,6 @@ function ProjectDetailPage() {
       </MainLayout>
     );
   }
-
-  const fallbackImage = getProjectImageUrl(project);
-  const projectImages = project.images && project.images.length > 0
-    ? project.images
-    : fallbackImage
-      ? [fallbackImage]
-      : [];
-  const hasImages = projectImages.length > 0;
-
-  const handlePrevImage = () => {
-    if (!hasImages) return;
-    setCurrentImageIndex((prev) => 
-      prev === 0 ? projectImages.length - 1 : prev - 1
-    );
-  };
-
-  const handleNextImage = () => {
-    if (!hasImages) return;
-    setCurrentImageIndex((prev) => 
-      prev === projectImages.length - 1 ? 0 : prev + 1
-    );
-  };
 
   return (
     <MainLayout>
@@ -100,13 +119,24 @@ function ProjectDetailPage() {
             <div className="project-detail__right reveal">
               <div className="project-detail__preview">
                 <div className="project-detail__browser-bar">
-                  <span className="project-detail__browser-dot project-detail__browser-dot--red" />
-                  <span className="project-detail__browser-dot project-detail__browser-dot--yellow" />
-                  <span className="project-detail__browser-dot project-detail__browser-dot--green" />
+                  <div className="project-detail__browser-dots">
+                    <span className="project-detail__browser-dot project-detail__browser-dot--red" />
+                    <span className="project-detail__browser-dot project-detail__browser-dot--yellow" />
+                    <span className="project-detail__browser-dot project-detail__browser-dot--green" />
+                  </div>
+                  {hasImages && projectImages.length > 1 && (
+                    <span className="project-detail__carousel-counter">
+                      {currentImageIndex + 1} / {projectImages.length}
+                    </span>
+                  )}
                 </div>
                 <div className="project-detail__image-container">
                   {!hasImages ? (
-                    <span className="project-detail__coming-soon">¡Próximamente más imágenes!</span>
+                    <div className="project-detail__coming-soon">
+                      <i className="fa-solid fa-images"></i>
+                      <h3>Próximamente más capturas</h3>
+                      <p>Documentación visual de este proyecto en preparación.</p>
+                    </div>
                   ) : (
                     <>
                       <div className="project-detail__carousel-inner">
@@ -125,8 +155,9 @@ function ProjectDetailPage() {
                             <img
                               key={idx}
                               src={img}
-                              alt={`${project.title} - imagen ${idx + 1}`}
+                              alt={`${project.title} - captura ${idx + 1}`}
                               className={`project-detail__screenshot ${idx === currentImageIndex ? 'project-detail__screenshot--active' : ''}`}
+                              loading={idx === 0 ? "eager" : "lazy"}
                             />
                           ))}
                         </div>
@@ -149,7 +180,7 @@ function ProjectDetailPage() {
                               key={idx}
                               className={`project-detail__carousel-dot ${idx === currentImageIndex ? 'project-detail__carousel-dot--active' : ''}`}
                               onClick={() => setCurrentImageIndex(idx)}
-                              aria-label={`Ir a imagen ${idx + 1}`}
+                              aria-label={`Ir a captura ${idx + 1}`}
                             />
                           ))}
                         </div>

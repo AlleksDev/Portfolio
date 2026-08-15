@@ -86,9 +86,25 @@ const ProjectsSection = () => {
                 <span>about</span><span>learn</span><span>portfolio</span><span>blog</span><span>contact</span>
               </div>
               <div className="project-img">
-                {previewImage && (
-                  <img src={previewImage} alt={proj.title} />
-                )}
+                {previewImage ? (
+                  <img
+                    src={previewImage}
+                    alt={proj.title}
+                    loading="lazy"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      const fallback = e.target.parentElement.querySelector('.project-img-placeholder');
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  />
+                ) : null}
+                <div
+                  className="project-img-placeholder"
+                  style={{ display: previewImage ? 'none' : 'flex' }}
+                >
+                  <i className={`fa-solid ${proj.type === 'mobile' ? 'fa-mobile-screen-button' : proj.type === 'illustration' ? 'fa-pen-nib' : 'fa-laptop-code'}`}></i>
+                  <span>Próximamente más capturas</span>
+                </div>
               </div>
               <div className="project-info">
                 <div className="project-tags">
