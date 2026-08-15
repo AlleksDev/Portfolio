@@ -150,16 +150,14 @@ function ProjectDetailPage() {
                           </button>
                         )}
                         
-                        <div className="project-detail__images-track">
-                          {projectImages.map((img, idx) => (
-                            <img
-                              key={idx}
-                              src={img}
-                              alt={`${project.title} - captura ${idx + 1}`}
-                              className={`project-detail__screenshot ${idx === currentImageIndex ? 'project-detail__screenshot--active' : ''}`}
-                              loading={idx === 0 ? "eager" : "lazy"}
-                            />
-                          ))}
+                        <div className="project-detail__image-wrapper">
+                          <img
+                            key={currentImageIndex}
+                            src={projectImages[currentImageIndex]}
+                            alt={`${project.title} - captura ${currentImageIndex + 1}`}
+                            className="project-detail__screenshot"
+                            loading="eager"
+                          />
                         </div>
 
                         {projectImages.length > 1 && (
