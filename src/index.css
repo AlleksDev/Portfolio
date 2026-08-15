@@ -5,6 +5,11 @@
 :root {
   color-scheme: light;
 
+  --theme-bg: #fafaf9;
+  --theme-step-bg: #fafaf9;
+  --theme-step-text: #5b5b66;
+  --theme-step-heading: #15151a;
+  --theme-step-border: rgba(20, 20, 26, 0.14);
   /* Paleta exacta de example.html */
   --color-bg: #fafaf9;
   --color-bg-alt: #f1f0ed;
@@ -206,6 +211,11 @@
 
 [data-theme='dark'] {
   color-scheme: dark;
+  --theme-bg: #0a0a0d;
+  --theme-step-bg: #131318;
+  --theme-step-text: #9e9ea9;
+  --theme-step-heading: #f1f0ed;
+  --theme-step-border: rgba(255, 255, 255, 0.14);
   --color-bg: #0a0a0d;
   --color-bg-alt: #131318;
   --color-surface: #16161c;
@@ -426,17 +436,17 @@ section[id] {
   }
 }
 
+/* ─── Scrollbar styling ─── */
+
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 ::-webkit-scrollbar {
-  width: 0.625rem;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-bg);
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: var(--radius-s);
-  background: var(--color-border-strong);
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {

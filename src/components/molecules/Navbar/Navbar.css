@@ -8,6 +8,14 @@
   transition: padding var(--duration-normal) var(--ease), background var(--duration-normal) var(--ease), border-color var(--duration-normal) var(--ease);
 }
 
+.site-nav:not(.is-scrolled) {
+  --color-text: #f1f0ed;
+  --color-text-muted: #9e9ea9;
+  --color-border-strong: rgba(255, 255, 255, 0.18);
+  --color-surface: #16161c;
+  --color-bg-alt: rgba(255, 255, 255, 0.08);
+}
+
 .site-nav.is-scrolled {
   padding-block: var(--header-padding-scrolled);
   border-bottom-color: var(--color-border);
@@ -73,6 +81,44 @@
   gap: var(--space-2);
 }
 
+.theme-toggle-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.theme-toast {
+  position: absolute;
+  right: calc(100% + var(--space-3));
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  border: var(--line-width) solid var(--color-border-strong);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-2xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  white-space: nowrap;
+  box-shadow: var(--shadow-m);
+  animation: theme-toast-pop var(--duration-fast) var(--ease) both;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes theme-toast-pop {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
+
 .theme-toggle,
 .nav-toggle {
   width: var(--control-size);
@@ -83,12 +129,30 @@
   color: var(--color-text);
   background: var(--color-surface);
   cursor: pointer;
-  transition: transform var(--duration-normal) var(--ease), border-color var(--duration-normal) var(--ease), background var(--duration-normal) var(--ease);
+  transition: transform var(--duration-normal) var(--ease), border-color var(--duration-normal) var(--ease), background var(--duration-normal) var(--ease), box-shadow var(--duration-normal) var(--ease);
 }
 
 .theme-toggle:hover {
   border-color: var(--color-red);
   transform: rotate(18deg);
+}
+
+.theme-toggle--light {
+  color: var(--color-gold);
+  border-color: var(--color-border-strong);
+}
+
+.theme-toggle--light:hover {
+  box-shadow: 0 0 0.8rem var(--color-gold-light);
+}
+
+.theme-toggle--dark {
+  color: var(--color-teal);
+  border-color: var(--color-border-strong);
+}
+
+.theme-toggle--dark:hover {
+  box-shadow: 0 0 0.8rem var(--color-teal-glow);
 }
 
 .nav-toggle {

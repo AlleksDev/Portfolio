@@ -17,13 +17,26 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || 'light');
+  const [themeFeedback, setThemeFeedback] = useState(null);
 
   useEffect(() => {
-    const handleScrollState = () => setIsScrolled(window.scrollY > 20);
+    const handleScrollState = () => {
+      const hero = document.getElementById('hero');
+      if (hero) {
+        const heroBottom = hero.getBoundingClientRect().bottom;
+        setIsScrolled(heroBottom <= 70);
+      } else {
+        setIsScrolled(window.scrollY > 20);
+      }
+    };
 
     handleScrollState();
     window.addEventListener('scroll', handleScrollState, { passive: true });
-    return () => window.removeEventListener('scroll', handleScrollState);
+    window.addEventListener('resize', handleScrollState, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScrollState);
+      window.removeEventListener('resize', handleScrollState);
+    };
   }, []);
 
   useEffect(() => {
@@ -34,6 +47,12 @@ const Navbar = () => {
     window.addEventListener('keydown', handleEscape);
     return () => window.removeEventListener('keydown', handleEscape);
   }, []);
+
+  useEffect(() => {
+    if (!themeFeedback) return;
+    const timer = setTimeout(() => setThemeFeedback(null), 2200);
+    return () => clearTimeout(timer);
+  }, [themeFeedback]);
 
   const handleScroll = (event, id) => {
     event.preventDefault();
@@ -67,6 +86,7 @@ const Navbar = () => {
     const nextTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(nextTheme);
     document.documentElement.dataset.theme = nextTheme;
+    setThemeFeedback(nextTheme === 'dark' ? 'Modo Oscuro' : 'Modo Claro');
     try {
       localStorage.setItem('portfolio-theme', nextTheme);
     } catch {
@@ -92,15 +112,22 @@ const Navbar = () => {
         </ul>
 
         <div className="nav-actions">
-          <button
-            type="button"
-            className="theme-toggle"
-            onClick={toggleTheme}
-            aria-label={`Cambiar a modo ${theme === 'dark' ? 'claro' : 'oscuro'}`}
-            title={`Cambiar a modo ${theme === 'dark' ? 'claro' : 'oscuro'}`}
-          >
-            <i className={`fa-solid ${theme === 'dark' ? 'fa-sun' : 'fa-moon'}`} aria-hidden="true" />
-          </button>
+          <div className="theme-toggle-wrapper">
+            {themeFeedback && (
+              <span className="theme-toast" role="status" aria-live="polite">
+                {themeFeedback === 'Modo Oscuro' ? '🌙 Modo Oscuro' : '☀️ Modo Claro'}
+              </span>
+            )}
+            <button
+              type="button"
+              className={`theme-toggle theme-toggle--${theme}`}
+              onClick={toggleTheme}
+              aria-label={`Cambiar a modo ${theme === 'dark' ? 'claro' : 'oscuro'}`}
+              title={`Cambiar a modo ${theme === 'dark' ? 'claro' : 'oscuro'}`}
+            >
+              <i className={`fa-solid ${theme === 'dark' ? 'fa-sun' : 'fa-moon'}`} aria-hidden="true" />
+            </button>
+          </div>
 
           <button
             type="button"

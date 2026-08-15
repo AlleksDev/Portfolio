@@ -12,26 +12,28 @@ const HeroSection = () => {
   return (
     <>
       <section id="hero">
-        <div className="hero-ambient" aria-hidden="true">
-          <div className="hero-blob hero-blob--red" />
-          <div className="hero-blob hero-blob--teal" />
-        </div>
+        <div className="hero-backdrop" aria-hidden="true">
+          <div className="hero-ambient">
+            <div className="hero-blob hero-blob--red" />
+            <div className="hero-blob hero-blob--teal" />
+          </div>
 
-        <div className="hero-system" aria-hidden="true">
-          <span className="hero-system-axis hero-system-axis--horizontal" />
-          <span className="hero-system-axis hero-system-axis--vertical" />
-          <span className="hero-system-ring hero-system-ring--outer" />
-          <span className="hero-system-ring hero-system-ring--middle" />
-          <span className="hero-system-ring hero-system-ring--inner" />
-          <span className="hero-system-connector hero-system-connector--one" />
-          <span className="hero-system-connector hero-system-connector--two" />
-          <span className="hero-system-connector hero-system-connector--three" />
-          <span className="hero-system-node hero-system-node--one" />
-          <span className="hero-system-node hero-system-node--two" />
-          <span className="hero-system-node hero-system-node--three" />
-          <span className="hero-system-node hero-system-node--four" />
-          <span className="hero-system-node hero-system-node--five" />
-          <span className="hero-system-core">A</span>
+          <div className="hero-system">
+            <span className="hero-system-axis hero-system-axis--horizontal" />
+            <span className="hero-system-axis hero-system-axis--vertical" />
+            <span className="hero-system-ring hero-system-ring--outer" />
+            <span className="hero-system-ring hero-system-ring--middle" />
+            <span className="hero-system-ring hero-system-ring--inner" />
+            <span className="hero-system-connector hero-system-connector--one" />
+            <span className="hero-system-connector hero-system-connector--two" />
+            <span className="hero-system-connector hero-system-connector--three" />
+            <span className="hero-system-node hero-system-node--one" />
+            <span className="hero-system-node hero-system-node--two" />
+            <span className="hero-system-node hero-system-node--three" />
+            <span className="hero-system-node hero-system-node--four" />
+            <span className="hero-system-node hero-system-node--five" />
+            <span className="hero-system-core">A</span>
+          </div>
         </div>
 
         <div className="hero-inner">
@@ -56,16 +58,16 @@ const HeroSection = () => {
                 <div className="hero-socials">
                   <a href="#" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
                   <a href="#" aria-label="GitHub"><i className="fa-brands fa-github" aria-hidden="true"></i></a>
-                  <a href="#" aria-label="Twitter / X"><i className="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
                   <a href="#" aria-label="Instagram"><i className="fa-brands fa-instagram" aria-hidden="true"></i></a>
                 </div>
               </div>
             </div>
 
-            <h1 className="sr-only">Código más diseño</h1>
           </div>
+        </div>
 
-          <div className="hero-bottom">
+        <div className="hero-step">
+          <div className="hero-step-panel">
             <a href="#about" onClick={(e) => handleScroll(e, 'about')} className="hero-scroll" aria-label="Desplazarse a Sobre Mí">
               <span className="hero-scroll-mouse">
                 <span className="hero-scroll-wheel" />
@@ -74,17 +76,15 @@ const HeroSection = () => {
               <i className="fa-solid fa-arrow-down-long hero-scroll-arrow" aria-hidden="true"></i>
             </a>
 
-            <div className="hero-bottom-info">
-              <span className="hero-bottom-item"><span className="hero-bottom-dot"></span> DISPONIBLE</span>
-              <span className="hero-bottom-divider">/</span>
-              <span className="hero-bottom-item">INGENIERÍA & UI/UX</span>
-              <span className="hero-bottom-divider">/</span>
-              <span className="hero-bottom-item">2026</span>
+            <div className="hero-step-info">
+              <span className="hero-step-item"><span className="hero-step-dot"></span> DISPONIBLE</span>
+              <span className="hero-step-divider">/</span>
+              <span className="hero-step-item">INGENIERÍA & UI/UX</span>
+              <span className="hero-step-divider">/</span>
+              <span className="hero-step-item">2026</span>
             </div>
           </div>
         </div>
-
-        <div className="hero-transition-mask" aria-hidden="true" />
       </section>
     </>
   );

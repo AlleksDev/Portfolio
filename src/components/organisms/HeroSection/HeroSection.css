@@ -1,15 +1,49 @@
 /* ─── Hero Section ─── */
 
 #hero {
-  min-height: 100svh;
+  color-scheme: dark;
+  --color-bg: #0a0a0d;
+  --color-bg-alt: #131318;
+  --color-surface: #16161c;
+  --color-border: rgba(255, 255, 255, 0.09);
+  --color-border-strong: rgba(255, 255, 255, 0.18);
+  --color-text: #f1f0ed;
+  --color-text-muted: #9e9ea9;
+  --color-text-faint: #6c6c77;
+  --color-red: #ff3b4c;
+  --color-red-ink: #ff7a85;
+  --color-red-soft: rgba(255, 59, 76, 0.14);
+  --color-red-glow: rgba(255, 59, 76, 0.22);
+  --color-teal: #22e6c7;
+  --color-teal-ink: #7cf2de;
+  --color-teal-soft: rgba(34, 230, 199, 0.1);
+  --color-teal-glow: rgba(34, 230, 199, 0.2);
+  --shadow-s: 0 0.125rem 0.875rem rgba(0, 0, 0, 0.35);
+  --shadow-m: 0 1.125rem 3.125rem rgba(0, 0, 0, 0.5);
+  --shadow-red: 0 1rem 2.5rem var(--color-red-glow);
+  --gradient-progress: linear-gradient(90deg, var(--color-red), var(--color-teal));
+  --gradient-progress-vertical: linear-gradient(180deg, var(--color-red), var(--color-teal));
+  --gradient-hero: radial-gradient(circle at 20% 24%, var(--color-red-glow), var(--color-transparent) 34%), radial-gradient(circle at 82% 36%, var(--color-teal-glow), var(--color-transparent) 38%);
+
+  position: relative;
+  z-index: 2;
+  min-height: calc(100svh - 4.5rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
   isolation: isolate;
   padding-top: calc(var(--header-offset) + clamp(1.5rem, 4vh, 3.5rem));
-  padding-bottom: var(--space-5);
-  background: var(--gradient-hero);
+  padding-bottom: 0;
+  background-color: var(--color-bg);
+  background-image: var(--gradient-hero);
+}
+
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
 }
 
 #hero::before {
@@ -294,6 +328,12 @@
   box-shadow: var(--shadow-m);
 }
 
+#hero .btn-outline {
+  border-color: var(--color-border-strong);
+  color: var(--color-text);
+  background: color-mix(in srgb, var(--color-surface) 50%, var(--color-transparent));
+}
+
 #hero .btn-outline:hover {
   border-color: var(--color-teal);
   color: var(--color-teal-ink);
@@ -336,101 +376,99 @@
   transform: translateY(var(--motion-lift-s));
 }
 
-/* ─── Hero Bottom Bar ─── */
+/* ─── Hero Stepped Panel (Clean architectural transition) ─── */
 
-.hero-bottom {
+.hero-step {
   position: relative;
-  z-index: 3;
+  z-index: 10;
+  width: min(100%, var(--container-width));
+  margin-inline: auto;
+  padding-inline: var(--container-gutter);
+  margin-bottom: -2.25rem;
+}
+
+.hero-step-panel {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  padding-top: var(--space-4);
-  border-top: var(--line-width) solid var(--color-border);
+  padding: 1.35rem 2.5rem;
+  border-radius: var(--radius-l);
+  background: var(--theme-step-bg, #fafaf9);
+  border: var(--line-width) solid var(--theme-step-border, rgba(20, 20, 26, 0.14));
+  box-shadow: 0 0.85rem 3rem rgba(0, 0, 0, 0.26);
+  transition: background var(--duration-normal) var(--ease), border-color var(--duration-normal) var(--ease), box-shadow var(--duration-normal) var(--ease);
   animation: enter-up var(--duration-slow) var(--ease) var(--stagger-3) both;
 }
 
 .hero-scroll {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-3);
-  color: var(--color-text-muted);
+  gap: var(--space-4);
+  color: var(--theme-step-text, #5b5b66);
   font-family: var(--font-mono);
-  font-size: var(--font-size-2xs);
+  font-size: var(--font-size-xs);
   letter-spacing: var(--tracking-label);
-  font-weight: 500;
+  font-weight: 600;
   transition: color var(--duration-fast) var(--ease), transform var(--duration-fast) var(--ease);
 }
 
 .hero-scroll:hover {
-  color: var(--color-text);
+  color: var(--theme-step-heading, #15151a);
   transform: translateY(var(--motion-lift-xs));
 }
 
 .hero-scroll-mouse {
   display: flex;
   justify-content: center;
-  width: 1.125rem;
-  height: 1.625rem;
-  border: var(--line-width) solid var(--color-border-strong);
+  width: 1.25rem;
+  height: 1.85rem;
+  border: var(--line-width) solid var(--theme-step-border, rgba(20, 20, 26, 0.25));
   border-radius: var(--radius-pill);
-  padding-top: 0.25rem;
+  padding-top: 0.3rem;
 }
 
 .hero-scroll-wheel {
-  width: 0.1875rem;
-  height: 0.375rem;
+  width: 0.2rem;
+  height: 0.45rem;
   border-radius: var(--radius-pill);
   background: var(--color-teal);
   animation: hero-scroll-wheel 1600ms var(--ease) infinite;
 }
 
 .hero-scroll-arrow {
-  font-size: 0.75rem;
-  color: var(--color-teal-ink);
+  font-size: 0.85rem;
+  color: var(--color-teal);
   animation: hero-scroll-bounce 1600ms var(--ease) infinite;
 }
 
-.hero-bottom-info {
+.hero-step-info {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-  color: var(--color-text-faint);
+  gap: var(--space-4);
+  color: var(--theme-step-text, #5b5b66);
   font-family: var(--font-mono);
-  font-size: var(--font-size-2xs);
+  font-size: var(--font-size-xs);
   letter-spacing: var(--tracking-label);
+  font-weight: 500;
 }
 
-.hero-bottom-item {
+.hero-step-item {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
 }
 
-.hero-bottom-dot {
-  width: 0.375rem;
-  height: 0.375rem;
+.hero-step-dot {
+  width: 0.45rem;
+  height: 0.45rem;
   border-radius: var(--radius-circle);
   background: var(--color-teal);
-  box-shadow: 0 0 0.4rem var(--color-teal-glow);
+  box-shadow: 0 0 0.45rem var(--color-teal-glow);
   animation: pulse 2000ms var(--ease) infinite;
 }
 
-.hero-bottom-divider {
+.hero-step-divider {
   opacity: 0.4;
-}
-
-/* ─── Hero Transition Mask (Soft gradient into next section) ─── */
-
-.hero-transition-mask {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: clamp(3.5rem, 8vh, 6rem);
-  pointer-events: none;
-  z-index: 2;
-  background: linear-gradient(to bottom, transparent 0%, var(--color-bg) 100%);
 }
 
 /* ─── Orbital system ─── */
@@ -770,10 +808,15 @@
     width: var(--hero-system-size-tablet);
   }
 
-  .hero-bottom {
+  .hero-step {
+    margin-bottom: -1.5rem;
+  }
+
+  .hero-step-panel {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-3);
+    padding: 1.15rem 1.5rem;
   }
 }
 
@@ -782,7 +825,7 @@
 @media (max-width: 600px) {
   #hero {
     padding-top: calc(var(--space-12) + var(--space-6));
-    padding-bottom: var(--space-7);
+    padding-bottom: 0;
   }
 
   #hero::before {
@@ -829,7 +872,7 @@
     border-color: var(--color-border);
   }
 
-  .hero-bottom-info {
+  .hero-step-info {
     flex-wrap: wrap;
     gap: var(--space-2);
   }
