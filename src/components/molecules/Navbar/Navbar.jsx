@@ -115,7 +115,7 @@ const Navbar = () => {
           <div className="theme-toggle-wrapper">
             {themeFeedback && (
               <span className="theme-toast" role="status" aria-live="polite">
-                {themeFeedback === 'Modo Oscuro' ? '🌙 Modo Oscuro' : '☀️ Modo Claro'}
+                {themeFeedback === 'Modo Oscuro' ? 'Modo Oscuro' : 'Modo Claro'}
               </span>
             )}
             <button

@@ -138,21 +138,25 @@
 }
 
 .theme-toggle--light {
-  color: var(--color-gold);
-  border-color: var(--color-border-strong);
-}
-
-.theme-toggle--light:hover {
-  box-shadow: 0 0 0.8rem var(--color-gold-light);
-}
-
-.theme-toggle--dark {
   color: var(--color-teal);
   border-color: var(--color-border-strong);
 }
 
-.theme-toggle--dark:hover {
+.theme-toggle--light:hover {
+  border-color: var(--color-teal);
+  color: var(--color-teal-ink);
   box-shadow: 0 0 0.8rem var(--color-teal-glow);
+}
+
+.theme-toggle--dark {
+  color: var(--color-red-ink);
+  border-color: var(--color-border-strong);
+}
+
+.theme-toggle--dark:hover {
+  border-color: var(--color-red);
+  color: var(--color-red);
+  box-shadow: 0 0 0.8rem var(--color-red-glow);
 }
 
 .nav-toggle {
