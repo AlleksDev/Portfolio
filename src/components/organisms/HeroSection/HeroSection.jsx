@@ -64,24 +64,28 @@ const HeroSection = () => {
 
             <h1 className="sr-only">Código más diseño</h1>
           </div>
-        </div>
-      </section>
 
-      <div className="marquee">
-        <div className="marquee-content">
-          {[...Array(2)].map((_, i) => (
-            <div className="marquee-sequence" aria-hidden={i === 1 ? 'true' : undefined} key={i}>
-              <div className="marquee-item">UI/UX DESIGN <div className="dot-separator"></div></div>
-              <div className="marquee-item">FRONTEND <div className="dot-separator"></div></div>
-              <div className="marquee-item">BACKEND <div className="dot-separator"></div></div>
-              <div className="marquee-item">ILLUSTRATION <div className="dot-separator"></div></div>
-              <div className="marquee-item">IOT <div className="dot-separator"></div></div>
-              <div className="marquee-item">3D MODELING <div className="dot-separator"></div></div>
-              <div className="marquee-item">CLEAN ARCHITECTURE <div className="dot-separator"></div></div>
+          <div className="hero-bottom">
+            <a href="#about" onClick={(e) => handleScroll(e, 'about')} className="hero-scroll" aria-label="Desplazarse a Sobre Mí">
+              <span className="hero-scroll-mouse">
+                <span className="hero-scroll-wheel" />
+              </span>
+              <span className="hero-scroll-text">EXPLORAR</span>
+              <i className="fa-solid fa-arrow-down-long hero-scroll-arrow" aria-hidden="true"></i>
+            </a>
+
+            <div className="hero-bottom-info">
+              <span className="hero-bottom-item"><span className="hero-bottom-dot"></span> DISPONIBLE</span>
+              <span className="hero-bottom-divider">/</span>
+              <span className="hero-bottom-item">INGENIERÍA & UI/UX</span>
+              <span className="hero-bottom-divider">/</span>
+              <span className="hero-bottom-item">2026</span>
             </div>
-          ))}
+          </div>
         </div>
-      </div>
+
+        <div className="hero-transition-mask" aria-hidden="true" />
+      </section>
     </>
   );
 };

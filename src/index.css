@@ -56,7 +56,7 @@
   --font-size-lg: 1.15rem;
   --font-size-xl: 1.9rem;
   --font-size-section: clamp(1.9rem, 3.4vw, 2.6rem);
-  --font-size-hero: clamp(4rem, 9vw, 10.75rem);
+  --font-size-hero: clamp(4rem, 10vw, 10.75rem);
   --font-size-hero-mobile: clamp(3.25rem, 17vw, 4.5rem);
   --line-height-tight: 1.12;
   --line-height-body: 1.55;
@@ -83,7 +83,7 @@
   --container-gutter: 1.75rem;
   --header-padding: 1.125rem;
   --header-padding-scrolled: 0.75rem;
-  --header-offset: 5rem;
+  --header-offset: 10rem;
   --control-size: 2.5rem;
   --touch-target: 2.75rem;
   --progress-height: 0.1875rem;
@@ -107,10 +107,10 @@
   --hero-system-size: clamp(31rem, 44vw, 45rem);
   --hero-system-size-tablet: min(72vw, 35rem);
   --hero-system-size-mobile: clamp(20rem, 88vw, 28rem);
-  --hero-system-offset-inline: clamp(-8rem, -4vw, -3rem);
-  --hero-system-opacity: 0.82;
-  --hero-system-opacity-tablet: 0.46;
-  --hero-system-opacity-mobile: 0.32;
+  --hero-system-offset-inline: clamp(-22rem, -18vw, -12rem);
+  --hero-system-opacity: 0.4;
+  --hero-system-opacity-tablet: 0.3;
+  --hero-system-opacity-mobile: 0.22;
   --hero-system-tilt: -7deg;
   --hero-system-axis-extension: 16%;
   --hero-system-ring-middle: 70%;
