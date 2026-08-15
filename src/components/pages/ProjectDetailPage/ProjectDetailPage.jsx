@@ -68,14 +68,16 @@ function ProjectDetailPage() {
     <MainLayout>
       <div className="project-detail">
         <div className="project-detail__container">
+          <div className="project-detail__top-nav reveal">
+            <button
+              className="project-detail__back"
+              onClick={() => navigate("/")}
+            >
+              <i className="fa-solid fa-arrow-left"></i> Volver a proyectos
+            </button>
+          </div>
           <div className="project-detail__grid">
             <div className="project-detail__info reveal">
-              <button
-                className="project-detail__back"
-                onClick={() => navigate("/")}
-              >
-                <i className="fa-solid fa-arrow-left"></i> Volver
-              </button>
               <div className="project-detail__title-wrapper">
                 <h1 className="project-detail__title">{project.title}</h1>
                 {project.mainTag && (

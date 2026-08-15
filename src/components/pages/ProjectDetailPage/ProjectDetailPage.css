@@ -1,12 +1,18 @@
 .project-detail {
   min-height: 80svh;
-  padding: calc(var(--space-section) + var(--space-5)) var(--container-gutter) var(--space-section);
+  padding: calc(var(--space-10) + var(--space-6)) var(--container-gutter) var(--space-section);
   background: var(--color-bg);
 }
 
 .project-detail__container {
   width: min(100%, var(--container-width));
   margin-inline: auto;
+}
+
+.project-detail__top-nav {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-6);
 }
 
 .project-detail__not-found {
@@ -34,15 +40,15 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  min-height: var(--touch-target);
-  margin-bottom: var(--space-5);
-  padding: var(--space-2) var(--space-4);
+  min-height: 2.25rem;
+  padding: var(--space-1) var(--space-4);
   border: var(--line-width) solid var(--color-border-strong);
   border-radius: var(--radius-pill);
   color: var(--color-text-muted);
   background: var(--color-surface);
-  font-size: var(--font-size-sm);
-  font-weight: 600;
+  font-size: var(--font-size-xs);
+  font-family: var(--font-mono);
+  font-weight: 500;
   cursor: pointer;
   transition: color var(--duration-fast) var(--ease), border-color var(--duration-fast) var(--ease), background var(--duration-fast) var(--ease), transform var(--duration-fast) var(--ease);
 }
@@ -51,7 +57,7 @@
   border-color: var(--color-teal);
   color: var(--color-teal-ink);
   background: var(--color-teal-soft);
-  transform: translateY(var(--motion-lift-xs));
+  transform: translateX(calc(var(--space-1) * -1));
 }
 
 .project-detail__title-wrapper {
@@ -168,7 +174,7 @@
 }
 
 .project-detail__preview {
-  margin-top: var(--space-10);
+  margin-top: 0;
   overflow: hidden;
   border: var(--line-width) solid var(--color-border);
   border-radius: var(--radius-l);
@@ -448,7 +454,7 @@
 
 @media (max-width: 600px) {
   .project-detail {
-    padding-top: calc(var(--space-12) + var(--space-6));
+    padding-top: calc(var(--space-10) + var(--space-4));
   }
 
   .project-detail__image-container,
