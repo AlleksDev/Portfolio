@@ -1,3 +1,29 @@
+/* ─── Custom property registrations for gradient animation ─── */
+
+@property --hero-grad-x1 {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 20%;
+}
+
+@property --hero-grad-y1 {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 24%;
+}
+
+@property --hero-grad-x2 {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 82%;
+}
+
+@property --hero-grad-y2 {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 36%;
+}
+
 /* ─── Hero Section ─── */
 
 #hero {
@@ -35,7 +61,10 @@
   padding-top: calc(var(--header-offset) + clamp(1.5rem, 4vh, 3.5rem));
   padding-bottom: 0;
   background-color: var(--color-bg);
-  background-image: var(--gradient-hero);
+  background-image:
+    radial-gradient(circle at var(--hero-grad-x1, 20%) var(--hero-grad-y1, 24%), var(--color-red-glow), var(--color-transparent) 34%),
+    radial-gradient(circle at var(--hero-grad-x2, 82%) var(--hero-grad-y2, 36%), var(--color-teal-glow), var(--color-transparent) 38%);
+  animation: hero-gradient-drift 12s var(--ease) infinite alternate;
 }
 
 .hero-backdrop {
@@ -484,7 +513,9 @@
   pointer-events: none;
   opacity: var(--hero-system-current-opacity);
   transform: translateY(-50%) rotate(var(--hero-system-tilt));
-  animation: hero-system-enter var(--duration-slow) var(--ease) var(--stagger-step) both;
+  animation:
+    hero-system-enter var(--duration-slow) var(--ease) var(--stagger-step) both,
+    hero-system-breathe 6s var(--ease) 1s infinite;
 }
 
 .hero-system::before,
@@ -564,13 +595,33 @@
   width: var(--hero-system-ring-middle);
   border: var(--line-width) solid var(--color-teal);
   box-shadow: inset 0 0 var(--space-10) var(--color-teal-glow);
-  animation: hero-orbit-spin 16000ms var(--ease-linear) infinite reverse;
+  animation:
+    hero-orbit-spin 16000ms var(--ease-linear) infinite reverse,
+    hero-ring-pulse 4s var(--ease) infinite;
 }
 
 .hero-system-ring--inner {
   width: var(--hero-system-ring-inner);
   border: var(--line-accent-width) solid var(--color-red);
   box-shadow: 0 0 var(--space-10) var(--color-red-glow);
+  overflow: hidden;
+}
+
+/* Radar sweep line inside the inner ring */
+.hero-system-ring--inner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 320deg,
+    rgba(255, 59, 76, 0.25) 345deg,
+    rgba(255, 59, 76, 0.45) 355deg,
+    transparent 360deg
+  );
+  animation: hero-radar-sweep 3s linear infinite;
 }
 
 .hero-system-connector {
@@ -751,6 +802,60 @@
   50% {
     opacity: 1;
     transform: scale(1.12);
+  }
+}
+
+@keyframes hero-system-breathe {
+  0%, 100% {
+    transform: translateY(-50%) rotate(var(--hero-system-tilt)) scale(1);
+  }
+  50% {
+    transform: translateY(-50%) rotate(var(--hero-system-tilt)) scale(1.04);
+  }
+}
+
+@keyframes hero-ring-pulse {
+  0%, 100% {
+    box-shadow: inset 0 0 var(--space-10) var(--color-teal-glow);
+  }
+  50% {
+    box-shadow: inset 0 0 1.5rem var(--color-teal-glow), 0 0 1rem var(--color-teal-glow);
+  }
+}
+
+@keyframes hero-radar-sweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hero-gradient-drift {
+  0% {
+    --hero-grad-x1: 20%;
+    --hero-grad-y1: 24%;
+    --hero-grad-x2: 82%;
+    --hero-grad-y2: 36%;
+  }
+  33% {
+    --hero-grad-x1: 28%;
+    --hero-grad-y1: 18%;
+    --hero-grad-x2: 74%;
+    --hero-grad-y2: 44%;
+  }
+  66% {
+    --hero-grad-x1: 15%;
+    --hero-grad-y1: 30%;
+    --hero-grad-x2: 88%;
+    --hero-grad-y2: 28%;
+  }
+  100% {
+    --hero-grad-x1: 24%;
+    --hero-grad-y1: 20%;
+    --hero-grad-x2: 78%;
+    --hero-grad-y2: 40%;
   }
 }
 
