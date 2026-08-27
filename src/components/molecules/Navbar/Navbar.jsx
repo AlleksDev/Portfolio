@@ -49,6 +49,15 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isMenuOpen]);
+
+  useEffect(() => {
     if (!themeFeedback) return;
     const timer = setTimeout(() => setThemeFeedback(null), 2200);
     return () => clearTimeout(timer);

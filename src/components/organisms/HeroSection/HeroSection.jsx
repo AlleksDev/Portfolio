@@ -65,25 +65,23 @@ const HeroSection = () => {
 
           </div>
         </div>
-
-        <div className="hero-step">
-          <div className="hero-step-panel">
-            <a href="#about" onClick={(e) => handleScroll(e, 'about')} className="hero-scroll" aria-label="Desplazarse a Sobre Mí">
-              <span className="hero-scroll-mouse">
-                <span className="hero-scroll-wheel" />
-              </span>
-              <span className="hero-scroll-text">EXPLORAR</span>
-              <i className="fa-solid fa-arrow-down-long hero-scroll-arrow" aria-hidden="true"></i>
-            </a>
-
-            <div className="hero-step-info">
-              <span className="hero-step-item"><span className="hero-step-dot"></span> DISPONIBLE</span>
-              <span className="hero-step-divider">/</span>
-              <span className="hero-step-item">INGENIERÍA & UI/UX</span>
-              <span className="hero-step-divider">/</span>
-              <span className="hero-step-item">2026</span>
-            </div>
-          </div>
+        <div className="hero-divider" aria-hidden="true">
+          <svg
+            className="hero-divider-svg"
+            viewBox="0 0 1440 100"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+          >
+            <path
+              className="hero-divider-fill"
+              d="M0,50 C199,72 521,72 720,50 C919,28 1241,28 1440,50 L1440,100 L0,100 Z"
+            />
+            <path
+              className="hero-divider-stroke"
+              d="M0,50 C199,72 521,72 720,50 C919,28 1241,28 1440,50"
+            />
+          </svg>
         </div>
       </section>
     </>
