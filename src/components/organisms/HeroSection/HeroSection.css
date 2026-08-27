@@ -900,6 +900,7 @@
     min-height: auto;
     padding-top: calc(var(--space-12) + var(--space-8));
     padding-bottom: var(--space-8);
+    overflow: hidden;
   }
 
   .hero-inner {
@@ -922,6 +923,13 @@
     right: -4%;
     width: var(--hero-system-size-tablet);
   }
+
+  /* Disable expensive backdrop-filter on orbital rings for tablets */
+  .hero-system-ring--middle,
+  .hero-system-ring--inner {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
 }
 
 /* ─── Responsive — Mobile ─── */
@@ -930,6 +938,9 @@
   #hero {
     padding-top: calc(var(--space-12) + var(--space-6));
     padding-bottom: clamp(3rem, 6vh, 5rem);
+    overflow: hidden;
+    /* Disable expensive gradient animation on mobile */
+    animation: none;
   }
 
   #hero::before {
@@ -965,14 +976,14 @@
     width: 100%;
   }
 
+  /* Hide orbital system on mobile — it was only 0.22 opacity
+     but still ran ~12 animations consuming GPU */
   .hero-system {
-    --hero-system-current-opacity: var(--hero-system-opacity-mobile);
-    top: 34%;
-    right: -6%;
-    width: var(--hero-system-size-mobile);
+    display: none;
   }
 
-  .hero-system-ring--outer {
-    border-color: var(--color-border);
+  /* Disable blob animations on mobile */
+  .hero-blob {
+    animation: none;
   }
 }

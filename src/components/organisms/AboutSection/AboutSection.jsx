@@ -1,6 +1,6 @@
 import React from 'react';
 import './AboutSection.css';
-import profilePic from '../../../assets/img/me.png';
+import profilePic from '../../../assets/img/me.webp';
 import StackedCardImage from '../../molecules/StackedCardImage/StackedCardImage';
 
 const AboutSection = () => {
@@ -23,7 +23,7 @@ const AboutSection = () => {
           </div>
         </div>
         <div className="about-image">
-          <StackedCardImage src={profilePic} alt="Foto de perfil" />
+          <StackedCardImage src={profilePic} alt="Foto de perfil" loading="lazy" />
         </div>
       </div>
       </div>

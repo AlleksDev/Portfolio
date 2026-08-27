@@ -860,3 +860,15 @@
     flex-basis: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .soft-background {
+    display: none;
+  }
+
+  .soft-item {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+

@@ -486,6 +486,28 @@ html {
     --header-offset: 4rem;
   }
 
+  html {
+    scroll-snap-type: none;
+  }
+
+  /* Disable noise texture overlay on mobile — causes extra compositing */
+  body::before {
+    display: none;
+  }
+
+  /* Disable scroll-snap on individual sections */
+  #about,
+  #projects,
+  #skills,
+  #patterns,
+  #soft-skills,
+  #experience,
+  #contact {
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+    min-height: auto;
+  }
+
   .section-header {
     margin-bottom: var(--space-9);
   }
