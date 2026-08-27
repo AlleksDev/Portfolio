@@ -2,7 +2,6 @@
 import { techIconsMap, patternIconsMap } from './skills.js';
 
 // Importar imágenes locales de proyectos
-import notariaCover from '../assets/img/projects/web/notaria178/notaria.webp';
 import vaultDocCover from '../assets/img/projects/web/estancias/VaultDoc.webp';
 import vixelCover from '../assets/img/projects/web/vixel/vixel.webp';
 import geovaCover from '../assets/img/projects/web/geova/GEOVA.webp';

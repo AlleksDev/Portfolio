@@ -66,6 +66,7 @@ function ScrollToTopAndAnimate() {
     };
   }, [location.pathname]);
 
+
   return (
     <div
       className="scroll-progress"

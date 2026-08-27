@@ -83,12 +83,12 @@
   --space-10: 3rem;
   --space-11: 4rem;
   --space-12: 5rem;
-  --space-section: 7.5rem;
+  --space-section: clamp(4.25rem, 7vh, 6.25rem);
   --container-width: 72.5rem;
   --container-gutter: 1.75rem;
   --header-padding: 1.125rem;
   --header-padding-scrolled: 0.75rem;
-  --header-offset: 10rem;
+  --header-offset: clamp(4rem, 6.5vh, 4.75rem);
   --control-size: 2.5rem;
   --touch-target: 2.75rem;
   --progress-height: 0.1875rem;
@@ -112,10 +112,10 @@
   --hero-system-size: clamp(42rem, 62vw, 68rem);
   --hero-system-size-tablet: min(90vw, 48rem);
   --hero-system-size-mobile: clamp(26rem, 98vw, 36rem);
-  --hero-system-offset-inline: clamp(-8rem, -20vw, 6rem);
-  --hero-system-opacity: 0.56;
-  --hero-system-opacity-tablet: 0.42;
-  --hero-system-opacity-mobile: 0.32;
+  --hero-system-offset-inline: clamp(-18rem, -35vw, 6rem);
+  --hero-system-opacity: 1;
+  --hero-system-opacity-tablet: 0.35;
+  --hero-system-opacity-mobile: 0.22;
   --hero-system-tilt: -7deg;
   --hero-system-axis-extension: 16%;
   --hero-system-ring-middle: 70%;
@@ -255,6 +255,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
   scroll-padding-top: var(--header-offset);
   background: var(--color-bg);
 }
@@ -335,15 +336,32 @@ ul {
   box-shadow: var(--shadow-focus);
 }
 
-section {
+section:not(#hero) {
   position: relative;
   z-index: 1;
   width: 100%;
   padding: var(--space-section) var(--space-0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-section[id] {
+#hero {
+  scroll-snap-align: start;
+  scroll-margin-top: 0;
+}
+
+#about,
+#projects,
+#skills,
+#patterns,
+#soft-skills,
+#experience,
+#contact {
+  scroll-snap-align: start;
   scroll-margin-top: var(--header-offset);
+  scroll-snap-stop: normal;
+  min-height: min(100svh, fit-content);
 }
 
 .section-inner {
@@ -455,15 +473,17 @@ html {
 
 @media (max-width: 1024px) {
   :root {
-    --space-section: 5rem;
+    --space-section: 4.5rem;
     --container-gutter: 1.5rem;
+    --header-offset: 4.5rem;
   }
 }
 
 @media (max-width: 768px) {
   :root {
-    --space-section: 4rem;
+    --space-section: 3.75rem;
     --container-gutter: 1rem;
+    --header-offset: 4rem;
   }
 
   .section-header {
@@ -473,14 +493,16 @@ html {
 
 @media (max-width: 480px) {
   :root {
-    --space-section: 3.5rem;
+    --space-section: 3.25rem;
     --container-gutter: 0.875rem;
+    --header-offset: 3.5rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+    scroll-snap-type: none;
   }
 
   *,

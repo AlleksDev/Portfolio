@@ -11,11 +11,12 @@ function ProjectDetailPage() {
   const navigate = useNavigate();
   const project = projects.find((p) => p.id === id);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [prevId, setPrevId] = useState(id);
 
-  // Reiniciar el índice de imagen cuando cambie el proyecto
-  useEffect(() => {
+  if (prevId !== id) {
+    setPrevId(id);
     setCurrentImageIndex(0);
-  }, [id]);
+  }
 
   const fallbackImage = project ? getProjectImageUrl(project) : '';
   const projectImages = (project?.images && project.images.length > 0)
@@ -23,26 +24,27 @@ function ProjectDetailPage() {
     : fallbackImage
       ? [fallbackImage]
       : [];
-  const hasImages = projectImages.length > 0;
+  const numImages = projectImages.length;
+  const hasImages = numImages > 0;
 
   const handlePrevImage = useCallback(() => {
-    if (!hasImages || projectImages.length <= 1) return;
+    if (numImages <= 1) return;
     setCurrentImageIndex((prev) => 
-      prev === 0 ? projectImages.length - 1 : prev - 1
+      prev === 0 ? numImages - 1 : prev - 1
     );
-  }, [hasImages, projectImages.length]);
+  }, [numImages]);
 
   const handleNextImage = useCallback(() => {
-    if (!hasImages || projectImages.length <= 1) return;
+    if (numImages <= 1) return;
     setCurrentImageIndex((prev) => 
-      prev === projectImages.length - 1 ? 0 : prev + 1
+      prev === numImages - 1 ? 0 : prev + 1
     );
-  }, [hasImages, projectImages.length]);
+  }, [numImages]);
 
   // Navegación con flechas del teclado
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (!hasImages || projectImages.length <= 1) return;
+      if (numImages <= 1) return;
       if (e.key === 'ArrowLeft') {
         handlePrevImage();
       } else if (e.key === 'ArrowRight') {
@@ -51,7 +53,7 @@ function ProjectDetailPage() {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [hasImages, projectImages.length, handlePrevImage, handleNextImage]);
+  }, [numImages, handlePrevImage, handleNextImage]);
 
   if (!project) {
     return (
