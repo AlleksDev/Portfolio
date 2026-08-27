@@ -6,7 +6,6 @@ const ContactSection = () => {
     <section id="contact" className="reveal">
       <div className="section-inner">
       <div className="section-header">
-        <div className="section-dot"></div>
         <h2 className="section-title">CONTACTO</h2>
       </div>
       <div className="contact-grid">

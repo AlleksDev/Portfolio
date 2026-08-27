@@ -1,78 +1,146 @@
 .card-container {
   position: relative;
   width: 100%;
-  max-width: 25rem;
-  aspect-ratio: 4 / 5;
-  perspective: 75rem;
+  max-width: 32rem;
+  height: clamp(27rem, 66vh, 40rem);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-inline: auto;
+  margin-bottom: 0;
 }
 
-.main-image,
-.stacked-card {
-  position: absolute;
-  inset: var(--space-0);
-  width: 100%;
+.main-image-wrapper {
+  position: relative;
+  z-index: 3;
+  width: 86%;
   height: 100%;
-  border: var(--line-width) solid var(--color-border);
-  border-radius: var(--radius-l);
-  transition: transform var(--duration-normal) var(--ease), box-shadow var(--duration-normal) var(--ease), border-color var(--duration-normal) var(--ease);
+  border-top-left-radius: 2.75rem;
+  border-top-right-radius: 2.75rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow: hidden;
+  border: 1.5px solid var(--color-border-strong);
+  border-bottom: none;
+  background: var(--color-bg-alt);
+  box-shadow: none;
+  transition: transform 350ms cubic-bezier(0.25, 1, 0.5, 1), border-color var(--duration-normal) var(--ease);
 }
 
 .main-image {
-  z-index: 4;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  background: var(--color-bg-alt);
-  box-shadow: var(--shadow-m);
+  object-position: center 20%;
+  display: block;
 }
 
 .stacked-card {
-  background: var(--gradient-card);
+  position: absolute;
+  bottom: 0;
+  border-top-left-radius: 2.5rem;
+  border-top-right-radius: 2.5rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
+  box-shadow: none;
+  pointer-events: none;
+  transition: transform 350ms cubic-bezier(0.25, 1, 0.5, 1), border-color var(--duration-normal) var(--ease);
 }
 
-.stacked-card-1 {
-  z-index: 3;
-  border-color: var(--color-red-glow);
-  transform: rotate(-2deg);
-}
-
-.stacked-card-2 {
-  z-index: 2;
-  border-color: var(--color-teal-glow);
-  transform: rotate(2deg);
-}
-
-.stacked-card-3 {
+/* Tarjeta izquierda detrás: asoma por el lado izquierdo sin sobresalir por arriba */
+.stacked-card-left {
   z-index: 1;
-  transform: rotate(-4deg);
+  left: 0;
+  width: 84%;
+  height: calc(100% - 1.25rem);
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border-strong);
+  border-bottom: none;
+  box-shadow: none;
 }
 
-.card-container:hover .main-image {
-  border-color: var(--color-border-strong);
-  transform: translateY(var(--motion-lift-s)) rotate(-2deg);
-  box-shadow: var(--shadow-m);
+/* Tarjeta derecha detrás: asoma por el lado derecho sin sobresalir por arriba */
+.stacked-card-right {
+  z-index: 2;
+  right: 0;
+  width: 84%;
+  height: calc(100% - 1.75rem);
+  background: var(--color-bg-alt);
+  border: 1.5px solid var(--color-border-strong);
+  border-bottom: none;
+  box-shadow: none;
 }
 
-.card-container:hover .stacked-card-1 {
-  transform: translate(var(--space-3), var(--space-2)) rotate(4deg);
+/* Hover interactivo notorio: amplia separación lateral sin rotaciones ni sombras */
+.card-container:hover .main-image-wrapper {
+  transform: translateY(-10px);
+  border-color: var(--color-red);
+  box-shadow: none;
 }
 
-.card-container:hover .stacked-card-2 {
-  transform: translate(var(--space-6), var(--space-4)) rotate(8deg);
+.card-container:hover .stacked-card-left {
+  transform: translateX(-34px) translateY(-4px);
+  border-color: var(--color-red);
+  box-shadow: none;
 }
 
-.card-container:hover .stacked-card-3 {
-  transform: translate(var(--space-8), var(--space-6)) rotate(12deg);
+.card-container:hover .stacked-card-right {
+  transform: translateX(34px) translateY(-4px);
+  border-color: var(--color-teal);
+  box-shadow: none;
 }
 
-@media (max-width: 640px) {
-  .card-container:hover .stacked-card-1 {
-    transform: translate(var(--space-2), var(--space-1)) rotate(2deg);
+@media (max-width: 800px) {
+  .card-container {
+    max-width: 24rem;
+    height: clamp(20rem, 50vh, 28rem);
   }
 
-  .card-container:hover .stacked-card-2 {
-    transform: translate(var(--space-4), var(--space-2)) rotate(4deg);
+  .main-image-wrapper {
+    width: 86%;
   }
 
-  .card-container:hover .stacked-card-3 {
-    transform: translate(var(--space-6), var(--space-3)) rotate(6deg);
+  .stacked-card {
+    width: 84%;
+  }
+
+  .card-container:hover .stacked-card-left {
+    transform: translateX(-20px) translateY(-2px);
+  }
+
+  .card-container:hover .stacked-card-right {
+    transform: translateX(20px) translateY(-2px);
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+    max-width: 19rem;
+    height: clamp(18rem, 45vh, 24rem);
+  }
+
+  .main-image-wrapper {
+    width: 88%;
+  }
+
+  .stacked-card {
+    width: 86%;
+  }
+
+  .stacked-card-left {
+    height: calc(100% - 0.85rem);
+  }
+
+  .stacked-card-right {
+    height: calc(100% - 1.25rem);
+  }
+
+  .card-container:hover .stacked-card-left {
+    transform: translateX(-12px) translateY(-2px);
+  }
+
+  .card-container:hover .stacked-card-right {
+    transform: translateX(12px) translateY(-2px);
   }
 }

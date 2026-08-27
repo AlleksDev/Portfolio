@@ -4,13 +4,14 @@ import './StackedCardImage.css';
 const StackedCardImage = ({ src, alt = 'Card image' }) => {
   return (
     <div className="card-container">
-      {/* Tarjetas apiladas detrás (efecto documento) */}
-      <div className="stacked-card stacked-card-1"></div>
-      <div className="stacked-card stacked-card-2"></div>
-      <div className="stacked-card stacked-card-3"></div>
+      {/* Tarjetas apiladas detrás que asoman por los lados izquierdo y derecho */}
+      <div className="stacked-card stacked-card-left" aria-hidden="true"></div>
+      <div className="stacked-card stacked-card-right" aria-hidden="true"></div>
       
       {/* Imagen principal */}
-      <img src={src} alt={alt} className="main-image" />
+      <div className="main-image-wrapper">
+        <img src={src} alt={alt} className="main-image" />
+      </div>
     </div>
   );
 };

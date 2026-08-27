@@ -160,12 +160,12 @@ export const softSkills = [
 
 // Patrones y arquitecturas
 export const patternsAndArchitectures = [
-  { icon: cleanArchIcon, title: 'Arquitectura limpia', desc: 'Separación de responsabilidades en capas para lograr un código independiente, testeable y muy mantenible.' },
-  { icon: hexagonIcon, title: 'Hexagonal / Puertos y adaptadores', desc: 'Aislamiento de la lógica de negocio central de las bases de datos y frameworks mediante puertos e implementaciones externas.' },
-  { icon: triangleIcon, title: 'Modelo Vista Controlador (MVC)', desc: 'Estructuración clásica separando la interfaz de usuario, la lógica de datos y el flujo de control para facilitar el desarrollo.' },
-  { icon: eventDrivenIcon, title: 'Event Driven', desc: 'Arquitectura dirigida por eventos enfocada en el bajo acoplamiento y flujos asíncronos para sistemas altamente reactivos.' },
-  { icon: mvvmIcon, title: 'Modelo Vista ViewModel (MVVM)', desc: 'Desacoplamiento especializado en desarrollo Front-End (ej. con Android/Jetpack) que facilita el enlace bidireccional de datos.' },
-  { icon: designPatternsIcon, title: 'Patrones de diseño', desc: 'Aplicación de patrones creacionales, estructurales y de comportamiento (Singleton, Observer, Factory, etc) para resolver problemas comunes.' },
+  { icon: cleanArchIcon, title: 'Arquitectura limpia', desc: 'Separación en capas independientes, altamente testeables y mantenibles.' },
+  { icon: hexagonIcon, title: 'Hexagonal / Puertos y adaptadores', desc: 'Aislamiento del dominio central mediante puertos y adaptadores externos.' },
+  { icon: triangleIcon, title: 'Modelo Vista Controlador (MVC)', desc: 'Separación clásica de interfaz de usuario, datos y control de flujo.' },
+  { icon: eventDrivenIcon, title: 'Event Driven', desc: 'Sistemas reactivos desacoplados mediante flujos asíncronos y eventos.' },
+  { icon: mvvmIcon, title: 'Modelo Vista ViewModel (MVVM)', desc: 'Enlace bidireccional reactivo y desacoplamiento de la interfaz de usuario.' },
+  { icon: designPatternsIcon, title: 'Patrones de diseño', desc: 'Soluciones estándar reutilizables: Singleton, Observer, Factory, etc.' },
 ];
 
 // Objeto de habilidades antiguo (se mantiene para compatibilidad hacia atrás si es necesario)

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SkillsSection.css';
 import { techSkillsCategories, softSkills, patternsAndArchitectures } from '../../../data/skills';
 
@@ -6,7 +6,6 @@ const SoftSkills = () => (
   <section id="soft-skills" className="reveal">
     <div className="section-inner">
     <div className="section-header">
-      <div className="section-dot"></div>
       <h2 className="section-title">HABILIDADES BLANDAS</h2>
     </div>
     <div className="soft-grid">
@@ -26,66 +25,308 @@ const SoftSkills = () => (
   </section>
 );
 
-const Patterns = () => (
-  <section id="patterns" className="reveal">
-    <div className="section-inner">
-      <div className="section-header">
-        <div className="section-dot"></div>
-        <h2 className="section-title">PATRONES & ARQUITECTURAS</h2>
-      </div>
-      <div className="patterns-layout">
-        <div className="architecture-visual" aria-hidden="true">
-          <div className="architecture-rings">
-            <div className="architecture-ring architecture-ring--outer">
-              <span>{patternsAndArchitectures[3].title}</span>
+const Patterns = () => {
+  const [activeIdx, setActiveIdx] = useState(null);
+
+  const handleSelect = (idx) => {
+    setActiveIdx((prev) => (prev === idx ? null : idx));
+  };
+
+  return (
+    <section id="patterns" className="reveal">
+      <div className="section-inner">
+        <div className="patterns-layout">
+          {/* Lado Izquierdo: Título + Cards */}
+          <div className="patterns-left">
+            <div className="section-header">
+              <h2 className="section-title">PATRONES & ARQUITECTURAS</h2>
             </div>
-            <div className="architecture-ring architecture-ring--middle">
-              <span>{patternsAndArchitectures[1].title}</span>
-            </div>
-            <div className="architecture-ring architecture-ring--inner">
-              <span>MVC · MVVM</span>
-            </div>
-            <div className="architecture-core">
-              <img src={patternsAndArchitectures[0].icon} alt="" />
-              <span>{patternsAndArchitectures[0].title}</span>
-            </div>
+            <ul className="patterns-grid">
+              {patternsAndArchitectures.map((item, idx) => (
+                <li
+                  className={`pattern-card ${activeIdx === idx ? 'is-active' : ''}`}
+                  key={item.title}
+                  onMouseEnter={() => setActiveIdx(idx)}
+                  onMouseLeave={() => setActiveIdx(null)}
+                  onClick={() => handleSelect(idx)}
+                  tabIndex={0}
+                  role="button"
+                  aria-pressed={activeIdx === idx}
+                >
+                  <div
+                    className="pattern-icon"
+                    style={{ '--pattern-icon': `url("${item.icon}")` }}
+                    aria-hidden="true"
+                  />
+                  <div className="pattern-info">
+                    <h3>{item.title}</h3>
+                    <p>{item.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
-        <div className="patterns-content">
-          <ul className="patterns-grid">
-            {patternsAndArchitectures.map((item) => (
-              <li className="pattern-card" key={item.title}>
-                <div
-                  className="pattern-icon"
-                  style={{ '--pattern-icon': `url("${item.icon}")` }}
-                  aria-hidden="true"
+
+          {/* Lado Derecho: Círculos concéntricos completos cortados al borde de pantalla */}
+          <div className="architecture-visual" aria-label="Diagrama arquitectónico concéntrico lateral">
+            <div className="architecture-semicircle-container architecture-right-container">
+              <svg
+                className="architecture-svg architecture-svg--right"
+                viewBox="0 0 460 700"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                {/* Ejes técnicos: vertical y horizontal cruzando el centro (430, 350) */}
+                <line x1="430" y1="20" x2="430" y2="680" className="arch-cut-axis" />
+                <line x1="100" y1="350" x2="760" y2="350" className="arch-cut-axis" />
+
+                {/* Ticks en eje vertical */}
+                <line x1="418" y1="350" x2="442" y2="350" className="arch-tick-major" />
+                <line x1="422" y1="20" x2="438" y2="20" className="arch-tick" />
+                <line x1="422" y1="120" x2="438" y2="120" className="arch-tick" />
+                <line x1="422" y1="210" x2="438" y2="210" className="arch-tick" />
+                <line x1="422" y1="280" x2="438" y2="280" className="arch-tick" />
+                <line x1="422" y1="420" x2="438" y2="420" className="arch-tick" />
+                <line x1="422" y1="490" x2="438" y2="490" className="arch-tick" />
+                <line x1="422" y1="580" x2="438" y2="580" className="arch-tick" />
+                <line x1="422" y1="680" x2="438" y2="680" className="arch-tick" />
+
+                {/* Ticks en eje horizontal */}
+                <line x1="100" y1="342" x2="100" y2="358" className="arch-tick" />
+                <line x1="200" y1="342" x2="200" y2="358" className="arch-tick" />
+                <line x1="290" y1="342" x2="290" y2="358" className="arch-tick" />
+                <line x1="360" y1="342" x2="360" y2="358" className="arch-tick" />
+                <line x1="500" y1="342" x2="500" y2="358" className="arch-tick" />
+                <line x1="570" y1="342" x2="570" y2="358" className="arch-tick" />
+                <line x1="660" y1="342" x2="660" y2="358" className="arch-tick" />
+                <line x1="760" y1="342" x2="760" y2="358" className="arch-tick" />
+
+                {/* Rayos estructurales radiales (Patrones de diseño - Idx 5) */}
+                <g className={`arch-radial-rays ${activeIdx === 5 ? 'is-active' : ''}`}>
+                  <line x1="430" y1="350" x2="160" y2="161" className="arch-ray" />
+                  <line x1="430" y1="350" x2="100" y2="350" className="arch-ray" />
+                  <line x1="430" y1="350" x2="160" y2="539" className="arch-ray" />
+                  <line x1="430" y1="350" x2="700" y2="161" className="arch-ray" />
+                  <line x1="430" y1="350" x2="760" y2="350" className="arch-ray" />
+                  <line x1="430" y1="350" x2="700" y2="539" className="arch-ray" />
+                </g>
+
+                {/* Círculo 4: Capa Externa Completa - Event Driven (Idx 3) */}
+                <circle
+                  cx="430"
+                  cy="350"
+                  r="330"
+                  className={`arch-arc arch-arc--outer ${activeIdx === 3 ? 'is-active' : ''}`}
+                  onMouseEnter={() => setActiveIdx(3)}
+                  onMouseLeave={() => setActiveIdx(null)}
+                  onClick={() => handleSelect(3)}
                 />
-                <div className="pattern-info">
-                  <h3>{item.title}</h3>
-                  <p>{item.desc}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-          <div className="architecture-chips" aria-hidden="true">
-            {patternsAndArchitectures.map((item) => (
-              <span className="architecture-chip" key={item.title}>
-                <img src={item.icon} alt="" />
-              </span>
-            ))}
+
+                {/* Círculo 3: Capa Media Completa - Hexagonal / Puertos y Adaptadores (Idx 1) */}
+                <circle
+                  cx="430"
+                  cy="350"
+                  r="230"
+                  className={`arch-arc arch-arc--middle ${activeIdx === 1 ? 'is-active' : ''}`}
+                  onMouseEnter={() => setActiveIdx(1)}
+                  onMouseLeave={() => setActiveIdx(null)}
+                  onClick={() => handleSelect(1)}
+                />
+
+                {/* Círculo 2: Capa Interna Completa - MVC & MVVM (Idx 2 & 4) */}
+                <circle
+                  cx="430"
+                  cy="350"
+                  r="140"
+                  className={`arch-arc arch-arc--inner ${activeIdx === 2 || activeIdx === 4 ? 'is-active' : ''}`}
+                  onMouseEnter={() => setActiveIdx(2)}
+                  onMouseLeave={() => setActiveIdx(null)}
+                  onClick={() => handleSelect(2)}
+                />
+
+                {/* Círculo Central Completo: Núcleo - Arquitectura Limpia (Idx 0) */}
+                <circle
+                  cx="430"
+                  cy="350"
+                  r="70"
+                  className={`arch-core-semicircle ${activeIdx === 0 ? 'is-active' : ''}`}
+                  onMouseEnter={() => setActiveIdx(0)}
+                  onMouseLeave={() => setActiveIdx(null)}
+                  onClick={() => handleSelect(0)}
+                />
+
+                {/* Nodos de anclaje */}
+                <circle
+                  cx="430"
+                  cy="350"
+                  r="7"
+                  className={`arch-node arch-node--core ${activeIdx === 0 ? 'is-active' : ''}`}
+                  onMouseEnter={() => setActiveIdx(0)}
+                  onMouseLeave={() => setActiveIdx(null)}
+                  onClick={() => handleSelect(0)}
+                />
+                <circle
+                  cx="331"
+                  cy="251"
+                  r="6"
+                  className={`arch-node arch-node--teal ${activeIdx === 2 ? 'is-active' : ''}`}
+                  onMouseEnter={() => setActiveIdx(2)}
+                  onMouseLeave={() => setActiveIdx(null)}
+                  onClick={() => handleSelect(2)}
+                />
+                <circle
+                  cx="331"
+                  cy="449"
+                  r="6"
+                  className={`arch-node arch-node--teal ${activeIdx === 4 ? 'is-active' : ''}`}
+                  onMouseEnter={() => setActiveIdx(4)}
+                  onMouseLeave={() => setActiveIdx(null)}
+                  onClick={() => handleSelect(4)}
+                />
+                <circle
+                  cx="200"
+                  cy="350"
+                  r="6.5"
+                  className={`arch-node arch-node--teal ${activeIdx === 1 ? 'is-active' : ''}`}
+                  onMouseEnter={() => setActiveIdx(1)}
+                  onMouseLeave={() => setActiveIdx(null)}
+                  onClick={() => handleSelect(1)}
+                />
+                <circle
+                  cx="160"
+                  cy="161"
+                  r="7"
+                  className={`arch-node arch-node--red ${activeIdx === 3 ? 'is-active' : ''}`}
+                  onMouseEnter={() => setActiveIdx(3)}
+                  onMouseLeave={() => setActiveIdx(null)}
+                  onClick={() => handleSelect(3)}
+                />
+                <circle
+                  cx="160"
+                  cy="539"
+                  r="7"
+                  className={`arch-node arch-node--gold ${activeIdx === 5 ? 'is-active' : ''}`}
+                  onMouseEnter={() => setActiveIdx(5)}
+                  onMouseLeave={() => setActiveIdx(null)}
+                  onClick={() => handleSelect(5)}
+                />
+
+                {/* Badges SVG integrados con foreignObject (centrado perfecto flexbox) */}
+                {/* 0: Clean Arch */}
+                <foreignObject
+                  x="290"
+                  y="335"
+                  width="135"
+                  height="30"
+                  className={`arch-svg-badge-fo arch-svg-badge-fo--core ${activeIdx === 0 ? 'is-active' : ''}`}
+                  onClick={() => handleSelect(0)}
+                  onMouseEnter={() => setActiveIdx(0)}
+                  onMouseLeave={() => setActiveIdx(null)}
+                >
+                  <div className="arch-badge-pill">
+                    <img src={patternsAndArchitectures[0].icon} alt="" />
+                    <span>CLEAN ARCH</span>
+                  </div>
+                </foreignObject>
+
+                {/* 2: MVC */}
+                <foreignObject
+                  x="292"
+                  y="208"
+                  width="78"
+                  height="28"
+                  className={`arch-svg-badge-fo ${activeIdx === 2 ? 'is-active' : ''}`}
+                  onClick={() => handleSelect(2)}
+                  onMouseEnter={() => setActiveIdx(2)}
+                  onMouseLeave={() => setActiveIdx(null)}
+                >
+                  <div className="arch-badge-pill">
+                    <img src={patternsAndArchitectures[2].icon} alt="" />
+                    <span>MVC</span>
+                  </div>
+                </foreignObject>
+
+                {/* 4: MVVM */}
+                <foreignObject
+                  x="287"
+                  y="465"
+                  width="88"
+                  height="28"
+                  className={`arch-svg-badge-fo ${activeIdx === 4 ? 'is-active' : ''}`}
+                  onClick={() => handleSelect(4)}
+                  onMouseEnter={() => setActiveIdx(4)}
+                  onMouseLeave={() => setActiveIdx(null)}
+                >
+                  <div className="arch-badge-pill">
+                    <img src={patternsAndArchitectures[4].icon} alt="" />
+                    <span>MVVM</span>
+                  </div>
+                </foreignObject>
+
+                {/* 1: Hexagonal */}
+                <foreignObject
+                  x="58"
+                  y="335"
+                  width="130"
+                  height="30"
+                  className={`arch-svg-badge-fo ${activeIdx === 1 ? 'is-active' : ''}`}
+                  onClick={() => handleSelect(1)}
+                  onMouseEnter={() => setActiveIdx(1)}
+                  onMouseLeave={() => setActiveIdx(null)}
+                >
+                  <div className="arch-badge-pill">
+                    <img src={patternsAndArchitectures[1].icon} alt="" />
+                    <span>HEXAGONAL</span>
+                  </div>
+                </foreignObject>
+
+                {/* 3: Event Driven */}
+                <foreignObject
+                  x="88"
+                  y="145"
+                  width="145"
+                  height="32"
+                  className={`arch-svg-badge-fo ${activeIdx === 3 ? 'is-active' : ''}`}
+                  onClick={() => handleSelect(3)}
+                  onMouseEnter={() => setActiveIdx(3)}
+                  onMouseLeave={() => setActiveIdx(null)}
+                >
+                  <div className="arch-badge-pill">
+                    <img src={patternsAndArchitectures[3].icon} alt="" />
+                    <span>EVENT DRIVEN</span>
+                  </div>
+                </foreignObject>
+
+                {/* 5: Design Patterns */}
+                <foreignObject
+                  x="76"
+                  y="523"
+                  width="168"
+                  height="32"
+                  className={`arch-svg-badge-fo ${activeIdx === 5 ? 'is-active' : ''}`}
+                  onClick={() => handleSelect(5)}
+                  onMouseEnter={() => setActiveIdx(5)}
+                  onMouseLeave={() => setActiveIdx(null)}
+                >
+                  <div className="arch-badge-pill">
+                    <img src={patternsAndArchitectures[5].icon} alt="" />
+                    <span>DESIGN PATTERNS</span>
+                  </div>
+                </foreignObject>
+              </svg>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 const TechSkills = () => {
   return (
     <section id="skills" className="reveal">
       <div className="section-inner">
       <div className="section-header">
-        <div className="section-dot"></div>
         <h2 className="section-title">CONOCIMIENTOS TÉCNICOS</h2>
       </div>
       <div className="tech-grid">

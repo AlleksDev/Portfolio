@@ -8,7 +8,6 @@ const AboutSection = () => {
     <section id="about" className="reveal">
       <div className="section-inner">
       <div className="section-header">
-        <div className="section-dot"></div>
         <h2 className="section-title">SOBRE MÍ</h2>
       </div>
       <div className="about-grid">

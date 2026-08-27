@@ -8,9 +8,6 @@
   color: var(--color-footer-text);
 }
 
-#contact .section-dot {
-  background: var(--color-red);
-}
 
 .contact-grid {
   display: grid;

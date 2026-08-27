@@ -37,7 +37,6 @@ const ProjectsSection = () => {
     <section id="projects" className="reveal">
       <div className="section-inner">
       <div className="section-header">
-        <div className="section-dot"></div>
         <h2 className="section-title">PROYECTOS</h2>
       </div>
       <div className="projects-filters">
