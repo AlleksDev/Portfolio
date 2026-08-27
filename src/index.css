@@ -471,6 +471,26 @@ html {
   background: var(--color-red);
 }
 
+@media (max-width: 1024px), (hover: none) and (pointer: coarse) {
+  html {
+    scroll-snap-type: none !important;
+  }
+
+  /* Disable scroll-snap on all sections for mobile/tablet/touch */
+  #hero,
+  #about,
+  #projects,
+  #skills,
+  #patterns,
+  #soft-skills,
+  #experience,
+  #contact {
+    scroll-snap-align: none !important;
+    scroll-snap-stop: normal;
+    min-height: auto;
+  }
+}
+
 @media (max-width: 1024px) {
   :root {
     --space-section: 4.5rem;
@@ -486,26 +506,9 @@ html {
     --header-offset: 4rem;
   }
 
-  html {
-    scroll-snap-type: none;
-  }
-
   /* Disable noise texture overlay on mobile — causes extra compositing */
   body::before {
     display: none;
-  }
-
-  /* Disable scroll-snap on individual sections */
-  #about,
-  #projects,
-  #skills,
-  #patterns,
-  #soft-skills,
-  #experience,
-  #contact {
-    scroll-snap-align: none;
-    scroll-snap-stop: normal;
-    min-height: auto;
   }
 
   .section-header {

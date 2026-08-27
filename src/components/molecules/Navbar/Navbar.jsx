@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../../../assets/logo.svg';
+import logoDark from '../../../assets/logo-dark.svg';
 
 const navItems = [
   { id: 'about', label: 'SOBRE MÍ' },
@@ -26,7 +27,7 @@ const Navbar = () => {
         const heroBottom = hero.getBoundingClientRect().bottom;
         setIsScrolled(heroBottom <= 70);
       } else {
-        setIsScrolled(window.scrollY > 20);
+        setIsScrolled(true);
       }
     };
 
@@ -37,6 +38,15 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScrollState);
       window.removeEventListener('resize', handleScrollState);
     };
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const syncTheme = () => {
+      setTheme(document.documentElement.dataset.theme || 'light');
+    };
+    const observer = new MutationObserver(syncTheme);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -103,11 +113,14 @@ const Navbar = () => {
     }
   };
 
+  const isOverHero = location.pathname === '/' && !isScrolled;
+  const currentLogo = (!isOverHero && theme === 'light') ? logoDark : logo;
+
   return (
     <nav className={`site-nav ${isScrolled ? 'is-scrolled' : ''}`} aria-label="Navegación principal">
       <div className="nav-inner">
         <a href="/" onClick={scrollToTop} className="nav-logo" aria-label="Alleks, volver al inicio">
-          <img className="nav-logo__image" src={logo} alt="Logo de Alleks" />
+          <img className="nav-logo__image" src={currentLogo} alt="Logo de Alleks" />
         </a>
 
         <ul id="primary-navigation" className={`nav-links ${isMenuOpen ? 'is-open' : ''}`}>
