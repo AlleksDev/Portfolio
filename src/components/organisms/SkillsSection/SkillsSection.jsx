@@ -4,23 +4,88 @@ import { techSkillsCategories, softSkills, patternsAndArchitectures } from '../.
 
 const SoftSkills = () => (
   <section id="soft-skills" className="reveal">
+    {/* Fondo interactivo de ondas topológicas y partículas flotantes */}
+    <div className="soft-background" aria-hidden="true">
+      <svg className="soft-waves-svg" viewBox="0 0 1440 600" preserveAspectRatio="none" fill="none">
+        <defs>
+          <linearGradient id="soft-wave-grad-1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="var(--color-teal)" stopOpacity="0.04" />
+            <stop offset="50%" stopColor="var(--color-teal)" stopOpacity="0.35" />
+            <stop offset="100%" stopColor="var(--color-red)" stopOpacity="0.08" />
+          </linearGradient>
+          <linearGradient id="soft-wave-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="var(--color-red)" stopOpacity="0.03" />
+            <stop offset="50%" stopColor="var(--color-teal)" stopOpacity="0.25" />
+            <stop offset="100%" stopColor="var(--color-teal)" stopOpacity="0.04" />
+          </linearGradient>
+          <radialGradient id="soft-glow-grad" cx="50%" cy="85%" r="55%">
+            <stop offset="0%" stopColor="var(--color-teal)" stopOpacity="0.16" />
+            <stop offset="60%" stopColor="var(--color-teal)" stopOpacity="0.04" />
+            <stop offset="100%" stopColor="var(--color-teal)" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+
+        {/* Resplandor ambiental de domo */}
+        <ellipse cx="720" cy="560" rx="660" ry="340" fill="url(#soft-glow-grad)" className="soft-ambient-glow" />
+
+        {/* Malla de ondas armónicas (el domo/onda central en el fondo) */}
+        <path
+          d="M -100,600 Q 720,70 1540,600"
+          className="soft-wave-path soft-wave-path--main"
+        />
+        <path
+          d="M -100,600 Q 720,130 1540,600"
+          className="soft-wave-path soft-wave-path--1"
+        />
+        <path
+          d="M -100,600 Q 720,200 1540,600"
+          className="soft-wave-path soft-wave-path--2"
+        />
+        <path
+          d="M -100,600 Q 720,280 1540,600"
+          className="soft-wave-path soft-wave-path--3"
+        />
+        <path
+          d="M -100,600 Q 720,370 1540,600"
+          className="soft-wave-path soft-wave-path--4"
+        />
+        <path
+          d="M -100,600 Q 720,470 1540,600"
+          className="soft-wave-path soft-wave-path--5"
+        />
+      </svg>
+
+      {/* Partículas flotantes bioluminiscentes */}
+      <div className="soft-particles-container">
+        <span className="soft-particle p1"></span>
+        <span className="soft-particle p2"></span>
+        <span className="soft-particle p3"></span>
+        <span className="soft-particle p4"></span>
+        <span className="soft-particle p5"></span>
+        <span className="soft-particle p6"></span>
+        <span className="soft-particle p7"></span>
+        <span className="soft-particle p8"></span>
+        <span className="soft-particle p9"></span>
+        <span className="soft-particle p10"></span>
+        <span className="soft-particle p11"></span>
+        <span className="soft-particle p12"></span>
+      </div>
+    </div>
+
     <div className="section-inner">
-    <div className="section-header">
-      <h2 className="section-title">HABILIDADES BLANDAS</h2>
-    </div>
-    <div className="soft-grid">
-      <div className="soft-graphic">
-        <div className="soft-cube"></div>
+      <div className="section-header">
+        <h2 className="section-title">HABILIDADES BLANDAS</h2>
       </div>
-      <div className="soft-items">
-        {softSkills.map((item, idx) => (
-          <div className="soft-item" key={idx}>
-            <h4><img src={item.icon} alt={item.title} className="soft-skill-icon" /> {item.title}</h4>
-            <p>{item.desc}</p>
-          </div>
-        ))}
+      <div className="soft-grid">
+        <div className="soft-items">
+          {softSkills.map((item, idx) => (
+            <div className="soft-item" key={idx}>
+              <h4><img src={item.icon} alt={item.title} className="soft-skill-icon" /> {item.title}</h4>
+              <p>{item.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
     </div>
   </section>
 );
