@@ -10,7 +10,7 @@ const ContactSection = () => {
       </div>
       <div className="contact-grid">
         <div className="contact-left">
-          <h3 className="contact-title"><span>TRABAJEMOS</span>JUNTOS</h3>
+          <h3 className="contact-title">TRABAJEMOS<span>JUNTOS</span></h3>
           <p className="contact-desc">
             ¿Tienes un proyecto en mente o buscas a un desarrollador que integre diseño UX/UI de calidad con un Front-End estructurado? Me encantaría escucharte y convertir esa idea en un producto funcional y estético. Hablemos y llevemos tu visión al siguiente nivel.
           </p>

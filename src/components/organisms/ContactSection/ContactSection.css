@@ -3,8 +3,7 @@
   background: var(--color-footer-bg);
 }
 
-#contact .section-title,
-#contact .contact-title {
+#contact .section-title {
   color: var(--color-footer-text);
 }
 
@@ -21,17 +20,18 @@
 }
 
 .contact-title {
+  color: var(--color-footer-muted);
+  font-family: var(--font-hero);
   margin-bottom: var(--space-5);
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2rem, 4vw, 1.8rem);
 }
 
 .contact-title span {
-  display: block;
-  margin-bottom: var(--space-2);
+  font-family: inherit;
+  display: inline;
+  margin-left: var(--space-2);
   color: var(--color-footer-red);
-  font-family: var(--font-mono);
-  font-size: var(--font-size-xs);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: var(--tracking-label);
 }
 
