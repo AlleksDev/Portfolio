@@ -109,10 +109,10 @@
   --hero-title-outline-offset: 0.045em;
   --hero-title-outline-opacity: 0.48;
   --hero-support-width: 35rem;
-  --hero-system-size: clamp(42rem, 62vw, 68rem);
-  --hero-system-size-tablet: min(90vw, 48rem);
-  --hero-system-size-mobile: clamp(26rem, 98vw, 36rem);
-  --hero-system-offset-inline: clamp(-18rem, -35vw, 6rem);
+  --hero-system-size: clamp(40rem, 58vw, 64rem);
+  --hero-system-size-tablet: min(90vw, 46rem);
+  --hero-system-size-mobile: clamp(25rem, 96vw, 35rem);
+  --hero-system-offset-inline: clamp(-19rem, -35vw, 4rem);
   --hero-system-opacity: 1;
   --hero-system-opacity-tablet: 0.35;
   --hero-system-opacity-mobile: 0.22;
@@ -336,11 +336,14 @@ ul {
   box-shadow: var(--shadow-focus);
 }
 
+section:not(#hero, #about) {
+  padding: var(--space-section) var(--space-0);
+}
+
 section:not(#hero) {
   position: relative;
   z-index: 1;
   width: 100%;
-  padding: var(--space-section) var(--space-0);
   display: flex;
   flex-direction: column;
   justify-content: center;
