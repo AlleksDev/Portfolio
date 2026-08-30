@@ -62,7 +62,7 @@
   --font-size-xl: 1.9rem;
   --font-size-section: clamp(1.9rem, 3.4vw, 2.6rem);
   --font-size-hero: clamp(4rem, 10vw, 10.75rem);
-  --font-size-hero-mobile: clamp(3.25rem, 17vw, 4.5rem);
+  --font-size-hero-mobile: clamp(2.5rem, 13.5vw, 3.75rem);
   --line-height-tight: 1.12;
   --line-height-body: 1.55;
   --line-height-copy: 1.75;
@@ -85,7 +85,7 @@
   --space-12: 5rem;
   --space-section: clamp(4.25rem, 7vh, 6.25rem);
   --container-width: 72.5rem;
-  --container-gutter: 1.75rem;
+  --container-gutter: clamp(1rem, 4vw, 1.75rem);
   --header-padding: 1.125rem;
   --header-padding-scrolled: 0.75rem;
   --header-offset: clamp(4rem, 6.5vh, 4.75rem);
@@ -257,10 +257,14 @@ html {
   scroll-behavior: smooth;
   scroll-snap-type: y proximity;
   background: var(--color-bg);
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
-  min-width: 20rem;
+  width: 100%;
+  max-width: 100vw;
   overflow-x: hidden;
   background: var(--color-bg);
   color: var(--color-text);
@@ -285,6 +289,9 @@ body::before {
 #root {
   position: relative;
   isolation: isolate;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 h1,

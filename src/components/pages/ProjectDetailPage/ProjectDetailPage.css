@@ -1,6 +1,6 @@
 .project-detail {
   min-height: 80svh;
-  padding: calc(var(--space-10) + var(--space-6)) var(--container-gutter) var(--space-section);
+  padding: calc(var(--space-10) * 2) var(--container-gutter) var(--space-section);
   background: var(--color-bg);
 }
 

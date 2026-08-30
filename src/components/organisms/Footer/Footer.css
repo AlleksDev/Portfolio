@@ -6,7 +6,10 @@ footer {
   justify-content: space-between;
   gap: var(--space-8);
   margin-top: var(--space-0);
-  padding: var(--space-8) max(var(--container-gutter), calc((100% - var(--container-width)) / 2 + var(--container-gutter)));
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: var(--space-8) var(--container-gutter);
   border-top: var(--line-width) solid var(--color-footer-border);
   color: var(--color-footer-text);
   background: var(--color-footer-bg);
@@ -25,6 +28,7 @@ footer {
   color: var(--color-footer-muted);
   font-family: var(--font-mono);
   font-size: var(--font-size-xs);
+  word-break: break-word;
 }
 
 .footer-subtitle {

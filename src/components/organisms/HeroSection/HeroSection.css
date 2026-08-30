@@ -60,7 +60,9 @@
   flex-direction: column;
   justify-content: center;
   isolation: isolate;
-  overflow: visible;
+  overflow: hidden;
+  max-width: 100%;
+  width: 100%;
   padding-top: 0;
   padding-bottom: clamp(4rem, 8vh, 6.5rem);
   background-color: var(--color-bg);
@@ -70,7 +72,6 @@
   animation: hero-gradient-drift 12s var(--ease) infinite alternate;
 }
 
-/* Asymmetrical bottom divider */
 /* Asymmetrical bottom divider */
 .hero-divider {
   position: absolute;
@@ -106,7 +107,7 @@
 .hero-backdrop {
   position: absolute;
   inset: 0;
-  overflow: visible;
+  overflow: hidden;
   pointer-events: none;
   z-index: 2;
 }
@@ -144,7 +145,7 @@
   position: absolute;
   inset: var(--space-0);
   z-index: 0;
-  overflow: visible;
+  overflow: hidden;
   pointer-events: none;
   -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 70%, transparent 95%);
   mask-image: linear-gradient(to bottom, #000 0%, #000 70%, transparent 95%);
