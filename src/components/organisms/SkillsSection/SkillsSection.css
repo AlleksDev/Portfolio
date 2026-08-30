@@ -139,6 +139,8 @@
   background: var(--color-bg);
   overflow-x: clip;
   position: relative;
+  padding-top: 0;
+  max-height: calc(100vh - var(--space-10));
 }
 
 #patterns .section-inner {

@@ -1,8 +1,8 @@
 .card-container {
   position: relative;
   width: 100%;
-  max-width: 32rem;
-  height: clamp(27rem, 66vh, 40rem);
+  max-width: 35rem;
+  height: clamp(29rem, 68vh, 43rem);
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -93,8 +93,8 @@
 
 @media (max-width: 800px) {
   .card-container {
-    max-width: 24rem;
-    height: clamp(20rem, 50vh, 28rem);
+    max-width: 25rem;
+    height: clamp(21.5rem, 52vh, 30rem);
   }
 
   .main-image-wrapper {
@@ -116,8 +116,8 @@
 
 @media (max-width: 480px) {
   .card-container {
-    max-width: 19rem;
-    height: clamp(18rem, 45vh, 24rem);
+    max-width: 20rem;
+    height: clamp(19.5rem, 48vh, 26rem);
   }
 
   .main-image-wrapper {

@@ -335,7 +335,7 @@ ul {
   box-shadow: var(--shadow-focus);
 }
 
-section:not(#hero, #about) {
+section:not(#hero, #about, #patterns) {
   padding: var(--space-section) var(--space-0);
 }
 
@@ -357,7 +357,7 @@ section:not(#hero) {
   scroll-snap-align: start;
   scroll-margin-top: clamp(8rem, 13vh, 9.5rem);
   scroll-snap-stop: normal;
-  min-height: min(100svh, fit-content);
+  min-height: auto;
 }
 
 #projects,
