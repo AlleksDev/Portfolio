@@ -256,7 +256,6 @@
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y proximity;
-  scroll-padding-top: var(--header-offset);
   background: var(--color-bg);
 }
 
@@ -354,7 +353,13 @@ section:not(#hero) {
   scroll-margin-top: 0;
 }
 
-#about,
+#about {
+  scroll-snap-align: start;
+  scroll-margin-top: clamp(8rem, 13vh, 9.5rem);
+  scroll-snap-stop: normal;
+  min-height: min(100svh, fit-content);
+}
+
 #projects,
 #skills,
 #patterns,

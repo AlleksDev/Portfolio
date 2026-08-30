@@ -4,9 +4,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: calc(var(--space-section) / 3);
+  padding-top: var(--space-4);
   padding-bottom: 0;
-  scroll-margin-top: calc(var(--header-offset) + 1.25rem);
+  scroll-margin-top: clamp(8rem, 13vh, 9.5rem);
   overflow-x: clip;
 }
 
