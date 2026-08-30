@@ -1,7 +1,7 @@
-import { useState, useEffect, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import MainLayout from "../../templates/MainLayout/MainLayout";
 import Button from "../../atoms/Button/Button";
+import ProjectGallery from "../../molecules/ProjectGallery/ProjectGallery";
 import projects from "../../../data/projects";
 import { getProjectImageUrl } from "../../../utils/imageLoader";
 import "./ProjectDetailPage.css";
@@ -10,13 +10,6 @@ function ProjectDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
   const project = projects.find((p) => p.id === id);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [prevId, setPrevId] = useState(id);
-
-  if (prevId !== id) {
-    setPrevId(id);
-    setCurrentImageIndex(0);
-  }
 
   const fallbackImage = project ? getProjectImageUrl(project) : '';
   const projectImages = (project?.images && project.images.length > 0)
@@ -24,36 +17,6 @@ function ProjectDetailPage() {
     : fallbackImage
       ? [fallbackImage]
       : [];
-  const numImages = projectImages.length;
-  const hasImages = numImages > 0;
-
-  const handlePrevImage = useCallback(() => {
-    if (numImages <= 1) return;
-    setCurrentImageIndex((prev) => 
-      prev === 0 ? numImages - 1 : prev - 1
-    );
-  }, [numImages]);
-
-  const handleNextImage = useCallback(() => {
-    if (numImages <= 1) return;
-    setCurrentImageIndex((prev) => 
-      prev === numImages - 1 ? 0 : prev + 1
-    );
-  }, [numImages]);
-
-  // Navegación con flechas del teclado
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (numImages <= 1) return;
-      if (e.key === 'ArrowLeft') {
-        handlePrevImage();
-      } else if (e.key === 'ArrowRight') {
-        handleNextImage();
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [numImages, handlePrevImage, handleNextImage]);
 
   if (!project) {
     return (
@@ -70,14 +33,6 @@ function ProjectDetailPage() {
     <MainLayout>
       <div className="project-detail">
         <div className="project-detail__container">
-          <div className="project-detail__top-nav reveal">
-            <button
-              className="project-detail__back"
-              onClick={() => navigate("/")}
-            >
-              <i className="fa-solid fa-arrow-left"></i> Volver a proyectos
-            </button>
-          </div>
           <div className="project-detail__grid">
             <div className="project-detail__info reveal">
               <div className="project-detail__title-wrapper">
@@ -121,76 +76,7 @@ function ProjectDetailPage() {
             </div>
 
             <div className="project-detail__right reveal">
-              <div className="project-detail__preview">
-                <div className="project-detail__browser-bar">
-                  <div className="project-detail__browser-dots">
-                    <span className="project-detail__browser-dot project-detail__browser-dot--red" />
-                    <span className="project-detail__browser-dot project-detail__browser-dot--yellow" />
-                    <span className="project-detail__browser-dot project-detail__browser-dot--green" />
-                  </div>
-                  {hasImages && projectImages.length > 1 && (
-                    <span className="project-detail__carousel-counter">
-                      {currentImageIndex + 1} / {projectImages.length}
-                    </span>
-                  )}
-                </div>
-                <div className="project-detail__image-container">
-                  {!hasImages ? (
-                    <div className="project-detail__coming-soon">
-                      <i className="fa-solid fa-images"></i>
-                      <h3>Próximamente más capturas</h3>
-                      <p>Documentación visual de este proyecto en preparación.</p>
-                    </div>
-                  ) : (
-                    <>
-                      <div className="project-detail__carousel-inner">
-                        {projectImages.length > 1 && (
-                          <button 
-                            className="project-detail__carousel-btn project-detail__carousel-btn--prev" 
-                            onClick={handlePrevImage}
-                            aria-label="Imagen anterior"
-                          >
-                            <i className="fa-solid fa-chevron-left"></i>
-                          </button>
-                        )}
-                        
-                        <div className="project-detail__image-wrapper">
-                          <img
-                            key={currentImageIndex}
-                            src={projectImages[currentImageIndex]}
-                            alt={`${project.title} - captura ${currentImageIndex + 1}`}
-                            className="project-detail__screenshot"
-                            loading="eager"
-                          />
-                        </div>
-
-                        {projectImages.length > 1 && (
-                          <button 
-                            className="project-detail__carousel-btn project-detail__carousel-btn--next" 
-                            onClick={handleNextImage}
-                            aria-label="Siguiente imagen"
-                          >
-                            <i className="fa-solid fa-chevron-right"></i>
-                          </button>
-                        )}
-                      </div>
-                      
-                      {projectImages.length > 1 && (
-                        <div className="project-detail__carousel-dots">
-                          {projectImages.map((_, idx) => (
-                            <button
-                              key={idx}
-                              className={`project-detail__carousel-dot ${idx === currentImageIndex ? 'project-detail__carousel-dot--active' : ''}`}
-                              onClick={() => setCurrentImageIndex(idx)}
-                              aria-label={`Ir a captura ${idx + 1}`}
-                            />
-                          ))}
-                        </div>
-                      )}
-                    </>
-                  )}
-                </div>
-              </div>
+              <ProjectGallery images={projectImages} title={project.title} />
               <div className="project-detail__cta">
                 <Button
                   variant="primary"

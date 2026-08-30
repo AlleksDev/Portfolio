@@ -113,15 +113,42 @@ const Navbar = () => {
     }
   };
 
+  const isProjectPage = location.pathname.startsWith('/project');
   const isOverHero = location.pathname === '/' && !isScrolled;
   const currentLogo = (!isOverHero && theme === 'light') ? logoDark : logo;
+
+  const handleBackToProjects = (event) => {
+    event?.preventDefault();
+    setIsMenuOpen(false);
+    navigate('/');
+    setTimeout(() => {
+      document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
 
   return (
     <nav className={`site-nav ${isScrolled ? 'is-scrolled' : ''}`} aria-label="Navegación principal">
       <div className="nav-inner">
-        <a href="/" onClick={scrollToTop} className="nav-logo" aria-label="Alleks, volver al inicio">
-          <img className="nav-logo__image" src={currentLogo} alt="Logo de Alleks" />
-        </a>
+        <div className="nav-brand-group">
+          <a href="/" onClick={scrollToTop} className="nav-logo" aria-label="Alleks, volver al inicio">
+            <img className="nav-logo__image" src={currentLogo} alt="Logo de Alleks" />
+          </a>
+
+          {isProjectPage && (
+            <>
+              <span className="nav-brand-divider" aria-hidden="true" />
+              <button
+                type="button"
+                className="nav-back-btn"
+                onClick={handleBackToProjects}
+                aria-label="Volver a la sección de proyectos"
+              >
+                <i className="fa-solid fa-arrow-left" aria-hidden="true" />
+                <span className="nav-back-btn__text">Volver a proyectos</span>
+              </button>
+            </>
+          )}
+        </div>
 
         <ul id="primary-navigation" className={`nav-links ${isMenuOpen ? 'is-open' : ''}`}>
           {navItems.map((item) => (

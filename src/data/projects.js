@@ -8,6 +8,21 @@ import geovaCover from '../assets/img/projects/web/geova/GEOVA.webp';
 import frimeetCover from '../assets/img/projects/web/frimeet/Frimeet.webp';
 import game2dCover from '../assets/img/projects/web/estancias/Game2D.webp';
 
+// Web CREHOR
+import crehorCover from '../assets/img/projects/web/crehor/login.webp';
+import crehorDash from '../assets/img/projects/web/crehor/dash.webp';
+import crehorDash2 from '../assets/img/projects/web/crehor/dash-2.webp';
+import crehorHorarios from '../assets/img/projects/web/crehor/horarios.webp';
+import crehorScheduleView from '../assets/img/projects/web/crehor/schedule-view.webp';
+import crehorScheduleDoing from '../assets/img/projects/web/crehor/schedule-doing.webp';
+import crehorMaking from '../assets/img/projects/web/crehor/making.webp';
+import crehorGroups from '../assets/img/projects/web/crehor/groups.webp';
+import crehorSubjects from '../assets/img/projects/web/crehor/subjects.webp';
+import crehorProfessors from '../assets/img/projects/web/crehor/proffesors.webp';
+import crehorModal from '../assets/img/projects/web/crehor/modal.webp';
+import crehorModalDelete from '../assets/img/projects/web/crehor/modal-delete.webp';
+import crehorNone from '../assets/img/projects/web/crehor/none.webp';
+
 // Mobile SplitMeet
 import splitmeetCover from '../assets/img/projects/movil/splitmeet/splitmeet.webp';
 import splitmeet0 from '../assets/img/projects/movil/splitmeet/splitmeet0.webp';
@@ -212,8 +227,8 @@ export const webProjects = [
     myJob:
       'Desarrollé la identidad visual completa del proyecto. Diseñé la interfaz de usuario centrada en la experiencia, implementé la lógica de recomendación y realicé la integración con el SDK MercadoPago para pagos seguros.',
     images: [
+      "https://res.cloudinary.com/dahkwcslh/image/upload/f_auto,q_auto,w_920/v1778984455/LandingPage_w5bh98.png",
       frimeetCover,
-      "https://res.cloudinary.com/dahkwcslh/image/upload/f_auto,q_auto,w_920/v1778984455/LandingPage_w5bh98.png"
     ],
     github: "https://github.com/AlleksDev/Frimeet.git",
     demo: "https://frimeet.app/",
@@ -265,7 +280,21 @@ export const webProjects = [
       'La generación de horarios escolares manualmente es un proceso tedioso y propenso a errores, lo que afecta la eficiencia y el bienestar de los estudiantes y docentes, que pueden sufrir por la falta de organización en estos procesos.',
     myJob:
       'Conceptualicé el sistema de generación de horarios, diseñé e implementé la interfaz de usuario, desarrollé el Back-End completo junto con la integración con bases de datos y desplegué la plataforma en un entorno de producción.',
-    images: [],
+    images: [
+      crehorCover,
+      crehorDash,
+      crehorDash2,
+      crehorHorarios,
+      crehorScheduleView,
+      crehorScheduleDoing,
+      crehorMaking,
+      crehorGroups,
+      crehorSubjects,
+      crehorProfessors,
+      crehorModal,
+      crehorModalDelete,
+      crehorNone
+    ],
     github: "https://github.com/AlleksDev/Crehor.git",
     demo: "#",
     tags: ['UX/UI', 'Full-Stack', 'DevOps'],
