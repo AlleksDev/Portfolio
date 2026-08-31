@@ -65,10 +65,11 @@ const ProjectsSection = () => {
       <div className="projects-grid" key={activeFilter}>
         {displayedProjects.map((proj) => {
           const previewImage = (proj.images && proj.images[0]) || getProjectImageUrl(proj);
+          const isMobile = proj.type === 'mobile';
 
           return (
             <article
-              className={`project-card ${hoveredCardId === proj.id ? 'hovered' : hoveredCardId !== null ? 'unhovered' : ''}`}
+              className={`project-card ${isMobile ? 'project-card--mobile' : ''} ${hoveredCardId === proj.id ? 'hovered' : hoveredCardId !== null ? 'unhovered' : ''}`}
               key={proj.id}
               onClick={() => handleProjectClick(proj.id)}
               onKeyDown={(event) => handleProjectKeyDown(event, proj.id)}
@@ -81,21 +82,56 @@ const ProjectsSection = () => {
               data-main-tag={proj.mainTag}
               aria-label={`Ver proyecto ${proj.title}`}
             >
-              <div className="project-head-link">
-                <span>about</span><span>learn</span><span>portfolio</span><span>blog</span><span>contact</span>
-              </div>
-              <div className="project-img">
+              {isMobile ? (
+                <div className="project-head-mobile">
+                  <span className="mobile-header-badge">
+                    <i className="fa-brands fa-android"></i> Android
+                  </span>
+                  <div className="mobile-header-status">
+                    <i className="fa-solid fa-wifi"></i>
+                    <i className="fa-solid fa-battery-full"></i>
+                  </div>
+                </div>
+              ) : (
+                <div className="project-head-link">
+                  <span>about</span><span>learn</span><span>portfolio</span><span>blog</span><span>contact</span>
+                </div>
+              )}
+              <div className={`project-img ${isMobile ? 'project-img--mobile' : ''}`}>
                 {previewImage ? (
-                  <img
-                    src={previewImage}
-                    alt={proj.title}
-                    loading="lazy"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      const fallback = e.target.parentElement.querySelector('.project-img-placeholder');
-                      if (fallback) fallback.style.display = 'flex';
-                    }}
-                  />
+                  isMobile ? (
+                    <div className="mobile-preview-stage">
+                      <div className="mobile-card-mockup">
+                        <div className="mobile-card-notch">
+                          <div className="mobile-card-notch-cam"></div>
+                        </div>
+                        <div className="mobile-card-screen">
+                          <img
+                            src={previewImage}
+                            alt={proj.title}
+                            loading="lazy"
+                            onError={(e) => {
+                              e.target.style.display = 'none';
+                              const fallback = e.target.closest('.project-img')?.querySelector('.project-img-placeholder');
+                              if (fallback) fallback.style.display = 'flex';
+                            }}
+                          />
+                        </div>
+                        <div className="mobile-card-home-bar"></div>
+                      </div>
+                    </div>
+                  ) : (
+                    <img
+                      src={previewImage}
+                      alt={proj.title}
+                      loading="lazy"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        const fallback = e.target.parentElement.querySelector('.project-img-placeholder');
+                        if (fallback) fallback.style.display = 'flex';
+                      }}
+                    />
+                  )
                 ) : null}
                 <div
                   className="project-img-placeholder"

@@ -36,6 +36,31 @@ import splitmeet7 from '../assets/img/projects/movil/splitmeet/splitmeet7.webp';
 import splitmeet8 from '../assets/img/projects/movil/splitmeet/splitmeet8.webp';
 import splitmeet9 from '../assets/img/projects/movil/splitmeet/splitmeet9.webp';
 
+// Mobile Sebwave
+import sebwaveDash from '../assets/img/projects/movil/sebwave/dash.webp';
+import sebwaveLogin from '../assets/img/projects/movil/sebwave/login.webp';
+import sebwaveMap from '../assets/img/projects/movil/sebwave/map.webp';
+import sebwaveAlerts from '../assets/img/projects/movil/sebwave/alerts.webp';
+import sebwaveNew from '../assets/img/projects/movil/sebwave/new.webp';
+
+// Mobile ScoreUp
+import scoreupDash from '../assets/img/projects/movil/scoreup/dash.webp';
+import scoreupLogin from '../assets/img/projects/movil/scoreup/login.webp';
+import scoreupRegister from '../assets/img/projects/movil/scoreup/register.webp';
+import scoreupDashEmpty from '../assets/img/projects/movil/scoreup/dash-empty.webp';
+import scoreupRank from '../assets/img/projects/movil/scoreup/rank.webp';
+import scoreupLogros from '../assets/img/projects/movil/scoreup/logros.webp';
+import scoreupLogrosEmpty from '../assets/img/projects/movil/scoreup/logros-empty.webp';
+import scoreupCreate from '../assets/img/projects/movil/scoreup/create.webp';
+import scoreupSpinner from '../assets/img/projects/movil/scoreup/spinner.webp';
+
+// Mobile CineRadar
+import cineradarHome from '../assets/img/projects/movil/cineradar/home.webp';
+import cineradarForm from '../assets/img/projects/movil/cineradar/form.webp';
+import cineradarRecomForm from '../assets/img/projects/movil/cineradar/recom-form.webp';
+import cineradarResult from '../assets/img/projects/movil/cineradar/result.webp';
+import cineradarResult2 from '../assets/img/projects/movil/cineradar/result-2.webp';
+
 // Función auxiliar para generar URLs de devicons
 const devIcon = (name) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${name}/${name}-original.svg`;
 
@@ -324,7 +349,13 @@ export const mobileProjects = [
       'Los semáforos de tiempo fijo generan congestionamiento innecesario, emisiones evitables y retrasos en emergencias médicas que cuestan vidas.',
     myJob:
       'Participé en la conceptualización del proyecto, diseñé la interfaz de usuario completa, asegurando una experiencia fluida y fácil para los usuarios, además de dirigir el diseño de la carcasa para el dispositivo IoT.',
-    images: [],
+    images: [
+      sebwaveDash,
+      sebwaveLogin,
+      sebwaveMap,
+      sebwaveAlerts,
+      sebwaveNew
+    ],
     github: "https://github.com/AnabelenScript/SebWave.git",
     demo: "#",
     mainTag: 'Talent Land 2026',
@@ -388,7 +419,17 @@ export const mobileProjects = [
       'Los estudiantes luchan con la motivación y la organización del estudio, a menudo se sienten abrumados por la cantidad de tareas y la falta de un sistema efectivo para seguir su progreso, lo que puede llevar a la procrastinación y al estrés académico.',
     myJob:
       'Diseñé el sistema de gamificación y las interfaces. Desarrollé y desplegué la API para el seguimiento de progreso en tiempo real y la lógica de ranking, implementando funcionalidades de interacción social entre usuarios.',
-    images: [],
+    images: [
+      scoreupLogin,
+      scoreupDash,
+      scoreupRegister,
+      scoreupDashEmpty,
+      scoreupRank,
+      scoreupLogros,
+      scoreupLogrosEmpty,
+      scoreupCreate,
+      scoreupSpinner
+    ],
     github: "https://github.com/AlleksDev/ScoreUp_API.git",
     demo: "#",
     tags: ['Android', 'Productividad', 'UX/UI'],
@@ -414,7 +455,13 @@ export const mobileProjects = [
       'Con frecuencia, elegir una película para ver puede ser abrumador debido a la gran cantidad de opciones disponibles, esto puede generar estrés y dificultar la toma de decisiones para los usuarios, e incluso conllevar a discusiones al elegir en grupo.',
     myJob:
       'Diseñé la interfaz de usuario intuitiva. Implementé algoritmo de recomendación colaborativo y desarrollé la lógica de filtrado y búsqueda con integración a APIs de películas ya existentes.',
-    images: [],
+    images: [
+      cineradarHome,
+      cineradarRecomForm,
+      cineradarForm,
+      cineradarResult,
+      cineradarResult2
+    ],
     github: "https://github.com/AlleksDev/CineRadar.git",
     demo: "#",
     tags: ['Android', 'Kotlin', 'API Integrations'],

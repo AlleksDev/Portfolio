@@ -117,6 +117,37 @@
   text-transform: uppercase;
 }
 
+/* ─── Mobile Project Card Top Header ─── */
+.project-head-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-4);
+  border-bottom: var(--line-width) solid var(--color-border);
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-2xs);
+}
+
+.mobile-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-teal-ink);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+}
+
+.mobile-header-status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+
 .project-img {
   position: relative;
   display: flex;
@@ -133,6 +164,123 @@
   height: 100%;
   object-fit: cover;
   transition: transform var(--duration-slow) var(--ease), filter var(--duration-normal) var(--ease);
+}
+
+/* ─── Mobile Project Card Mockup Container ─── */
+.project-img--mobile {
+  aspect-ratio: 16 / 11;
+  padding: var(--space-4) var(--space-3) 0;
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(255, 255, 255, 0.92) 0%,
+    var(--color-bg-alt) 75%
+  );
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+[data-theme='dark'] .project-img--mobile {
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(34, 230, 199, 0.08) 0%,
+    rgba(255, 59, 76, 0.03) 50%,
+    #0c0c11 90%
+  );
+}
+
+.mobile-preview-stage {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.mobile-card-mockup {
+  position: relative;
+  width: 9.75rem;
+  height: 12.8rem;
+  border: 6px solid #181822;
+  border-bottom-width: 0;
+  border-top-left-radius: 1.25rem;
+  border-top-right-radius: 1.25rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background: #000000;
+  box-shadow:
+    0 -2px 10px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.12),
+    0 12px 30px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration-normal) var(--ease),
+              box-shadow var(--duration-normal) var(--ease);
+  transform-origin: bottom center;
+}
+
+[data-theme='dark'] .mobile-card-mockup {
+  border-color: #15151e;
+  box-shadow:
+    0 -2px 10px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.mobile-card-notch {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  width: 2.2rem;
+  height: 0.5rem;
+  background: #000000;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+}
+
+.mobile-card-notch-cam {
+  width: 4px;
+  height: 4px;
+  border-radius: var(--radius-circle);
+  background: #1e293b;
+}
+
+.mobile-card-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0a0a0d;
+}
+
+.mobile-card-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.mobile-card-home-bar {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  width: 2.75rem;
+  height: 3px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
 }
 
 .project-img-placeholder {
@@ -157,9 +305,18 @@
   opacity: 0.8;
 }
 
-#projects .project-card:hover .project-img img,
-#projects .project-card:focus-visible .project-img img {
+#projects .project-card:not(.project-card--mobile):hover .project-img img,
+#projects .project-card:not(.project-card--mobile):focus-visible .project-img img {
   transform: scale(1.06) rotate(-1deg);
+}
+
+#projects .project-card--mobile:hover .mobile-card-mockup,
+#projects .project-card--mobile:focus-visible .mobile-card-mockup {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow:
+    0 -4px 14px rgba(0, 0, 0, 0.2),
+    0 0 0 1px var(--color-teal),
+    0 16px 36px rgba(0, 0, 0, 0.35);
 }
 
 #projects .project-card:hover .project-img-placeholder i,

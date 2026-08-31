@@ -76,7 +76,11 @@ function ProjectDetailPage() {
             </div>
 
             <div className="project-detail__right reveal">
-              <ProjectGallery images={projectImages} title={project.title} />
+              <ProjectGallery
+                images={projectImages}
+                title={project.title}
+                type={project.type}
+              />
               <div className="project-detail__cta">
                 <Button
                   variant="primary"

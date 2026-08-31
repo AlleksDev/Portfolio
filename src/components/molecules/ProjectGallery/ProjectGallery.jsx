@@ -4,12 +4,15 @@ import "./ProjectGallery.css";
 const ProjectGallery = React.memo(function ProjectGallery({
   images = [],
   title = "Proyecto",
+  type = "web",
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState(null);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const transitionTimeoutRef = useRef(null);
+  const phoneScreenRef = useRef(null);
 
+  const isMobile = type === "mobile";
   const numImages = images.length;
   const hasImages = numImages > 0;
 
@@ -18,6 +21,9 @@ const ProjectGallery = React.memo(function ProjectGallery({
     setCurrentIndex(0);
     setPrevIndex(null);
     setIsTransitioning(false);
+    if (phoneScreenRef.current) {
+      phoneScreenRef.current.scrollTop = 0;
+    }
   }, [images]);
 
   // Preload next and previous images to ensure instant, flicker-free transitions
@@ -49,6 +55,10 @@ const ProjectGallery = React.memo(function ProjectGallery({
     setPrevIndex(currentIndex);
     setCurrentIndex(newIndex);
     setIsTransitioning(true);
+
+    if (phoneScreenRef.current) {
+      phoneScreenRef.current.scrollTo({ top: 0, behavior: "smooth" });
+    }
 
     transitionTimeoutRef.current = setTimeout(() => {
       setIsTransitioning(false);
@@ -94,19 +104,37 @@ const ProjectGallery = React.memo(function ProjectGallery({
   }, []);
 
   return (
-    <div className="project-gallery">
-      <div className="project-gallery__browser-bar">
-        <div className="project-gallery__browser-dots">
-          <span className="project-gallery__browser-dot project-gallery__browser-dot--red" />
-          <span className="project-gallery__browser-dot project-gallery__browser-dot--yellow" />
-          <span className="project-gallery__browser-dot project-gallery__browser-dot--green" />
-        </div>
-        {hasImages && numImages > 1 && (
-          <span className="project-gallery__counter">
-            {currentIndex + 1} / {numImages}
+    <div
+      className={`project-gallery ${
+        isMobile ? "project-gallery--mobile" : "project-gallery--web"
+      }`}
+    >
+      {/* Top Header / Bar */}
+      {isMobile ? (
+        <div className="project-gallery__mobile-header">
+          <span className="project-gallery__device-badge">
+            <i className="fa-solid fa-mobile-screen-button"></i> App Móvil
           </span>
-        )}
-      </div>
+          {hasImages && numImages > 1 && (
+            <span className="project-gallery__counter">
+              {currentIndex + 1} / {numImages}
+            </span>
+          )}
+        </div>
+      ) : (
+        <div className="project-gallery__browser-bar">
+          <div className="project-gallery__browser-dots">
+            <span className="project-gallery__browser-dot project-gallery__browser-dot--red" />
+            <span className="project-gallery__browser-dot project-gallery__browser-dot--yellow" />
+            <span className="project-gallery__browser-dot project-gallery__browser-dot--green" />
+          </div>
+          {hasImages && numImages > 1 && (
+            <span className="project-gallery__counter">
+              {currentIndex + 1} / {numImages}
+            </span>
+          )}
+        </div>
+      )}
 
       <div className="project-gallery__container">
         {!hasImages ? (
@@ -115,74 +143,142 @@ const ProjectGallery = React.memo(function ProjectGallery({
             <h3>Próximamente más capturas</h3>
             <p>Documentación visual de este proyecto en preparación.</p>
           </div>
-        ) : (
-          <>
-            <div className="project-gallery__carousel-inner">
-              {numImages > 1 && (
-                <button
-                  type="button"
-                  className="project-gallery__carousel-btn project-gallery__carousel-btn--prev"
-                  onClick={handlePrevImage}
-                  aria-label="Imagen anterior"
-                >
-                  <i className="fa-solid fa-chevron-left"></i>
-                </button>
-              )}
+        ) : isMobile ? (
+          /* Smartphone Showcase Mode */
+          <div className="project-gallery__mobile-stage">
+            {numImages > 1 && (
+              <button
+                type="button"
+                className="project-gallery__carousel-btn project-gallery__carousel-btn--prev project-gallery__carousel-btn--phone"
+                onClick={handlePrevImage}
+                aria-label="Imagen anterior"
+              >
+                <i className="fa-solid fa-chevron-left"></i>
+              </button>
+            )}
 
-              <div className="project-gallery__image-wrapper">
-                {/* Outgoing image during smooth crossfade */}
-                {isTransitioning && prevIndex !== null && images[prevIndex] && (
-                  <img
-                    src={images[prevIndex]}
-                    alt=""
-                    aria-hidden="true"
-                    className="project-gallery__screenshot project-gallery__screenshot--outgoing"
-                  />
-                )}
+            <div className="phone-mockup">
+              {/* Phone Outer Chassis / Bezel */}
+              <div className="phone-chassis">
+                {/* Phone Top Notch / Dynamic Island */}
+                <div className="phone-notch">
+                  <div className="phone-camera" />
+                  <div className="phone-speaker" />
+                </div>
 
-                {/* Current active image */}
-                <img
-                  src={images[currentIndex]}
-                  alt={`${title} - captura ${currentIndex + 1}`}
-                  className={`project-gallery__screenshot ${
-                    isTransitioning
-                      ? "project-gallery__screenshot--entering"
-                      : "project-gallery__screenshot--active"
-                  }`}
-                  loading="eager"
-                />
+                {/* Phone Screen Viewport (Scrollable) */}
+                <div className="phone-screen" ref={phoneScreenRef}>
+                  <div className="phone-screen-content">
+                    {isTransitioning &&
+                      prevIndex !== null &&
+                      images[prevIndex] && (
+                        <img
+                          src={images[prevIndex]}
+                          alt=""
+                          aria-hidden="true"
+                          className="phone-screenshot phone-screenshot--outgoing"
+                        />
+                      )}
+
+                    <img
+                      src={images[currentIndex]}
+                      alt={`${title} - captura ${currentIndex + 1}`}
+                      className={`phone-screenshot ${
+                        isTransitioning
+                          ? "phone-screenshot--entering"
+                          : "phone-screenshot--active"
+                      }`}
+                      loading="eager"
+                    />
+                  </div>
+                </div>
+
+                {/* Phone Bottom Home Indicator */}
+                <div className="phone-home-bar" />
               </div>
-
-              {numImages > 1 && (
-                <button
-                  type="button"
-                  className="project-gallery__carousel-btn project-gallery__carousel-btn--next"
-                  onClick={handleNextImage}
-                  aria-label="Siguiente imagen"
-                >
-                  <i className="fa-solid fa-chevron-right"></i>
-                </button>
-              )}
             </div>
 
             {numImages > 1 && (
-              <div className="project-gallery__dots">
-                {images.map((_, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    className={`project-gallery__dot ${
-                      idx === currentIndex
-                        ? "project-gallery__dot--active"
-                        : ""
-                    }`}
-                    onClick={() => changeImage(idx)}
-                    aria-label={`Ir a captura ${idx + 1}`}
-                  />
-                ))}
-              </div>
+              <button
+                type="button"
+                className="project-gallery__carousel-btn project-gallery__carousel-btn--next project-gallery__carousel-btn--phone"
+                onClick={handleNextImage}
+                aria-label="Siguiente imagen"
+              >
+                <i className="fa-solid fa-chevron-right"></i>
+              </button>
             )}
-          </>
+          </div>
+        ) : (
+          /* Standard Web Browser Window Mode */
+          <div className="project-gallery__carousel-inner">
+            {numImages > 1 && (
+              <button
+                type="button"
+                className="project-gallery__carousel-btn project-gallery__carousel-btn--prev"
+                onClick={handlePrevImage}
+                aria-label="Imagen anterior"
+              >
+                <i className="fa-solid fa-chevron-left"></i>
+              </button>
+            )}
+
+            <div className="project-gallery__image-wrapper">
+              {/* Outgoing image during smooth crossfade */}
+              {isTransitioning && prevIndex !== null && images[prevIndex] && (
+                <img
+                  src={images[prevIndex]}
+                  alt=""
+                  aria-hidden="true"
+                  className="project-gallery__screenshot project-gallery__screenshot--outgoing"
+                />
+              )}
+
+              {/* Current active image */}
+              <img
+                src={images[currentIndex]}
+                alt={`${title} - captura ${currentIndex + 1}`}
+                className={`project-gallery__screenshot ${
+                  isTransitioning
+                    ? "project-gallery__screenshot--entering"
+                    : "project-gallery__screenshot--active"
+                }`}
+                loading="eager"
+              />
+            </div>
+
+            {numImages > 1 && (
+              <button
+                type="button"
+                className="project-gallery__carousel-btn project-gallery__carousel-btn--next"
+                onClick={handleNextImage}
+                aria-label="Siguiente imagen"
+              >
+                <i className="fa-solid fa-chevron-right"></i>
+              </button>
+            )}
+          </div>
+        )}
+
+        {/* Carousel pagination dots */}
+        {hasImages && numImages > 1 && (
+          <div
+            className={`project-gallery__dots ${
+              isMobile ? "project-gallery__dots--mobile" : ""
+            }`}
+          >
+            {images.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                className={`project-gallery__dot ${
+                  idx === currentIndex ? "project-gallery__dot--active" : ""
+                }`}
+                onClick={() => changeImage(idx)}
+                aria-label={`Ir a captura ${idx + 1}`}
+              />
+            ))}
+          </div>
         )}
       </div>
     </div>
