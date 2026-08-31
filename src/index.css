@@ -362,7 +362,7 @@ section:not(#hero) {
 
 #about {
   scroll-snap-align: start;
-  scroll-margin-top: clamp(8rem, 13vh, 9.5rem);
+  scroll-margin-top: var(--header-offset);
   scroll-snap-stop: normal;
   min-height: auto;
 }

@@ -60,7 +60,8 @@
   flex-direction: column;
   justify-content: center;
   isolation: isolate;
-  overflow: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
   max-width: 100%;
   width: 100%;
   padding-top: 0;
@@ -80,7 +81,7 @@
   width: 100%;
   height: clamp(3rem, 5vw, 4.75rem);
   pointer-events: none;
-  z-index: 1;
+  z-index: 3;
   overflow: hidden;
   line-height: 0;
 }
@@ -449,8 +450,8 @@
 .hero-system {
   --hero-system-current-opacity: var(--hero-system-opacity);
   position: absolute;
-  z-index: 1;
-  top: 52%;
+  z-index: 4;
+  top: 50%;
   right: var(--hero-system-offset-inline);
   width: var(--hero-system-size);
   aspect-ratio: 1;
@@ -458,7 +459,8 @@
   border-radius: var(--radius-circle);
   background-color: #0a0a0d;
   box-shadow:
-    0 0 0 clamp(0.4rem, 0.5vw, 1.25rem) #0a0a0d;
+    0 0 0 clamp(0.4rem, 0.5vw, 1.25rem) #0a0a0d,
+    0 1.25rem 3.5rem rgba(0, 0, 0, 0.7);
   opacity: var(--hero-system-current-opacity);
   transform: translateY(-50%) rotate(var(--hero-system-tilt));
   animation:
@@ -900,7 +902,8 @@
     min-height: auto;
     padding-top: calc(var(--space-12) + var(--space-8));
     padding-bottom: var(--space-8);
-    overflow: hidden;
+    overflow-x: clip;
+    overflow-y: visible;
   }
 
   .hero-inner {
@@ -938,7 +941,8 @@
   #hero {
     padding-top: calc(var(--space-12) + var(--space-6));
     padding-bottom: clamp(3rem, 6vh, 5rem);
-    overflow: hidden;
+    overflow-x: clip;
+    overflow-y: visible;
     /* Disable expensive gradient animation on mobile */
     animation: none;
   }

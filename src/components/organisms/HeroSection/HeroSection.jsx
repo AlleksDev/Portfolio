@@ -17,23 +17,23 @@ const HeroSection = () => {
             <div className="hero-blob hero-blob--red" />
             <div className="hero-blob hero-blob--teal" />
           </div>
+        </div>
 
-          <div className="hero-system">
-            <span className="hero-system-axis hero-system-axis--horizontal" />
-            <span className="hero-system-axis hero-system-axis--vertical" />
-            <span className="hero-system-ring hero-system-ring--outer" />
-            <span className="hero-system-ring hero-system-ring--middle" />
-            <span className="hero-system-ring hero-system-ring--inner" />
-            <span className="hero-system-connector hero-system-connector--one" />
-            <span className="hero-system-connector hero-system-connector--two" />
-            <span className="hero-system-connector hero-system-connector--three" />
-            <span className="hero-system-node hero-system-node--one" />
-            <span className="hero-system-node hero-system-node--two" />
-            <span className="hero-system-node hero-system-node--three" />
-            <span className="hero-system-node hero-system-node--four" />
-            <span className="hero-system-node hero-system-node--five" />
-            <span className="hero-system-core">A</span>
-          </div>
+        <div className="hero-system" aria-hidden="true">
+          <span className="hero-system-axis hero-system-axis--horizontal" />
+          <span className="hero-system-axis hero-system-axis--vertical" />
+          <span className="hero-system-ring hero-system-ring--outer" />
+          <span className="hero-system-ring hero-system-ring--middle" />
+          <span className="hero-system-ring hero-system-ring--inner" />
+          <span className="hero-system-connector hero-system-connector--one" />
+          <span className="hero-system-connector hero-system-connector--two" />
+          <span className="hero-system-connector hero-system-connector--three" />
+          <span className="hero-system-node hero-system-node--one" />
+          <span className="hero-system-node hero-system-node--two" />
+          <span className="hero-system-node hero-system-node--three" />
+          <span className="hero-system-node hero-system-node--four" />
+          <span className="hero-system-node hero-system-node--five" />
+          <span className="hero-system-core">A</span>
         </div>
 
         <div className="hero-inner">
