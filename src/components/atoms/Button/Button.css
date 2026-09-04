@@ -15,10 +15,17 @@
   transition: color var(--duration-fast) var(--ease), background var(--duration-fast) var(--ease), border-color var(--duration-fast) var(--ease), transform var(--duration-fast) var(--ease), box-shadow var(--duration-fast) var(--ease);
 }
 
+.btn:disabled,
+.btn[aria-disabled='true'] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .btn--primary {
-  border-color: var(--color-red);
+  border-color: var(--color-btn-primary-bg);
   color: var(--color-on-accent);
-  background: var(--color-red);
+  background: var(--color-btn-primary-bg);
 }
 
 .btn--primary:hover,

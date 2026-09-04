@@ -4,11 +4,13 @@ import Button from "../../atoms/Button/Button";
 import ProjectGallery from "../../molecules/ProjectGallery/ProjectGallery";
 import projects from "../../../data/projects";
 import { getProjectImageUrl } from "../../../utils/imageLoader";
+import { useToast } from "../../../context/ToastContext";
 import "./ProjectDetailPage.css";
 
 function ProjectDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { showToast } = useToast();
   const project = projects.find((p) => p.id === id);
 
   const fallbackImage = project ? getProjectImageUrl(project) : '';
@@ -17,6 +19,22 @@ function ProjectDetailPage() {
     : fallbackImage
       ? [fallbackImage]
       : [];
+
+  const handleGithubClick = () => {
+    if (project?.github && project.github !== '#') {
+      window.open(project.github, "_blank", "noopener,noreferrer");
+    } else {
+      showToast("El repositorio de este proyecto es privado o no está disponible públicamente por ahora.", "info");
+    }
+  };
+
+  const handleDemoClick = () => {
+    if (project?.demo && project.demo !== '#') {
+      window.open(project.demo, "_blank", "noopener,noreferrer");
+    } else {
+      showToast("La demo interactiva de este proyecto no está disponible por ahora.", "info");
+    }
+  };
 
   if (!project) {
     return (
@@ -83,18 +101,22 @@ function ProjectDetailPage() {
               />
               <div className="project-detail__cta">
                 <Button
-                  variant="primary"
-                  onClick={() => window.open(project.github, "_blank")}
+                  variant={project.github && project.github !== '#' ? 'primary' : 'ghost'}
+                  onClick={handleGithubClick}
+                  aria-label={project.github && project.github !== '#' ? 'Ver repositorio en Github' : 'Repositorio no disponible públicamente'}
+                  title={project.github && project.github !== '#' ? 'Ver repositorio en Github' : 'Repositorio privado / no disponible'}
                 >
-                  <i className="fa-brands fa-github"></i>
+                  <i className="fa-brands fa-github" aria-hidden="true"></i>
                   Github
                 </Button>
                 <Button
-                  variant="primary"
-                  onClick={() => window.open(project.demo, "_blank")}
+                  variant={project.demo && project.demo !== '#' ? 'primary' : 'ghost'}
+                  onClick={handleDemoClick}
+                  aria-label={project.demo && project.demo !== '#' ? 'Abrir demo del proyecto' : 'Demo interactiva no disponible'}
+                  title={project.demo && project.demo !== '#' ? 'Abrir demo del proyecto' : 'Demo no disponible por ahora'}
                 >
-                  <i className="fa-solid fa-arrow-up-right-from-square"></i>
-                  Demo del proyecto
+                  <i className="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                  {project.demo && project.demo !== '#' ? 'Demo del proyecto' : 'Demo no disponible'}
                 </Button>
               </div>
 

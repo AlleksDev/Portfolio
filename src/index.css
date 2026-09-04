@@ -18,8 +18,9 @@
   --color-border-strong: rgba(20, 20, 26, 0.16);
   --color-text: #15151a;
   --color-text-muted: #5b5b66;
-  --color-text-faint: #8a8a94;
+  --color-text-faint: #666672;
   --color-red: #ff2e3e;
+  --color-btn-primary-bg: #d61f32;
   --color-red-ink: #c4101e;
   --color-red-soft: #ffe4e5;
   --color-red-glow: rgba(255, 46, 62, 0.16);
@@ -53,7 +54,7 @@
   --font-hero: 'Clash Display', 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  --font-size-2xs: 0.68rem;
+  --font-size-2xs: 0.78rem;
   --font-size-xs: 0.85rem;
   --font-size-sm: 0.9rem;
   --font-size-base: 1rem;
@@ -89,7 +90,7 @@
   --header-padding: 1.125rem;
   --header-padding-scrolled: 0.75rem;
   --header-offset: clamp(4rem, 6.5vh, 4.75rem);
-  --control-size: 2.5rem;
+  --control-size: 2.75rem;
   --touch-target: 2.75rem;
   --progress-height: 0.1875rem;
   --line-width: 0.0625rem;
@@ -223,8 +224,9 @@
   --color-border-strong: rgba(255, 255, 255, 0.18);
   --color-text: #f1f0ed;
   --color-text-muted: #9e9ea9;
-  --color-text-faint: #6c6c77;
+  --color-text-faint: #9898a6;
   --color-red: #ff3b4c;
+  --color-btn-primary-bg: #d61f32;
   --color-red-ink: #ff7a85;
   --color-red-soft: rgba(255, 59, 76, 0.14);
   --color-red-glow: rgba(255, 59, 76, 0.22);
@@ -469,21 +471,30 @@ section:not(#hero) {
   }
 }
 
-/* ─── Scrollbar styling ─── */
+/* ─── Scrollbar styling (Siempre oscura y continua con el Hero) ─── */
 
 html {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.28) #0a0a0d;
 }
 
 ::-webkit-scrollbar {
-  display: none;
-  width: 0;
-  height: 0;
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-pill);
+  border: 1px solid #0a0a0d;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-red);
+  background: var(--color-btn-primary-bg);
 }
 
 @media (max-width: 1024px), (hover: none) and (pointer: coarse) {

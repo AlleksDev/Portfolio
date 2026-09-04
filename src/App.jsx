@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import HomePage from './components/pages/HomePage/HomePage';
 import ProjectDetailPage from './components/pages/ProjectDetailPage/ProjectDetailPage';
+import { ToastProvider } from './context/ToastContext';
 import './App.css';
 
 function ScrollToTopAndAnimate() {
@@ -78,13 +79,15 @@ function ScrollToTopAndAnimate() {
 
 function App() {
   return (
-    <HashRouter>
-      <ScrollToTopAndAnimate />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/project/:id" element={<ProjectDetailPage />} />
-      </Routes>
-    </HashRouter>
+    <ToastProvider>
+      <HashRouter>
+        <ScrollToTopAndAnimate />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/project/:id" element={<ProjectDetailPage />} />
+        </Routes>
+      </HashRouter>
+    </ToastProvider>
   );
 }
 

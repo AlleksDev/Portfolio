@@ -1,12 +1,20 @@
 import './HeroSection.css';
+import { useToast } from '../../../context/ToastContext';
 
 const HeroSection = () => {
+  const { showToast } = useToast();
+
   const handleScroll = (e, id) => {
     e.preventDefault();
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     document.getElementById(id)?.scrollIntoView({
       behavior: prefersReducedMotion ? 'auto' : 'smooth',
     });
+  };
+
+  const handleUnavailableLink = (e, platform) => {
+    e.preventDefault();
+    showToast(`El enlace a ${platform} no está disponible por ahora.`, 'info');
   };
 
   return (
@@ -39,7 +47,8 @@ const HeroSection = () => {
         <div className="hero-inner">
           <div className="hero-copy">
             <div className="hero-layout">
-              <div className="hero-headline">
+              <h1 className="hero-headline">
+                <span className="sr-only">Alleks — Desarrollador Front-End y Diseñador UX/UI: Código y Diseño</span>
                 <span className="hero-title-line hero-title-line--code" aria-hidden="true">
                   <span className="hero-title-word" data-word="CÓDIGO">CÓDIGO</span>
                 </span>
@@ -47,7 +56,7 @@ const HeroSection = () => {
                   <span className="hero-title-plus" aria-hidden="true">+</span>
                   <span className="hero-title-word" data-word="DISEÑO">DISEÑO</span>
                 </span>
-              </div>
+              </h1>
 
               <div className="hero-support">
                 <p className="hero-desc">Construyo experiencias digitales, busco la excelencia del código y el diseño, de la arquitectura a la gráfica</p>
@@ -56,9 +65,9 @@ const HeroSection = () => {
                   <a href="#experience" onClick={(e) => handleScroll(e, 'experience')} className="btn-outline">MI EXPERIENCIA</a>
                 </div>
                 <div className="hero-socials">
-                  <a href="#" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-                  <a href="#" aria-label="GitHub"><i className="fa-brands fa-github" aria-hidden="true"></i></a>
-                  <a href="#" aria-label="Instagram"><i className="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                  <a href="#linkedin" onClick={(e) => handleUnavailableLink(e, 'LinkedIn')} aria-label="LinkedIn (no disponible)"><i className="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                  <a href="https://github.com/AlleksDev" target="_blank" rel="noopener noreferrer" aria-label="GitHub de AlleksDev"><i className="fa-brands fa-github" aria-hidden="true"></i></a>
+                  <a href="#instagram" onClick={(e) => handleUnavailableLink(e, 'Instagram')} aria-label="Instagram (no disponible)"><i className="fa-brands fa-instagram" aria-hidden="true"></i></a>
                 </div>
               </div>
             </div>

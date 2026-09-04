@@ -1,13 +1,21 @@
 import React from 'react';
 import './Footer.css';
 import logo from '../../../assets/logo.svg';
+import { useToast } from '../../../context/ToastContext';
 
 const Footer = () => {
+  const { showToast } = useToast();
+
+  const handleUnavailableLink = (e, platform) => {
+    e.preventDefault();
+    showToast(`El enlace a ${platform} no está disponible por ahora.`, 'info');
+  };
+
   return (
     <footer>
       <div>
         <div className="footer-logo">
-          <img src={logo} alt="Logo" />
+          <img src={logo} alt="Logo de Alleks" />
         </div>
         <div className="footer-subtitle">FullStack - UX/UI Designer - Illustrator</div>
       </div>
@@ -15,9 +23,15 @@ const Footer = () => {
       <div className="footer-follow">
         <span>Sígueme</span>
         <div className="footer-socials">
-          <a href="#" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-          <a href="#" aria-label="GitHub"><i className="fa-brands fa-github" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Instagram"><i className="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#linkedin" onClick={(e) => handleUnavailableLink(e, 'LinkedIn')} aria-label="LinkedIn (no disponible)">
+            <i className="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a href="https://github.com/AlleksDev" target="_blank" rel="noopener noreferrer" aria-label="GitHub de AlleksDev">
+            <i className="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="#instagram" onClick={(e) => handleUnavailableLink(e, 'Instagram')} aria-label="Instagram (no disponible)">
+            <i className="fa-brands fa-instagram" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
     </footer>

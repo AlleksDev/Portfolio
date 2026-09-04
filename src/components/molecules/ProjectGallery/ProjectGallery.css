@@ -479,6 +479,7 @@
 }
 
 .project-gallery__dot {
+  position: relative;
   width: var(--space-2);
   height: var(--space-2);
   padding: var(--space-0);
@@ -489,6 +490,16 @@
   transition: width var(--duration-fast) var(--ease),
               background var(--duration-fast) var(--ease),
               border-radius var(--duration-fast) var(--ease);
+}
+
+.project-gallery__dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .project-gallery--mobile .project-gallery__dot {

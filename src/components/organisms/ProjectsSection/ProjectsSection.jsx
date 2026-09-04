@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './ProjectsSection.css';
 import { webProjects, mobileProjects, illustrationProjects } from '../../../data/projects';
 import { getProjectImageUrl } from '../../../utils/imageLoader';
@@ -7,7 +7,6 @@ import { getProjectImageUrl } from '../../../utils/imageLoader';
 const ProjectsSection = () => {
   const [activeFilter, setActiveFilter] = useState('web');
   const [hoveredCardId, setHoveredCardId] = useState(null);
-  const navigate = useNavigate();
 
   const getProjects = () => {
     switch (activeFilter) {
@@ -17,17 +16,6 @@ const ProjectsSection = () => {
         return illustrationProjects;
       default:
         return webProjects;
-    }
-  };
-
-  const handleProjectClick = (projectId) => {
-    navigate(`/project/${projectId}`);
-  };
-
-  const handleProjectKeyDown = (event, projectId) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      handleProjectClick(projectId);
     }
   };
 
@@ -68,22 +56,19 @@ const ProjectsSection = () => {
           const isMobile = proj.type === 'mobile';
 
           return (
-            <article
+            <Link
+              to={`/project/${proj.id}`}
               className={`project-card ${isMobile ? 'project-card--mobile' : ''} ${hoveredCardId === proj.id ? 'hovered' : hoveredCardId !== null ? 'unhovered' : ''}`}
               key={proj.id}
-              onClick={() => handleProjectClick(proj.id)}
-              onKeyDown={(event) => handleProjectKeyDown(event, proj.id)}
               onMouseEnter={() => setHoveredCardId(proj.id)}
               onMouseLeave={() => setHoveredCardId(null)}
               onFocus={() => setHoveredCardId(proj.id)}
               onBlur={() => setHoveredCardId(null)}
-              role="link"
-              tabIndex="0"
               data-main-tag={proj.mainTag}
               aria-label={`Ver proyecto ${proj.title}`}
             >
               {isMobile ? (
-                <div className="project-head-mobile">
+                <div className="project-head-mobile" aria-hidden="true">
                   <span className="mobile-header-badge">
                     <i className="fa-brands fa-android"></i> Android
                   </span>
@@ -93,7 +78,7 @@ const ProjectsSection = () => {
                   </div>
                 </div>
               ) : (
-                <div className="project-head-link">
+                <div className="project-head-link" aria-hidden="true">
                   <span>about</span><span>learn</span><span>portfolio</span><span>blog</span><span>contact</span>
                 </div>
               )}
@@ -148,7 +133,7 @@ const ProjectsSection = () => {
                 <h3 className="project-title">{proj.title}</h3>
                 <p className="project-desc">{proj.shortDescription || proj.description}</p>
               </div>
-            </article>
+            </Link>
           );
         })}
         <div className="project-card projects-more">

@@ -114,9 +114,16 @@ const Patterns = () => {
                   onMouseEnter={() => setActiveIdx(idx)}
                   onMouseLeave={() => setActiveIdx(null)}
                   onClick={() => handleSelect(idx)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      handleSelect(idx);
+                    }
+                  }}
                   tabIndex={0}
                   role="button"
                   aria-pressed={activeIdx === idx}
+                  aria-label={`Patrón de diseño: ${item.title}`}
                 >
                   <div
                     className="pattern-icon"

@@ -1,0 +1,103 @@
+.toast-container {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: min(24rem, calc(100vw - 2rem));
+  pointer-events: none;
+}
+
+.toast-item {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 0.875rem 1.125rem;
+  border-radius: var(--radius-m);
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: var(--line-width) solid var(--color-border-strong);
+  box-shadow: var(--shadow-m);
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  line-height: 1.4;
+  animation: toast-slide-in var(--duration-normal) var(--ease) both;
+}
+
+.toast-item--info {
+  border-left: 4px solid var(--color-teal);
+}
+
+.toast-item--info .toast-icon {
+  color: var(--color-teal);
+}
+
+.toast-item--success {
+  border-left: 4px solid #10b981;
+}
+
+.toast-item--success .toast-icon {
+  color: #10b981;
+}
+
+.toast-item--error {
+  border-left: 4px solid var(--color-red);
+}
+
+.toast-item--error .toast-icon {
+  color: var(--color-red);
+}
+
+.toast-icon {
+  flex-shrink: 0;
+  font-size: 1.15rem;
+}
+
+.toast-message {
+  flex: 1;
+}
+
+.toast-close {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-circle);
+  cursor: pointer;
+  transition: color var(--duration-fast) var(--ease), background var(--duration-fast) var(--ease);
+}
+
+.toast-close:hover {
+  color: var(--color-text);
+  background: var(--color-bg-alt);
+}
+
+@keyframes toast-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(1rem) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .toast-container {
+    bottom: var(--space-4);
+    right: var(--space-4);
+    left: var(--space-4);
+    max-width: 100%;
+  }
+}

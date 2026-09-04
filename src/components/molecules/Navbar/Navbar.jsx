@@ -6,9 +6,9 @@ import logoDark from '../../../assets/logo-dark.svg';
 
 const navItems = [
   { id: 'about', label: 'SOBRE MÍ' },
+  { id: 'projects', label: 'PROYECTOS' },
   { id: 'skills', label: 'HABILIDADES' },
   { id: 'experience', label: 'EXPERIENCIA' },
-  { id: 'projects', label: 'PROYECTOS' },
   { id: 'contact', label: 'CONTACTO' },
 ];
 
@@ -19,6 +19,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || 'light');
   const [themeFeedback, setThemeFeedback] = useState(null);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const handleScrollState = () => {
@@ -28,6 +29,23 @@ const Navbar = () => {
         setIsScrolled(heroBottom <= 70);
       } else {
         setIsScrolled(true);
+      }
+
+      // Scroll spy para sección activa
+      if (location.pathname === '/') {
+        const sectionIds = ['contact', 'experience', 'skills', 'projects', 'about'];
+        const scrollPos = window.scrollY + 140;
+        let found = '';
+        for (const id of sectionIds) {
+          const el = document.getElementById(id);
+          if (el && el.offsetTop <= scrollPos) {
+            found = id;
+            break;
+          }
+        }
+        setActiveSection(found);
+      } else {
+        setActiveSection('');
       }
     };
 
@@ -153,7 +171,12 @@ const Navbar = () => {
         <ul id="primary-navigation" className={`nav-links ${isMenuOpen ? 'is-open' : ''}`}>
           {navItems.map((item) => (
             <li key={item.id}>
-              <a href={`#${item.id}`} onClick={(event) => handleScroll(event, item.id)}>
+              <a
+                href={`#${item.id}`}
+                onClick={(event) => handleScroll(event, item.id)}
+                className={activeSection === item.id ? 'is-active' : ''}
+                aria-current={activeSection === item.id ? 'location' : undefined}
+              >
                 {item.label}
               </a>
             </li>
